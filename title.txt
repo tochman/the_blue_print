@@ -1,0 +1,73 @@
+---
+title: The Blue Print
+subtitle: A Journey Into Web Application Development with React
+author: Thomas Ochman
+affiliation: Agile Ventures
+titlepage: true
+titlepage-rule-height: 0
+language: en-US
+toc: true
+book: true
+listings-disable-line-numbers: true
+disable-header-and-footer: true 
+code-block-font-size: \small
+footer-left: "\ "
+fontsize: 13pt
+colorlinks: true
+urlcolor: blue
+
+
+header-includes:
+- |
+  ```{=latex}
+  \usepackage{makeidx}
+  \usepackage{showidx}
+  \makeindex
+  \usepackage{xcolor}
+  
+  % Note: tcolorbox is now loaded in clean-table-styling.tex with all required options
+  % We don't load it here to avoid package conflicts
+  
+  % Load the mdframed package for compatibility with different admonition formats
+  \usepackage{mdframed}
+  
+  % Define custom colors for admonition blocks
+  \definecolor{setupframe}{RGB}{90,90,90}
+  \definecolor{setupback}{RGB}{245,245,245}
+  \definecolor{tipframe}{RGB}{52,152,219}
+  \definecolor{tipback}{RGB}{236,240,241}
+  \definecolor{importantframe}{RGB}{231,76,60}
+  \definecolor{importantback}{RGB}{253,237,236}
+  \definecolor{cautionframe}{RGB}{243,156,18}
+  \definecolor{cautionback}{RGB}{253,247,236}
+  \definecolor{warningframe}{RGB}{192,57,43}
+  \definecolor{warningback}{RGB}{245,235,233}
+  \definecolor{exampleframe}{RGB}{46,125,50}
+  \definecolor{exampleback}{RGB}{232,245,233}
+  
+  % No awesomebox - using tcolorbox for all styles
+  % Note: The tcolorbox definitions are now moved to clean-table-styling.tex
+  % to avoid package conflicts. We only define compatibility environments here.
+  
+  % Define compatibility environments
+  \newenvironment{setup-box}{\begin{setupblock}}{\end{setupblock}}
+  \newenvironment{setup}{\begin{setupblock}}{\end{setupblock}}
+  
+  \newenvironment{example}{\begin{exampleblock}}{\end{exampleblock}}
+  ```
+pandoc-latex-environment:
+  noteblock: [note]
+  tipblock: [tip]
+  warningblock: [warning]
+  cautionblock: [caution]
+  importantblock: [important]
+  setupblock: [setup]
+  exampleblock: [example]
+  
+# Define additional block types and ensure all syntax variations are covered
+pandoc-latex-admonition:
+  - color: [gray, gray!5]
+    classes: [setup]
+  - color: [blue!70, blue!5]
+    classes: [note]
+...

@@ -1,0 +1,379 @@
+% Clean table styling for The Green Line book
+% Focused solution for code wrapping in markdown tables
+
+% Required packages
+\usepackage{xcolor} 
+\usepackage{listings}
+\usepackage{fancyvrb}
+\usepackage{etoolbox}
+\usepackage{framed}
+\usepackage{mdframed}
+\usepackage{longtable}
+
+% Configure mdframed for better page breaks
+\mdfsetup{
+  skipabove=\baselineskip,
+  skipbelow=\baselineskip,
+  innertopmargin=10pt,
+  innerbottommargin=10pt
+}
+
+% Define colors for syntax highlighting
+\definecolor{codebg}{RGB}{255, 255, 255}  % White background
+\definecolor{codecomment}{RGB}{76, 136, 76}  % Green for comments
+\definecolor{codekeyword}{RGB}{0, 119, 170}  % Blue for keywords
+\definecolor{codestring}{RGB}{196, 26, 22}  % Red for strings
+\definecolor{codenumber}{RGB}{170, 85, 0}  % Orange for numbers
+\definecolor{codeidentifier}{RGB}{0, 0, 0}  % Black for identifiers
+\definecolor{jsonkey}{RGB}{166, 0, 166}  % Purple for JSON keys
+
+% Configure table spacing
+\setlength{\LTpre}{1em}
+\setlength{\LTpost}{1em}
+
+% Configure longtable environment for better display
+\AtBeginEnvironment{longtable}{%
+    \footnotesize%
+    \setlength{\tabcolsep}{6pt}%
+    \renewcommand{\arraystretch}{1.3}%
+    % Allow more flexible spacing within tables
+    \tolerance=9999%
+    \emergencystretch=3em%
+    \hbadness=10000%
+}
+
+% Define Shaded environment for code blocks - no frame, white background
+\DefineVerbatimEnvironment{Shaded}{Verbatim}{
+  commandchars=\\\{\},
+  fontsize=\scriptsize,  % Smaller font for better line fitting
+  frame=none,
+  framerule=0pt,
+  rulecolor=\color{white},
+  fillcolor=white,
+  framesep=0pt,
+  breaklines=true,
+  breakanywhere=true,
+  numbers=none,
+  xleftmargin=0pt,
+  xrightmargin=0pt
+}
+
+% Improve code listings styling - no frame, no background
+\lstset{
+    basicstyle=\scriptsize\ttfamily,  % Smaller font for better line fitting
+    breaklines=true,
+    breakatwhitespace=false, % Break anywhere to prevent overflow
+    showspaces=false,
+    showstringspaces=false,
+    frame=none,
+    backgroundcolor=\color{white},
+    tabsize=2,
+    breakindent=0pt,
+    upquote=true,
+    postbreak=\mbox{\textcolor{gray}{\ensuremath{\hookrightarrow}\space}}, % Add arrow for line breaks
+    prebreak=\mbox{\textcolor{gray}{\ensuremath{\hookleftarrow}}}, % Add arrow before breaks
+    commentstyle=\color{codecomment}\itshape,
+    keywordstyle=\color{codekeyword}\bfseries,
+    stringstyle=\color{codestring},
+    identifierstyle=\color{codeidentifier},
+    numberstyle=\color{codenumber},
+    numbers=none,
+    captionpos=b,
+    escapeinside={(*@}{@*)},
+    extendedchars=true,
+    xleftmargin=0pt,
+    xrightmargin=0pt,
+    resetmargins=true,
+    columns=flexible,
+    keepspaces=true,
+    literate=
+      {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+      {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+      {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+      {À}{{\`A}}1 {È}{{\`E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+      {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+      {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+      {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+      {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+      {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+      {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {Ø}{{\O}}1
+      {€}{{\EUR}}1 {£}{{\pounds}}1
+}
+
+% Language definitions for better highlighting
+\lstdefinelanguage{JavaScript}{
+  keywords={break, case, catch, continue, debugger, default, delete, do, else, false, finally, for, function, if, in, instanceof, new, null, return, switch, this, throw, true, try, typeof, var, void, while, with, let, const, class, export, import, super, extends, async, await, from},
+  sensitive=true,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  morestring=[b]`
+}
+
+\lstdefinelanguage{JSON}{
+  alsodigit={-},
+  string=[s]{"}{"},
+  stringstyle=\color{codestring},
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{codecomment}\itshape,
+  keywordstyle=\color{jsonkey}
+}
+
+\lstdefinelanguage{HTML}{
+  sensitive=true,
+  keywords={html, head, body, title, style, script, link, meta, div, span, img, table, tr, td, th, p, h1, h2, h3, h4, h5, h6, ul, ol, li, a, form, input, button, select, option, label},
+  ndkeywords={class, id, src, href, rel, type, value, placeholder, name, content},
+  comment=[s]{<!--}{-->},
+  morecomment=[s]{<?}{?>},
+  tag=[s]{<}{>},
+  usekeywordsintag=true,
+  tagstyle=\color{codekeyword},
+  ndkeywordstyle=\color{jsonkey},
+  stringstyle=\color{codestring},
+  commentstyle=\color{codecomment}\itshape
+}
+
+% Add CSS language support
+\lstdefinelanguage{CSS}{
+  keywords={color, background, margin, padding, font, border, width, height, display, position, top, bottom, left, right, float, clear, overflow, min, max},
+  sensitive=true,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  alsodigit={-},
+  alsoletter={:}
+}
+
+% YAML language support
+\lstdefinelanguage{YAML}{
+  keywords={true, false, null, yes, no, on, off},
+  sensitive=true,
+  comment=[l]{\#},
+  morecomment=[s]{/*}{*/},
+  alsodigit={-},
+  alsoletter={:},
+  stringstyle=\color{codestring},
+  keywordstyle=\color{codekeyword},
+  commentstyle=\color{codecomment}\itshape
+}
+
+% Update listing settings with improved syntax highlighting
+\lstset{
+    basicstyle=\scriptsize\ttfamily,
+    breaklines=true,
+    breakatwhitespace=false,
+    showspaces=false,
+    showstringspaces=false,
+    frame=none,
+    backgroundcolor=\color{white},
+    tabsize=2,
+    breakindent=0pt,
+    upquote=true,
+    commentstyle=\color{codecomment}\itshape,
+    keywordstyle=\color{codekeyword}\bfseries,
+    stringstyle=\color{codestring},
+    identifierstyle=\color{codeidentifier},
+    numberstyle=\color{codenumber},
+    numbers=none,
+    captionpos=b,
+    escapeinside={(*@}{@*)},
+    extendedchars=true,
+    literate=
+      {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+      {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+      {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+      {À}{{\`A}}1 {È}{{\`E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+      {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+      {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+      {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+      {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+      {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+      {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {Ø}{{\O}}1
+      {€}{{\EUR}}1 {£}{{\pounds}}1
+}
+
+% Set default language for code blocks
+\lstset{
+  defaultdialect=JavaScript
+}
+
+% Load all languages
+\lstloadlanguages{
+  JavaScript,
+  HTML,
+  CSS,
+  YAML,
+  bash
+}
+
+% Configure paragraph spacing
+\setlength{\parskip}{0.6em}
+\setlength{\parindent}{0pt}
+
+% Allow flexible page breaks and improve print layout
+\raggedbottom
+\widowpenalty=10000
+\clubpenalty=10000
+
+% Ensure chapters start on odd pages (right-hand pages) for print
+% Use a more robust approach that doesn't interfere with internal LaTeX commands
+\usepackage{etoolbox}
+\pretocmd{\chapter}{\cleardoublepage}{}{}
+
+% Improve page break handling
+\brokenpenalty=10000    % Discourage page breaks after hyphens
+\predisplaypenalty=0    % Allow page breaks before displays
+\postdisplaypenalty=0   % Allow page breaks after displays
+\displaywidowpenalty=0  % Allow page breaks in displays
+
+% Custom environments for callouts using mdframed
+\newenvironment{tipblock}
+{\begin{mdframed}[
+    backgroundcolor=blue!5!white,
+    linecolor=blue!75!black,
+    linewidth=1pt,
+    innerleftmargin=10pt,
+    innerrightmargin=10pt,
+    innertopmargin=10pt,
+    innerbottommargin=10pt,
+    frametitle={\colorbox{blue!75!black}{\textcolor{white}{\textbf{Tip}}}},
+    frametitleaboveskip=5pt,
+    frametitlebelowskip=5pt,
+    skipabove=\baselineskip,
+    skipbelow=\baselineskip
+]}
+{\end{mdframed}}
+
+\newenvironment{warningblock}
+{\begin{mdframed}[
+    backgroundcolor=red!5!white,
+    linecolor=red!75!black,
+    linewidth=1pt,
+    innerleftmargin=10pt,
+    innerrightmargin=10pt,
+    innertopmargin=10pt,
+    innerbottommargin=10pt,
+    frametitle={\colorbox{red!75!black}{\textcolor{white}{\textbf{Warning}}}},
+    frametitleaboveskip=5pt,
+    frametitlebelowskip=5pt,
+    skipabove=\baselineskip,
+    skipbelow=\baselineskip
+]}
+{\end{mdframed}}
+
+\newenvironment{noteblock}
+{\begin{mdframed}[
+    backgroundcolor=yellow!5!white,
+    linecolor=yellow!75!black,
+    linewidth=1pt,
+    innerleftmargin=10pt,
+    innerrightmargin=10pt,
+    innertopmargin=10pt,
+    innerbottommargin=10pt,
+    frametitle={\colorbox{yellow!75!black}{\textcolor{white}{\textbf{Note}}}},
+    frametitleaboveskip=5pt,
+    frametitlebelowskip=5pt,
+    skipabove=\baselineskip,
+    skipbelow=\baselineskip
+]}
+{\end{mdframed}}
+
+\newenvironment{setupblock}
+{\begin{mdframed}[
+    backgroundcolor=gray!5!white,
+    linecolor=gray!75!black,
+    linewidth=1pt,
+    innerleftmargin=10pt,
+    innerrightmargin=10pt,
+    innertopmargin=10pt,
+    innerbottommargin=10pt,
+    frametitle={\colorbox{gray!75!black}{\textcolor{white}{\textbf{Setup}}}},
+    frametitleaboveskip=5pt,
+    frametitlebelowskip=5pt,
+    skipabove=\baselineskip,
+    skipbelow=\baselineskip
+]}
+{\end{mdframed}}
+
+\newenvironment{importantblock}
+{\begin{mdframed}[
+    backgroundcolor=orange!5!white,
+    linecolor=orange!75!black,
+    linewidth=1pt,
+    innerleftmargin=10pt,
+    innerrightmargin=10pt,
+    innertopmargin=10pt,
+    innerbottommargin=10pt,
+    frametitle={\colorbox{orange!75!black}{\textcolor{white}{\textbf{Important}}}},
+    frametitleaboveskip=5pt,
+    frametitlebelowskip=5pt,
+    skipabove=\baselineskip,
+    skipbelow=\baselineskip
+]}
+{\end{mdframed}}
+
+\newenvironment{cautionblock}
+{\begin{mdframed}[
+    backgroundcolor=purple!5!white,
+    linecolor=purple!75!black,
+    linewidth=1pt,
+    innerleftmargin=10pt,
+    innerrightmargin=10pt,
+    innertopmargin=10pt,
+    innerbottommargin=10pt,
+    frametitle={\colorbox{purple!75!black}{\textcolor{white}{\textbf{Caution}}}},
+    frametitleaboveskip=5pt,
+    frametitlebelowskip=5pt,
+    skipabove=\baselineskip,
+    skipbelow=\baselineskip
+]}
+{\end{mdframed}}
+
+% For code examples - with green background and frame
+\newenvironment{exampleblock}
+{\begin{mdframed}[
+    backgroundcolor=green!5!white,
+    linecolor=green!75!black,
+    linewidth=1pt,
+    innerleftmargin=12pt,
+    innerrightmargin=12pt,
+    innertopmargin=10pt,
+    innerbottommargin=10pt,
+    frametitle={\colorbox{green!75!black}{\textcolor{white}{\textbf{Example}}}},
+    frametitleaboveskip=5pt,
+    frametitlebelowskip=5pt,
+    skipabove=\baselineskip,
+    skipbelow=\baselineskip
+]}
+{\end{mdframed}}
+
+% Special handling for code blocks inside example blocks
+\AtBeginEnvironment{exampleblock}{%
+  \lstset{
+    frame=none,
+    backgroundcolor=\color{green!5!white},
+    basicstyle=\scriptsize\ttfamily,  % Smaller font for more characters per line
+    breaklines=true,         % Enable line breaking
+    breakatwhitespace=false, % Break anywhere to prevent overflow
+    postbreak=\mbox{\textcolor{gray}{\ensuremath{\hookrightarrow}\space}}, % Show arrow at breaks
+    breakindent=0pt,         % No indent after break
+    prebreak=\mbox{\textcolor{gray}{\ensuremath{\hookleftarrow}}}, % Show arrow before break
+    commentstyle=\color{codecomment}\itshape,
+    keywordstyle=\color{codekeyword}\bfseries,
+    stringstyle=\color{codestring},
+    identifierstyle=\color{codeidentifier},
+    numberstyle=\color{codenumber},
+    columns=flexible,        % Better handling of whitespace
+    keepspaces=true,         % Keep spacing consistent
+    showspaces=false,        % Don't show spaces as visible characters
+    showtabs=false,          % Don't show tabs as visible characters
+    tabsize=2,               % Set tab size
+    xleftmargin=0pt,         % No extra left margin
+    xrightmargin=0pt,        % No extra right margin
+    aboveskip=5pt,           % Space above code block
+    belowskip=5pt,           % Space below code block
+    lineskip=0pt,            % Line spacing
+    resetmargins=true        % Reset margins to container
+  }%
+}
