@@ -199,7 +199,7 @@ function CompactTimer() {
         <div className="compact-timer">
           <span>{seconds}s</span>
           <button onClick={isRunning ? pause : start}>
-            {isRunning ? '⏸' : '▶'}
+            {isRunning ? 'Pause' : 'Play'}
           </button>
         </div>
       )}

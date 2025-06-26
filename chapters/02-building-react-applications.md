@@ -23,7 +23,7 @@ These aren't just technical details—they're architectural decisions that will 
 
 Before diving into React-specific techniques, we need to understand the fundamental shift that React applications represent: the move from traditional multi-page applications to single page applications (SPAs).
 
-### Understanding Traditional Multi-Page Applications
+### Understanding Traditional Multi-Page Applications {.unnumbered .unlisted}
 
 Traditional web applications work like a series of separate documents. When you click a link or submit a form, your browser makes a request to the server, which responds with a completely new HTML page. Your browser then discards the current page and renders the new one from scratch.
 
@@ -32,32 +32,34 @@ Traditional web applications work like a series of separate documents. When you 
 
 ```
 User clicks "About" link
-     ↓
+  |
 Browser sends request to server (/about)
-     ↓
+  |
 Server generates HTML for about page
-     ↓
+  |
 Browser receives new HTML page
-     ↓
+  |
 Browser discards current page and renders new page
-     ↓
+  |
 Page load complete (full refresh)
 ```
 :::
 
 This approach has some advantages:
+
 - **Simple to understand**: Each page is a separate document
 - **SEO friendly**: Search engines can easily crawl and index each page
 - **Browser history works naturally**: Back/forward buttons work as expected
 - **Progressive enhancement**: Works even with JavaScript disabled
 
 But it also has significant drawbacks:
+
 - **Slow navigation**: Every page change requires a full server round-trip
 - **Poor user experience**: Flash/flicker between pages, lost scroll position
 - **Inefficient**: Re-downloading CSS, JavaScript, and other assets for each page
 - **Difficult state management**: Application state is lost between page loads
 
-### The Single Page Application Approach
+### The Single Page Application Approach {.unnumbered .unlisted}
 
 Single page applications take a fundamentally different approach. Instead of multiple separate pages, you have one HTML page that updates its content dynamically using JavaScript. When the user navigates, JavaScript updates the URL and changes what's displayed, but the browser never loads a new page.
 
@@ -66,18 +68,19 @@ Single page applications take a fundamentally different approach. Instead of mul
 
 ```
 User clicks "About" link
-     ↓
+  |
 JavaScript intercepts the click
-     ↓
+  |
 JavaScript updates the URL (/about)
-     ↓
+  |
 JavaScript renders new components
-     ↓
+  |
 Page content updates (no refresh)
 ```
 :::
 
 This provides several advantages:
+
 - **Fast navigation**: No server round-trips for page changes
 - **Smooth user experience**: No flickers, maintained scroll position
 - **Efficient resource usage**: CSS/JavaScript loaded once and reused
@@ -85,12 +88,13 @@ This provides several advantages:
 - **App-like feel**: Users expect this from modern web applications
 
 But SPAs also introduce new challenges:
+
 - **Complex routing**: JavaScript must manage URL changes and browser history
 - **SEO considerations**: Search engines need special handling for dynamic content
 - **Initial load time**: Larger JavaScript bundles take time to download
 - **Browser history management**: Back/forward buttons need special handling
 
-### Why React and SPAs Are Perfect Together
+### Why React and SPAs Are Perfect Together {.unnumbered .unlisted}
 
 React's component-based architecture and declarative approach make it ideal for building SPAs. Here's why:
 
@@ -116,7 +120,7 @@ Now that you understand why SPAs need special routing solutions, let's explore R
 
 React Router enables declarative, component-based routing that maintains React's compositional patterns. Instead of having a separate routing configuration file, you define routes using React components, making your routing logic part of your component tree.
 
-### Essential React Router Setup
+### Essential React Router Setup {.unnumbered .unlisted}
 
 Let's start with a complete, working example that demonstrates the core concepts:
 
@@ -223,7 +227,7 @@ export default App
 ```
 :::
 
-### Understanding React Router Components
+### Understanding React Router Components {.unnumbered .unlisted}
 
 Let's break down the key components and concepts:
 
@@ -237,7 +241,7 @@ Let's break down the key components and concepts:
 
 **NavLink**: Like Link, but with additional features for styling active links.
 
-### Working with URL Parameters
+### Working with URL Parameters {.unnumbered .unlisted}
 
 One of React Router's most powerful features is the ability to capture parts of the URL as parameters:
 
@@ -288,7 +292,7 @@ function ReviewDetail() {
 
 URL parameters are essential for creating bookmarkable, shareable URLs. When a user visits `/user/123`, your component automatically receives `123` as the `userId` parameter.
 
-### Programmatic Navigation
+### Programmatic Navigation {.unnumbered .unlisted}
 
 Sometimes you need to navigate programmatically—for example, after a form submission or when certain conditions are met:
 
@@ -351,7 +355,7 @@ function UserProfile() {
 ```
 :::
 
-### Advanced Routing Patterns
+### Advanced Routing Patterns {.unnumbered .unlisted}
 
 As your application grows, you'll need more sophisticated routing patterns:
 
@@ -429,7 +433,7 @@ function App() {
 ```
 :::
 
-### Loading States and Code Splitting
+### Loading States and Code Splitting {.unnumbered .unlisted}
 
 Modern React applications often use code splitting to reduce initial bundle size. React Router works beautifully with React's lazy loading:
 
@@ -481,7 +485,7 @@ function App() {
 
 React applications require a build process to transform JSX, handle modules, optimize assets, and create production-ready bundles. While you could set this up manually, several tools make this process much easier.
 
-### Create React App: The Traditional Starting Point
+### Create React App: The Traditional Starting Point {.unnumbered .unlisted}
 
 Create React App (CRA) has been the go-to solution for React applications for years. It provides a complete development environment with zero configuration:
 
@@ -504,6 +508,7 @@ npm test
 ```
 
 **What CRA provides:**
+
 - Development server with hot reloading
 - JSX and ES6+ transformation
 - CSS preprocessing and autoprefixing
@@ -514,7 +519,7 @@ npm test
 
 CRA handles complex webpack configuration behind the scenes, allowing you to focus on building your application rather than configuring build tools.
 
-### Vite: The Modern Alternative
+### Vite: The Modern Alternative {.unnumbered .unlisted}
 
 Vite (pronounced "veet") has emerged as a faster, more modern alternative to Create React App. It leverages native ES modules and esbuild for significantly faster development builds:
 
@@ -538,6 +543,7 @@ npm run preview
 ```
 
 **Why Vite is becoming popular:**
+
 - Much faster development server startup
 - Instant hot module replacement (HMR)
 - Smaller, more focused tool
@@ -546,7 +552,7 @@ npm run preview
 - More flexible configuration
 :::
 
-### Understanding the Build Process
+### Understanding the Build Process {.unnumbered .unlisted}
 
 Regardless of which tool you choose, the build process performs several crucial transformations:
 
@@ -577,7 +583,7 @@ function App() {
 ```
 :::
 
-### Custom Webpack Configuration
+### Custom Webpack Configuration {.unnumbered .unlisted}
 
 For more control, you can eject from Create React App or set up a custom webpack configuration:
 
@@ -630,7 +636,7 @@ module.exports = {
 ```
 :::
 
-### Environment Configuration
+### Environment Configuration {.unnumbered .unlisted}
 
 Modern React applications need different configurations for development, testing, and production:
 
@@ -668,7 +674,7 @@ function App() {
 
 Styling React applications requires careful consideration of maintainability, scalability, and developer experience. Let's explore the most effective approaches.
 
-### CSS Modules: Scoped Styling
+### CSS Modules: Scoped Styling {.unnumbered .unlisted}
 
 CSS Modules provide locally scoped CSS classes, preventing the global nature of CSS from causing conflicts:
 
@@ -728,7 +734,7 @@ function App() {
 ```
 :::
 
-### Styled Components: CSS-in-JS
+### Styled Components: CSS-in-JS {.unnumbered .unlisted}
 
 Styled Components brings CSS into your JavaScript, enabling dynamic styling based on props:
 
@@ -778,7 +784,7 @@ function App() {
 ```
 :::
 
-### Tailwind CSS: Utility-First Styling
+### Tailwind CSS: Utility-First Styling {.unnumbered .unlisted}
 
 Tailwind CSS provides low-level utility classes that you combine to build custom designs:
 
@@ -850,7 +856,7 @@ function Dashboard() {
 ```
 :::
 
-### Design System Integration
+### Design System Integration {.unnumbered .unlisted}
 
 For larger applications, consider using established design systems:
 
@@ -914,7 +920,7 @@ function Dashboard() {
 ```
 :::
 
-### Choosing the Right Styling Approach
+### Choosing the Right Styling Approach {.unnumbered .unlisted}
 
 Consider these factors when choosing a styling approach:
 
@@ -932,6 +938,7 @@ Consider these factors when choosing a styling approach:
 **Styling recommendation**
 
 For most React applications, I recommend starting with either:
+
 - **Tailwind CSS** for rapid prototyping and utility-based styling
 - **CSS Modules** for component-scoped styles with traditional CSS
 - **Material-UI or Ant Design** for applications that need comprehensive design systems

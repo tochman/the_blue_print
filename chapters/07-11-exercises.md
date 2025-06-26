@@ -11,6 +11,7 @@ Focus on exercises that align with problems you're currently facing in your proj
 Create a sophisticated compound component system for displaying notifications that supports various types, actions, and extensive customization options.
 
 **Requirements:**
+
 - Implement `NotificationCenter`, `Notification`, `NotificationTitle`, `NotificationMessage`, `NotificationActions`, and `NotificationIcon` components
 - Support different notification types (info, success, warning, error)
 - Enable custom positioning and animation
@@ -18,6 +19,7 @@ Create a sophisticated compound component system for displaying notifications th
 - Support both declarative and imperative APIs
 
 **Starting point:**
+
 
 ```jsx
 // Basic structure to extend
@@ -62,16 +64,18 @@ NotificationCenter.Icon = function NotificationIcon({ type }) {
 ```
 
 **Extensions:**
+
 1. Add animation support using CSS transitions or a library like Framer Motion
 2. Implement auto-dismiss functionality with progress indicators
 3. Add keyboard navigation and accessibility features
 4. Create a global notification service using the provider pattern
 
-### Exercise 2: Implement a data table with render props and performance optimization
+### Exercise 2: Implement a data table with render props and performance optimization {.unnumbered .unlisted}
 
 Build a flexible data table component that uses render props for customization and implements virtualization for performance.
 
 **Requirements:**
+
 - Use render props for custom cell rendering
 - Implement virtual scrolling for large datasets
 - Support sorting, filtering, and pagination
@@ -80,6 +84,7 @@ Build a flexible data table component that uses render props for customization a
 - Optimize for performance with memoization
 
 **Starting point:**
+
 
 ```jsx
 function DataTable({
@@ -136,17 +141,19 @@ function DataTable({
 ```
 
 **Extensions:**
+
 1. Add column resizing and reordering
 2. Implement grouping and aggregation features
 3. Add export functionality (CSV, JSON)
 4. Create custom filter components for different data types
 5. Implement infinite scrolling instead of pagination
 
-### Exercise 3: Create a provider-based theme system with advanced features
+### Exercise 3: Create a provider-based theme system with advanced features {.unnumbered .unlisted}
 
 Develop a comprehensive theme system using provider patterns that supports multiple themes, custom properties, and runtime theme switching.
 
 **Requirements:**
+
 - Implement hierarchical theme providers
 - Support theme inheritance and overrides
 - Provide custom hooks for consuming theme values
@@ -155,6 +162,7 @@ Develop a comprehensive theme system using provider patterns that supports multi
 - Include dark/light mode detection and system preference sync
 
 **Starting point:**
+
 
 ```jsx
 // Theme provider implementation
@@ -216,17 +224,19 @@ const lightTheme = {
 ```
 
 **Extensions:**
+
 1. Add theme validation and TypeScript support
 2. Implement theme persistence using localStorage
 3. Create a theme builder/editor interface
 4. Add motion and animation theme properties
 5. Support multiple color modes per theme (not just dark/light)
 
-### Exercise 4: Build an advanced form system with validation and field composition
+### Exercise 4: Build an advanced form system with validation and field composition {.unnumbered .unlisted}
 
 Create a sophisticated form system that combines render props, compound components, and custom hooks for maximum flexibility.
 
 **Requirements:**
+
 - Implement field-level and form-level validation
 - Support asynchronous validation
 - Provide field registration and dependency tracking
@@ -235,6 +245,7 @@ Create a sophisticated form system that combines render props, compound componen
 - Include accessibility features and error handling
 
 **Starting point:**
+
 
 ```jsx
 // Form context and hooks
@@ -312,17 +323,19 @@ function FieldGroup({ children, title, description }) {
 ```
 
 **Extensions:**
+
 1. Add field arrays for dynamic lists
 2. Implement wizard/multi-step form functionality
 3. Create custom field components for specific data types
 4. Add form auto-save and recovery features
 5. Support file uploads with progress tracking
 
-### Exercise 5: Implement a real-time collaboration system
+### Exercise 5: Implement a real-time collaboration system {.unnumbered .unlisted}
 
 Build a real-time collaboration system for practice sessions using advanced patterns including providers, custom hooks, and error boundaries.
 
 **Requirements:**
+
 - Enable multiple users to collaborate on practice sessions
 - Implement real-time updates using WebSockets or similar
 - Handle connection management and reconnection logic
@@ -331,6 +344,7 @@ Build a real-time collaboration system for practice sessions using advanced patt
 - Support offline functionality with sync on reconnect
 
 **Starting point:**
+
 
 ```jsx
 // Collaboration provider
@@ -389,17 +403,19 @@ function ConnectionStatus() {
 ```
 
 **Extensions:**
+
 1. Add operational transformation for text editing
 2. Implement user permissions and roles
 3. Create activity feeds and change history
 4. Add voice/video chat integration
 5. Support collaborative annotations on audio files
 
-### Exercise 6: Build a plugin architecture system
+### Exercise 6: Build a plugin architecture system {.unnumbered .unlisted}
 
 Create a flexible plugin system that allows extending the practice app with custom functionality using advanced composition patterns.
 
 **Requirements:**
+
 - Define plugin interfaces and lifecycle hooks
 - Implement plugin registration and management
 - Support plugin dependencies and versioning
@@ -408,6 +424,7 @@ Create a flexible plugin system that allows extending the practice app with cust
 - Include plugin development tools and hot reloading
 
 **Starting point:**
+
 
 ```jsx
 // Plugin system foundation
@@ -496,13 +513,14 @@ const analyticsPlugin = {
 ```
 
 **Extensions:**
+
 1. Add plugin marketplace and remote loading
 2. Implement plugin sandboxing and security
 3. Create visual plugin development tools
 4. Add plugin analytics and usage tracking
 5. Support plugin themes and styling
 
-### Bonus Challenge: Integrate everything
+### Bonus Challenge: Integrate everything {.unnumbered .unlisted}
 
 Combine all the patterns learned in this chapter to build a comprehensive practice session workspace that includes:
 
@@ -516,6 +534,7 @@ Combine all the patterns learned in this chapter to build a comprehensive practi
 This integration exercise will help you understand how these patterns work together in real-world applications and provide experience with the architectural decisions required for complex React applications.
 
 **Success criteria:**
+
 - Clean, composable component architecture
 - Efficient state management and data flow
 - Robust error handling and recovery

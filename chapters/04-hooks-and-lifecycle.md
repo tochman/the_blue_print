@@ -123,7 +123,7 @@ Instead of thinking "when the component mounts, fetch data," think "whenever the
 
 Complex applications often require advanced patterns for handling async operations, managing multiple data sources, and optimizing performance.
 
-### Handling Async Operations Safely
+### Handling Async Operations Safely {.unnumbered .unlisted}
 
 Async operations can complete after a component unmounts or after the data they're fetching is no longer relevant. This can lead to memory leaks and race conditions. Use a cancellation flag to prevent state updates after unmounting.
 
@@ -200,7 +200,7 @@ function PieceDetails({ pieceId }) {
 
 This custom hook encapsulates async data fetching with proper cleanup and error handling.
 
-### Managing Complex Side Effects
+### Managing Complex Side Effects {.unnumbered .unlisted}
 
 Some effects need to coordinate multiple async operations or maintain complex state across re-renders. Structure these effects to keep responsibilities clear and prevent bugs.
 
@@ -316,9 +316,7 @@ Each effect in this example has a specific responsibility, and they communicate 
 
 Beyond `useState` and `useEffect`, React provides several other hooks for common component development problems.
 
-### useRef for Mutable Values and DOM Access
-
-`useRef` is used for holding mutable values that persist across renders without causing re-renders, and for accessing DOM elements directly.
+### useRef for Mutable Values and DOM Access {.unnumbered .unlisted}`useRef` is used for holding mutable values that persist across renders without causing re-renders, and for accessing DOM elements directly.
 
 ::: important
 **useRef vs useState**
@@ -397,7 +395,7 @@ function PracticeTimer() {
 
 In this timer, `intervalRef` and `startTimeRef` store values without causing re-renders, while `time` is state because it affects the UI.
 
-### useRef for DOM Manipulation
+### useRef for DOM Manipulation {.unnumbered .unlisted}
 
 Direct DOM access is sometimes necessary for focus management, measuring dimensions, or integrating with third-party libraries.
 
@@ -445,7 +443,7 @@ function AutoFocusInput({ onSubmit }) {
 
 This pattern is useful for managing focus, measuring elements, or scrolling to specific elements.
 
-### useMemo and useCallback for Performance Optimization
+### useMemo and useCallback for Performance Optimization {.unnumbered .unlisted}
 
 Use `useMemo` to memoize expensive calculations and `useCallback` to prevent unnecessary function re-creation. Use them when you have expensive computations or need referential stability for child props.
 
@@ -556,7 +554,7 @@ Only use `useMemo` and `useCallback` when you have real performance problems or 
 
 Custom hooks allow you to package complex stateful logic into reusable functions. They help you think at a higher level and keep your components declarative.
 
-### Building Reusable Data Fetching Hooks
+### Building Reusable Data Fetching Hooks {.unnumbered .unlisted}
 
 A well-designed data fetching hook handles loading states, errors, and cleanup automatically.
 
@@ -667,7 +665,7 @@ function PracticeHistory({ userId }) {
 
 This custom hook encapsulates common API data fetching patterns and remains flexible through its options parameter.
 
-### Hooks for Complex State Management
+### Hooks for Complex State Management {.unnumbered .unlisted}
 
 Custom hooks are ideal for managing complex state patterns that would otherwise require repetitive code.
 
@@ -860,7 +858,7 @@ This form validation hook encapsulates complex logic and is flexible for differe
 
 Understanding how hooks affect performance helps you build responsive applications. Optimize only when necessary and use the right techniques.
 
-### Identifying Performance Bottlenecks
+### Identifying Performance Bottlenecks {.unnumbered .unlisted}
 
 Use React DevTools and browser profiling to identify real performance issues, such as unnecessary re-renders or expensive calculations.
 
@@ -926,7 +924,7 @@ function usePracticeAnalysis(sessions) {
 
 :::
 
-### Optimizing Component Updates
+### Optimizing Component Updates {.unnumbered .unlisted}
 
 Use `React.memo`, `useMemo`, and `useCallback` to prevent unnecessary re-renders while keeping code clean and readable.
 
@@ -1059,18 +1057,18 @@ These exercises will help you master hooks and lifecycle concepts through hands-
 Create a new React project or use an existing development environment. Apply the hooks patterns and lifecycle concepts discussed in this chapter. Pay attention to performance and proper cleanup of effects.
 :::
 
-### Exercise 1: Custom Data Fetching Hook
+### Exercise 1: Custom Data Fetching Hook {.unnumbered .unlisted}
 
 Create a versatile `useApi` hook that handles different types of API operations (GET, POST, PUT, DELETE) with error handling, loading states, and request cancellation. Support features like retries, deduplication, and caching. Test with multiple components and handle various error scenarios.
 
-### Exercise 2: Complex State Management Hook
+### Exercise 2: Complex State Management Hook {.unnumbered .unlisted}
 
 Build a `usePracticeSession` hook that manages the full lifecycle of a practice session: starting, pausing, resuming, and completing sessions with automatic data persistence. Include auto-save, analytics, and integration with practice goals. Ensure state changes are synchronized with external systems.
 
-### Exercise 3: Performance Optimization Challenge
+### Exercise 3: Performance Optimization Challenge {.unnumbered .unlisted}
 
 Create a music library component that displays hundreds of pieces with filtering, sorting, and search. Optimize for smooth interactions with large datasets. Use profiling tools to identify bottlenecks and apply memoization strategies. Consider virtual scrolling and debounced search.
 
-### Exercise 4: Lifecycle and Cleanup Patterns
+### Exercise 4: Lifecycle and Cleanup Patterns {.unnumbered .unlisted}
 
 Build a practice room component that integrates with external systems: a metronome, timer, and recorder. Focus on resource management and cleanup. Test scenarios where users navigate away during active sessions to ensure no resource leaks.

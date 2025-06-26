@@ -1,0 +1,186 @@
+% Clean table styling for The Blue Print book
+% Minimal working solution without tcolorbox
+
+% Required packages - minimal set that should be available
+\usepackage{xcolor} 
+\usepackage{framed}
+\usepackage{mdframed}
+
+% Define colors for boxes and syntax highlighting
+\definecolor{codebg}{RGB}{255, 255, 255}  % White background
+\definecolor{codecomment}{RGB}{76, 136, 76}  % Green for comments
+\definecolor{codekeyword}{RGB}{0, 119, 170}  % Blue for keywords
+\definecolor{codestring}{RGB}{196, 26, 22}  % Red for strings
+\definecolor{codenumber}{RGB}{170, 85, 0}  % Orange for numbers
+\definecolor{codeidentifier}{RGB}{0, 0, 0}  % Black for identifiers
+\definecolor{jsonkey}{RGB}{166, 0, 166}  % Purple for JSON keys
+
+% Define colors for custom boxes
+\definecolor{tipcolor}{RGB}{0, 102, 204}
+\definecolor{notecolor}{RGB}{255, 153, 0}
+\definecolor{importantcolor}{RGB}{220, 20, 60}
+\definecolor{cautioncolor}{RGB}{255, 69, 0}
+\definecolor{examplecolor}{RGB}{34, 139, 34}
+
+% Configure table spacing
+\setlength{\LTpre}{1em}
+\setlength{\LTpost}{1em}
+
+% Configure longtable environment for better display
+\AtBeginEnvironment{longtable}{%
+    \footnotesize%
+    \setlength{\tabcolsep}{6pt}%
+    \renewcommand{\arraystretch}{1.3}%
+    % Allow more flexible spacing within tables
+    \tolerance=9999%
+}
+
+% Custom box environments using mdframed
+\newmdenv[
+  linecolor=tipcolor,
+  linewidth=2pt,
+  leftmargin=10pt,
+  rightmargin=10pt,
+  innerleftmargin=10pt,
+  innerrightmargin=10pt,
+  innertopmargin=10pt,
+  innerbottommargin=10pt,
+  backgroundcolor=tipcolor!5
+]{tipbox}
+
+\newmdenv[
+  linecolor=notecolor,
+  linewidth=2pt,
+  leftmargin=10pt,
+  rightmargin=10pt,
+  innerleftmargin=10pt,
+  innerrightmargin=10pt,
+  innertopmargin=10pt,
+  innerbottommargin=10pt,
+  backgroundcolor=notecolor!5
+]{notebox}
+
+\newmdenv[
+  linecolor=importantcolor,
+  linewidth=2pt,
+  leftmargin=10pt,
+  rightmargin=10pt,
+  innerleftmargin=10pt,
+  innerrightmargin=10pt,
+  innertopmargin=10pt,
+  innerbottommargin=10pt,
+  backgroundcolor=importantcolor!5
+]{importantbox}
+
+\newmdenv[
+  linecolor=cautioncolor,
+  linewidth=2pt,
+  leftmargin=10pt,
+  rightmargin=10pt,
+  innerleftmargin=10pt,
+  innerrightmargin=10pt,
+  innertopmargin=10pt,
+  innerbottommargin=10pt,
+  backgroundcolor=cautioncolor!5
+]{cautionbox}
+
+\newmdenv[
+  linecolor=examplecolor,
+  linewidth=2pt,
+  leftmargin=10pt,
+  rightmargin=10pt,
+  innerleftmargin=10pt,
+  innerrightmargin=10pt,
+  innertopmargin=10pt,
+  innerbottommargin=10pt,
+  backgroundcolor=examplecolor!5
+]{examplebox}
+
+% Simple box for fallback
+\newmdenv[
+  linecolor=black,
+  linewidth=1pt,
+  leftmargin=10pt,
+  rightmargin=10pt,
+  innerleftmargin=10pt,
+  innerrightmargin=10pt,
+  innertopmargin=10pt,
+  innerbottommargin=10pt,
+  backgroundcolor=gray!5
+]{simplebox}
+
+% Configure code listing appearance
+\lstset{
+    backgroundcolor=\color{codebg},
+    commentstyle=\color{codecomment},
+    keywordstyle=\color{codekeyword},
+    stringstyle=\color{codestring},
+    numberstyle=\tiny\color{codenumber},
+    identifierstyle=\color{codeidentifier},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    frame=single,
+    framesep=5pt,
+    rulecolor=\color{black!30},
+    xleftmargin=10pt,
+    xrightmargin=10pt
+}
+
+% JSON-specific highlighting
+\lstdefinelanguage{json}{
+    basicstyle=\ttfamily\footnotesize,
+    string=[s]{"}{"},
+    stringstyle=\color{codestring},
+    comment=[l]{//},
+    commentstyle=\color{codecomment},
+    keywords={true,false,null},
+    keywordstyle=\color{codekeyword},
+    literate=
+     *{0}{{{\color{codenumber}0}}}{1}
+      {1}{{{\color{codenumber}1}}}{1}
+      {2}{{{\color{codenumber}2}}}{1}
+      {3}{{{\color{codenumber}3}}}{1}
+      {4}{{{\color{codenumber}4}}}{1}
+      {5}{{{\color{codenumber}5}}}{1}
+      {6}{{{\color{codenumber}6}}}{1}
+      {7}{{{\color{codenumber}7}}}{1}
+      {8}{{{\color{codenumber}8}}}{1}
+      {9}{{{\color{codenumber}9}}}{1}
+      {:}{{{\color{black}{:}}}}{1}
+      {,}{{{\color{black}{,}}}}{1}
+      {\{}{{{\color{black}{\{}}}}{1}
+      {\}}{{{\color{black}{\}}}}}{1}
+      {[}{{{\color{black}{[}}}}{1}
+      {]}{{{\color{black}{]}}}}{1},
+}
+
+% Configure headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[LO,RE]{\leftmark}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Configure paragraph spacing
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}
+
+% Configure section spacing
+\usepackage{titlesec}
+\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{6pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{6pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{10pt plus 4pt minus 2pt}{4pt plus 2pt minus 2pt}
+
+% Improve hyphenation
+\hyphenpenalty=5000
+\tolerance=1000

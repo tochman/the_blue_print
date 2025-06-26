@@ -78,9 +78,7 @@ The key insight is that you can start simple and gradually move right on this sp
 
 React provides powerful state management capabilities out of the box. Before reaching for external libraries, let's explore what you can accomplish with React's built-in tools.
 
-### useState: The foundation {.unnumbered .unlisted}
-
-`useState` is your go-to tool for local component state. It's simple, predictable, and handles the vast majority of state management needs in most components.
+### useState: The foundation {.unnumbered .unlisted}`useState` is your go-to tool for local component state. It's simple, predictable, and handles the vast majority of state management needs in most components.
 
 ::: example
 
@@ -588,6 +586,7 @@ function LoginForm() {
 :::
 
 Context is excellent for state that:
+
 - Many components need to access
 - Doesn't change very frequently
 - Represents "global" application concerns (user auth, theme, etc.)
@@ -955,6 +954,7 @@ function PracticeSessionList({ userId }) {
 :::
 
 Zustand is perfect when you need:
+
 - Simple global state without boilerplate
 - TypeScript support out of the box
 - Easy state subscription and derived state
@@ -963,6 +963,7 @@ Zustand is perfect when you need:
 ### Server state: React Query / TanStack Query {.unnumbered .unlisted}
 
 Here's something that took me years to fully appreciate: server state is fundamentally different from client state. Server state is:
+
 - Remote and asynchronous
 - Potentially out of date
 - Shared ownership (other users can modify it)
@@ -1379,9 +1380,7 @@ export function usePracticeSessionState() {
 
 This state machine pattern prevents impossible states and makes the component logic much clearer.
 
-### Performance optimization patterns {.unnumbered .unlisted}
-
-::: example
+### Performance optimization patterns {.unnumbered .unlisted}::: example
 
 ```jsx
 // Selector optimization with useMemo
@@ -1439,9 +1438,7 @@ export const useUserActions = () => useContext(UserActionsContext);
 
 One of the most common questions I get is: "How do I migrate from simple state to complex state management?" The key is to do it gradually.
 
-### From useState to useReducer {.unnumbered .unlisted}
-
-::: example
+### From useState to useReducer {.unnumbered .unlisted}::: example
 
 ```jsx
 // Step 1: Identify related state
@@ -1471,9 +1468,7 @@ const [state, dispatch] = useReducer(userReducer, initialState);
 
 :::
 
-### From prop drilling to Context {.unnumbered .unlisted}
-
-::: example
+### From prop drilling to Context {.unnumbered .unlisted}::: example
 
 ```jsx
 // Before: Prop drilling
@@ -1551,9 +1546,7 @@ function useUserLogic() {
 
 State management in React doesn't have to be overwhelming if you approach it systematically. The key insight is that state management is a spectrum, not a binary choice. Start simple and add complexity only when you need it.
 
-### Key principles for effective state management {.unnumbered .unlisted}
-
-**Start with local state**: Use `useState` for component-specific state. It's simple, predictable, and covers most cases.
+### Key principles for effective state management {.unnumbered .unlisted}**Start with local state**: Use `useState` for component-specific state. It's simple, predictable, and covers most cases.
 
 **Lift state up when needed**: When multiple components need the same state, lift it to their common parent.
 

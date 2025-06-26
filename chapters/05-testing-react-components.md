@@ -63,6 +63,7 @@ Effective testing strategies follow the testing pyramid concept:
 **End-to-end tests**: Test complete user workflows in a real browser. These catch issues with the entire application stack but are slower and more brittle.
 
 For React applications, I generally recommend:
+
 - Lots of unit tests for complex components and custom hooks
 - Some integration tests for critical user flows
 - A few e2e tests for your most important features
@@ -174,7 +175,8 @@ const onComplete = cy.stub().returns(true); // Always returns true
 const consoleSpy = jest.spyOn(console, 'error'); // Watches console.error
 ```
 
-**In practice:** You'll mostly use mocks in React testing--they're simpler and give you complete control over dependencies. Don't worry too much about the terminology; focus on the concept of replacing real dependencies with predictable, testable ones.
+**In practice:**
+ You'll mostly use mocks in React testing--they're simpler and give you complete control over dependencies. Don't worry too much about the terminology; focus on the concept of replacing real dependencies with predictable, testable ones.
 :::
 
 ::: tip
@@ -279,6 +281,7 @@ it('is expected to display user name', () => {
 
 **Common matchers you'll use every day:**
 
+
 ```javascript
 // Text and content
 expect(screen.getByText('Hello')).toBeInTheDocument();
@@ -312,6 +315,7 @@ await waitFor(() => {
 ```
 
 **Putting it all together - A complete test structure:**
+
 
 ```javascript
 describe('LoginForm', () => {
@@ -527,6 +531,7 @@ function PracticeSessionCard({ session, onStart, onDelete }) {
 ```
 
 This component is perfect for testing because it:
+
 - Takes clear inputs (props)
 - Produces visible outputs (rendered content)
 - Has user interactions (button clicks)
@@ -837,9 +842,7 @@ Key testing patterns for stateful components:
 
 Custom hooks are some of the most important things to test in React applications because they often contain your business logic. The React Testing Library provides a `renderHook` utility specifically for this purpose.
 
-### Starting with simple hooks {.unnumbered .unlisted}
-
-::: example
+### Starting with simple hooks {.unnumbered .unlisted}::: example
 
 ```jsx
 // usePracticeTimer.js
@@ -993,7 +996,7 @@ describe('usePracticeTimer', () => {
     expect(screen.getByText('Start')).toBeInTheDocument();
 });
 
-### Testing Custom Hooks: When Components Need Help
+### Testing Custom Hooks: When Components Need Help {.unnumbered .unlisted}
 
 Testing custom hooks requires a different approach since hooks can't be called outside of components. Let's explore testing strategies with our `usePracticeSessions` hook:
   const [sessions, setSessions] = useState([]);
@@ -1173,13 +1176,11 @@ describe('usePracticeSessions', () => {
 
 :::
 
-### Testing providers and context
+### Testing providers and context {.unnumbered .unlisted}
 
 Context providers often contain important application state and logic, making them crucial to test. Here's how to approach testing them effectively:
 
-### Testing your context providers {.unnumbered .unlisted}
-
-::: example
+### Testing your context providers {.unnumbered .unlisted}::: example
 
 ```jsx
 // PracticeSessionProvider.jsx
@@ -1493,6 +1494,7 @@ Now let's talk about the broader ecosystem of testing tools available for React 
 Jest is the most popular testing framework for React applications, and for good reason:
 
 **Strengths:**
+
 - Zero configuration for most React projects
 - Excellent mocking capabilities
 - Built-in assertions and test runners
@@ -1501,12 +1503,14 @@ Jest is the most popular testing framework for React applications, and for good 
 - Code coverage reporting
 
 **When to use Jest:**
+
 - Unit testing components and functions
 - Testing custom hooks
 - Mocking external dependencies
 - Running test suites in CI/CD
 
 **Jest configuration example:**
+
 
 ::: example
 
@@ -1542,11 +1546,13 @@ module.exports = {
 React Testing Library has become the standard for testing React components because it encourages testing from the user's perspective:
 
 **Philosophy:**
+
 - Tests should resemble how users interact with your app
 - Focus on behavior, not implementation details
 - If it's not something a user can see or do, you probably shouldn't test it
 
 **Common queries and their use cases:**
+
 
 ::: example
 
@@ -1568,6 +1574,7 @@ expect(component.state.email).toBe('user@example.com');
 Cypress isn't just for end-to-end testing--you can also use it to test React components in isolation:
 
 **Cypress Component Testing setup:**
+
 
 ::: example
 
@@ -1629,14 +1636,13 @@ describe('PracticeTimer Component', () => {
 :::
 
 **When to use Cypress for component testing:**
+
 - Visual regression testing
 - Complex user interactions
 - Testing components that integrate with external libraries
 - When you want to see your components running in a real browser
 
-### Other tools in the testing ecosystem {.unnumbered .unlisted}
-
-**Mocha + Chai**: Alternative to Jest, popular in the JavaScript ecosystem
+### Other tools in the testing ecosystem {.unnumbered .unlisted}**Mocha + Chai**: Alternative to Jest, popular in the JavaScript ecosystem
 - Mocha provides the test runner and structure
 - Chai provides assertions
 - More modular but requires more configuration
@@ -1655,9 +1661,7 @@ describe('PracticeTimer Component', () => {
 
 Integration tests verify that multiple components work together correctly. They're especially valuable for testing user workflows and data flow between components.
 
-### Testing multiple components together {.unnumbered .unlisted}
-
-::: example
+### Testing multiple components together {.unnumbered .unlisted}::: example
 
 ```jsx
 // PracticeWorkflow.jsx - A complex component that integrates multiple pieces
@@ -1854,6 +1858,7 @@ jobs:
         node-version: [18.x, 20.x]
 
     steps:
+
     - uses: actions/checkout@v4
     
     - name: Use Node.js ${{ matrix.node-version }}
@@ -1880,6 +1885,7 @@ jobs:
 :::
 
 **Key points about this CI setup:**
+
 - **Multiple Node versions**: Tests against different Node versions to catch compatibility issues
 - **Coverage reporting**: Generates test coverage and uploads to Codecov  
 - **Includes linting**: Runs code quality checks alongside tests
@@ -1964,6 +1970,7 @@ tests/
 :::
 
 **Test naming conventions:**
+
 - **Unit tests**: `ComponentName.test.js`
 - **Integration tests**: `FeatureName.integration.test.js`  
 - **E2E tests**: `user-flow.e2e.test.js`
@@ -1975,9 +1982,8 @@ tests/
 
 Let me share some hard-learned lessons about what works and what doesn't in React testing.
 
-### Finding the sweet spot for testing {.unnumbered .unlisted}
+### Finding the sweet spot for testing {.unnumbered .unlisted}**DO test:**
 
-**DO test:**
 - Component behavior that users can observe
 - Props affecting rendered output
 - User interactions and their effects
@@ -1986,15 +1992,14 @@ Let me share some hard-learned lessons about what works and what doesn't in Reac
 - Integration between components
 
 **DON'T test:**
+
 - Implementation details (internal state structure, specific function calls)
 - Third-party library behavior
 - Browser APIs (unless you're wrapping them)
 - CSS styling (unless it affects functionality)
 - Trivial components with no logic
 
-### Avoiding testing traps {.unnumbered .unlisted}
-
-::: example
+### Avoiding testing traps {.unnumbered .unlisted}::: example
 
 ```javascript
 // [BAD] Testing implementation details
@@ -2100,6 +2105,7 @@ it('is expected to start timer when button is clicked', async () => {
 
 **Common debugging patterns:**
 
+
 ::: example
 
 ```javascript
@@ -2155,6 +2161,7 @@ expect(screen.getByTestId('user-actions')).toBeInTheDocument();
 
 **Distinguishing between component bugs and test bugs:**
 
+
 When a test fails, ask yourself:
 1. **Is the component broken?** Test manually in the browser to see if the component actually works.
 2. **Is the test flaky?** Run the test multiple times. If it passes sometimes and fails other times, it's likely a timing issue.
@@ -2206,6 +2213,7 @@ it('is expected to show loading state', async () => {
 **Pro tip**: When debugging, temporarily add `screen.debug()` calls to see exactly what's being rendered at any point in your test. This is often more helpful than staring at error messages. Remove the debug calls once you've fixed the issue.
 
 **Quick debugging checklist:**
+
 1. Read the error message carefully
 2. Use `screen.debug()` to see actual DOM
 3. Check if elements exist with `queryBy*` first
@@ -2213,7 +2221,7 @@ it('is expected to show loading state', async () => {
 5. Test the component manually in browser
 6. Check imports and mocks are correct
 
-### Advanced debugging techniques
+### Advanced debugging techniques {.unnumbered .unlisted}
 
 When your tests get more complex, your debugging needs to level up too. Here are the power-user techniques that will save you hours of frustration.
 
@@ -2719,9 +2727,7 @@ The biggest takeaway from this chapter isn't about any specific tool or techniqu
 - **Start where you are**: You don't need to test everything from day one. Begin with your most important components and gradually expand.
 - **Test like a user**: Focus on what users can see and do, not on how your code works internally.
 
-### What you should remember {.unnumbered .unlisted}
-
-**Start with what matters**: Test the behavior your users care about, not implementation details. If clicking a button should save data, test that the save function gets called--don't test that the button has a specific CSS class.
+### What you should remember {.unnumbered .unlisted}**Start with what matters**: Test the behavior your users care about, not implementation details. If clicking a button should save data, test that the save function gets called--don't test that the button has a specific CSS class.
 
 **Build incrementally**: It's better to have some tests than no tests. Add testing gradually to existing projects rather than feeling overwhelmed by the need to test everything at once.
 
@@ -2755,9 +2761,7 @@ Here's a practical roadmap for introducing testing to your React applications:
 - Add e2e tests for your most critical user journeys
 - Share testing knowledge with your team
 
-### Resources for continued learning {.unnumbered .unlisted}
-
-- **For advanced testing strategies**: "The Green Line: A Journey Into Automated Testing" provides comprehensive coverage of testing philosophy and e2e techniques
+### Resources for continued learning {.unnumbered .unlisted}- **For advanced testing strategies**: "The Green Line: A Journey Into Automated Testing" provides comprehensive coverage of testing philosophy and e2e techniques
 - **For React Testing Library specifics**: The official docs at testing-library.com are excellent
 - **For testing mindset**: Kent C. Dodds' blog posts on testing best practices
 

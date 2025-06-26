@@ -1,54 +1,8 @@
-# Introduction and React Fundamentals
+# Introduction and Fundamentals
 
-The Blue Print - Alpha Edition
+## The Blueprint Approach {.unnumbered .unlisted}
 
-ISBN: ---
-
-Library of Congress Control Number: ---
-
-Copyright (C) 2025 Thomas Ochman
-
-All rights reserved. No part of this book may be reproduced or used in any manner without the prior written permission of the copyright owner, except for the use of brief quotations in a book review.
-
-To request permissions, contact the author at thomas@agileventures.org
-
-# Rationale
-
-_React gets plenty of attention in programming resources, but most books and tutorials focus on the happy path. You'll find countless introductions to JSX and state management, but when it comes to building maintainable React applications that scale, the guidance gets thin fast._
-
-_This book focuses entirely on that gap. Real React architecture patterns, practical strategies for handling complex state, and techniques that work when you're dealing with production applications instead of todo list examples._ 
-
-_I wrote this because I couldn't find a comprehensive resource that treated React as a serious discipline rather than a collection of scattered tutorials. Most books cover the basics, then jump to advanced topics without bridging the gap. This one stays put and goes deep._
-
-_For developers who need to build React applications that last and teams who want to establish solid development practices, you'll find strategies that work in production environments, not just demos._
-
-_This book assumes you're smart enough to take what works and leave what doesn't. Read it cover to cover or jump to the chapters that solve your immediate problems. Your choice._
-
-\hfill Thomas
-
-\hfill Gothenburg, June 2025
-
-# Preface
-
-Welcome to "The Blue Print: A Journey Into Web Application Development with React". This comprehensive guide equips you with the knowledge and skills needed to create scalable, maintainable React applications using modern development practices.
-
-Each chapter builds on the previous ones, providing you with a complete education in modern React—from fundamentals to advanced topics like performance optimization, testing strategies, state management patterns, and production deployment.
-
-
-::info
-### Why Read This Book?
-
-This book offers:
-
-- A systematic approach to learning React from fundamentals to production-ready applications
-- Real-world examples and practical patterns to solve common development challenges
-- Solutions to scaling and architecture problems in modern React applications
-- Strategies for integrating React into your development workflow effectively
-::
-
-# The Blueprint Approach
-
-## The Reality of Software Development
+### The Reality of Software Development {.unnumbered .unlisted}
 
 There's a saying about Texas Hold'em poker: "It takes five minutes to learn and a lifetime to master." The same could be said about software development in general, and React in particular. You can write your first React component in minutes, but mastering the craft of building maintainable, scalable applications is a journey measured in years, not weeks.
 
@@ -56,7 +10,7 @@ This isn't meant to discourage you—it's meant to set realistic expectations. S
 
 The complexity isn't a bug; it's a feature. But here's the crucial point: **hard doesn't mean impossible**. It means we need to approach learning thoughtfully and systematically.
 
-## A Learning Philosophy for Complex Systems
+## A Learning Philosophy for Complex Systems {.unnumbered .unlisted}
 
 Over years of teaching software development and mentoring programmers, I've noticed that successful developers—whether they're learning React, database design, or system architecture—tend to follow similar patterns in how they approach complex topics.
 
@@ -70,13 +24,13 @@ Over years of teaching software development and mentoring programmers, I've noti
 
 **Finally, they embrace deliberate repetition.** Not mindless copying, but returning to fundamental concepts with deeper understanding, practicing problem-solving patterns in different contexts, and revisiting challenging topics from new angles as knowledge expands.
 
-## Setting the Stage: Architecture as Foundation
+## Setting the Stage: Architecture as Foundation {.unnumbered .unlisted}
 
 In building applications—whether they use React, Vue, Angular, or any other framework—there's a simple truth: _good architecture is invisible_. When your application is well-structured, components feel natural, data flows predictably, and new features integrate seamlessly. Poor architecture makes itself known through difficult debugging sessions, unpredictable behavior, and the dreaded "works on my machine" syndrome.
 
 Most developers come to React with existing web development experience, but React requires a fundamental shift in thinking. The transition from imperative DOM manipulation to declarative component composition represents one of the most challenging—and rewarding—conceptual leaps in modern development.
 
-## Understanding the Learning Curve
+## Understanding the Learning Curve {.unnumbered .unlisted}
 
 React introduces several concepts that may feel foreign at first: JSX syntax, component lifecycle, unidirectional data flow, and the virtual DOM. The boundary between React-specific patterns and regular JavaScript can initially feel blurry. This confusion is normal and temporary—by the end of this book, these concepts will feel natural.
 
@@ -84,7 +38,7 @@ React's ecosystem includes a rich vocabulary of terms: components, props, state,
 
 This book takes a practical approach: we'll explore concepts through concrete examples and build your understanding incrementally. Each chapter assumes you're intelligent enough to adapt the patterns to your specific context while providing clear guidance on proven approaches.
 
-## The Paradigm Shift: From Imperative to Declarative
+## The Paradigm Shift: From Imperative to Declarative {.unnumbered .unlisted}
 
 Before we dive into React's technical details, let's discuss a fundamental shift that applies to modern application development more broadly. This mental transition affects not just how you write code, but how you think about building complex systems.
 
@@ -92,7 +46,7 @@ Most of us come to modern frameworks from a world where we tell computers exactl
 
 Modern application frameworks—React included—ask you to flip that thinking. Instead of saying "here's how to change the interface," these tools want you to say "here's what the interface should look like right now." It's like the difference between giving someone turn-by-turn directions versus showing them the destination on a map and letting GPS figure out the route.
 
-### Traditional Approaches to Interfaces
+### Traditional Approaches to Interfaces {.unnumbered .unlisted}
 
 ::: example
 ```javascript
@@ -111,7 +65,7 @@ function incrementCounter() {
 
 This is imperative programming—you're giving explicit instructions for what needs to happen, when it needs to happen, and how it should happen.
 
-### The Declarative Alternative
+### The Declarative Alternative {.unnumbered .unlisted}
 
 ::: example
 ```jsx
@@ -131,7 +85,7 @@ function Counter() {
 
 See the difference? Instead of telling the system how to update things, you describe what the end result should look like. The framework handles the transformation details.
 
-### Why This Mental Shift Matters
+### Why This Mental Shift Matters {.unnumbered .unlisted}
 
 This declarative approach pays dividends as applications grow in complexity:
 
@@ -142,7 +96,7 @@ This declarative approach pays dividends as applications grow in complexity:
 
 I'll be honest—this shift doesn't happen overnight. For the first few weeks with any declarative framework, you might find yourself fighting against this approach, trying to control every detail imperatively. That's completely normal. But once this pattern clicks, you'll wonder how you ever built complex systems any other way.
 
-## React: A Solution Born from Real Problems
+## React's Origins and Philosophy {.unnumbered .unlisted}
 
 Let me give you some context about where React came from, because understanding its origins helps explain why it works the way it does. React wasn't born in a vacuum—it was Facebook's answer to very real, very painful problems they were facing with their user interfaces.
 
@@ -152,7 +106,7 @@ The specific problem that sparked React's creation was deceptively simple: the n
 
 React emerged as their solution to this coordination chaos. Instead of manually tracking every possible update, what if the interface could automatically reflect the current state of the data? What if you could describe what the interface should look like, and React would figure out what needed to change?
 
-### The Core Problems React Solved
+### The Core Problems React Solved {.unnumbered .unlisted}
 
 React wasn't created by academics in a lab—it was born from the frustration of trying to build complex, interactive interfaces with traditional DOM manipulation. Every React pattern and principle exists because it solved a real problem that developers were actually facing:
 
@@ -164,7 +118,7 @@ React wasn't created by academics in a lab—it was born from the frustration of
 
 **Reusability struggles**: Creating truly reusable interface components with traditional approaches was like trying to build LEGO sets that only worked in one specific configuration.
 
-### React as Library, Not Framework
+### React as Library, Not Framework {.unnumbered .unlisted}
 
 React is often called a "library" rather than a "framework," and this distinction matters for how you approach building applications. React focuses specifically on building user interfaces and managing component state. Unlike frameworks that provide opinions about routing, data fetching, project structure, and build tools, React leaves these decisions to you and the broader ecosystem.
 
@@ -177,7 +131,7 @@ React is often called a "library" rather than a "framework," and this distinctio
 
 This library approach offers flexibility to choose the best tools for your specific needs, but it also means more decisions to make and a need to understand how different pieces work together.
 
-### React in the Component Ecosystem
+### React in the Component Ecosystem {.unnumbered .unlisted}
 
 React popularized component-based architecture for web applications, but it's part of a broader movement toward this approach. Understanding React's place in this ecosystem helps contextualize its patterns and principles.
 
@@ -189,7 +143,7 @@ Other component-based approaches include Vue.js (more framework-like with built-
 Understanding that React is one approach among many helps you make informed decisions about when to use it and how to combine it with other tools. The patterns we'll explore in this book aren't exclusively React-specific—many translate to other component-based approaches and general application architecture principles.
 :::
 
-## The Thinking Framework for React Development
+## The Thinking Framework for React Development {.unnumbered .unlisted}
 
 Building with React isn't just about learning syntax and APIs—it's about developing a way of thinking that leads to maintainable, scalable applications. The learning approach we discussed earlier applies directly to mastering React's patterns and principles.
 
@@ -215,7 +169,7 @@ At its core, effective React applications revolve around several key principles:
 
 These principles will resurface throughout our journey, each time with deeper exploration and practical examples. In Chapter 2, we'll put these concepts into practice with hands-on exercises in component design and architecture planning.
 
-### How This Book Supports Your Learning Journey
+### How This Book Supports Your Learning Journey {.unnumbered .unlisted}
 
 This book is designed around the learning principles we discussed—starting with genuine interest by showing you what becomes possible when you master React's patterns, providing clear scope for each concept and how it connects to the bigger picture, encouraging active engagement through examples and exercises, building in reflection opportunities to consider alternative approaches and trade-offs, and allowing repetition as concepts reappear in different contexts to build deeper understanding.
 
@@ -224,14 +178,6 @@ This book is designed around the learning principles we discussed—starting wit
 
 While this framework has proven effective for many developers, adapt it to your own learning style and context. The goal isn't to follow a rigid formula, but to approach React learning with intention and strategy.
 :::
-
-# From DOM Manipulation to Component Composition
-
-Remember that mental shift I talked about earlier? The move from imperative to declarative thinking? Well, now we're going to see it in action. This is where React starts to feel different from any JavaScript you've written before, and honestly, this is where a lot of developers either fall in love with React or get really frustrated with it.
-
-I want to be upfront with you: this section is going to change how you think about building user interfaces. We're not just learning new syntax or API calls—we're developing a completely different approach to organizing and structuring interactive applications. It's the difference between thinking like a micromanager who controls every detail and thinking like an architect who designs systems that work elegantly on their own.
-
-The good news? Once you get this mindset, building complex interfaces becomes way more enjoyable. The not-so-good news? It might feel uncomfortable at first if you're used to having direct control over every DOM element and every interaction.
 
 ## Understanding the Mental Shift
 
@@ -295,7 +241,8 @@ Look at all those steps! And that's just for a simple modal. Imagine if you have
 
 React asks you to think differently:
 
-::: important
+::: example
+
 **The React way: declarative thinking**
 
 ```jsx
@@ -341,7 +288,7 @@ This felt really weird to me at first. My initial reaction was "but I want contr
 Once you start building anything more complex than a simple modal, the imperative approach becomes a nightmare to manage. You end up with state scattered everywhere, complex interdependencies, and bugs that are incredibly hard to track down. The declarative approach scales beautifully because each component just describes what it should look like, period.
 :::
 
-### The Compounding Benefits
+### The Compounding Benefits {.unnumbered .unlisted}
 
 I know this mental shift feels strange if you're used to having direct control over the DOM. But stick with me here, because the benefits compound quickly:
 
@@ -365,9 +312,10 @@ Identifying the right boundaries for your components is perhaps the most critica
 Good components are "just right" - not too big, not too small. They handle a cohesive set of functionality that makes sense to group together, without trying to do too much or too little.
 :::
 
-### Signs of Poor Component Boundaries
+### Signs of Poor Component Boundaries {.unnumbered .unlisted}
 
 **Components that are too large** exhibit these warning signs:
+
 - Difficult to name clearly and concisely
 - Handle multiple unrelated concerns
 - Have too many props (typically more than 5-7)
@@ -375,6 +323,7 @@ Good components are "just right" - not too big, not too small. They handle a coh
 - Require significant scrolling to read through the code
 
 **Components that are too small** create these problems:
+
 - Excessive prop drilling between parent and child
 - No clear benefit from the separation
 - Difficult to understand the overall functionality
@@ -421,7 +370,7 @@ function UserDashboard() {
 ```
 :::
 
-### The Rule of Three Levels
+### The Rule of Three Levels {.unnumbered .unlisted}
 
 A useful heuristic for component boundaries is the "rule of three levels":
 
@@ -433,18 +382,21 @@ A useful heuristic for component boundaries is the "rule of three levels":
 **Understanding the three levels**
 
 **Presentation components** (also called "dumb" or "stateless" components):
+
 - Receive data via props
 - Focus on how things look
 - Don't manage their own state (except for UI state like form inputs)
 - Are highly reusable
 
 **Container components** (also called "smart" or "stateful" components):
+
 - Manage state and data fetching
 - Focus on how things work
 - Provide data to presentation components
 - Handle business logic
 
 **Page components**:
+
 - Coordinate multiple features
 - Handle routing and navigation
 - Manage application-level state
@@ -497,7 +449,7 @@ function UserProfile({ user, onUpdate }) {
 ```
 :::
 
-### Data Flow Patterns
+### Data Flow Patterns {.unnumbered .unlisted}
 
 Understanding how data flows through your component hierarchy is essential for good architecture. React's unidirectional data flow means data flows down through props and actions flow up through callbacks.
 
@@ -587,7 +539,7 @@ This upfront planning ensures scalability, maintainability, and clear separation
 
 Many developers skip this planning phase and jump straight into coding, which often leads to components that are too large and try to do too much, confusing data flow patterns that are hard to debug, tight coupling between components that should be independent, and difficulty adding new features without breaking existing functionality.
 
-### Why Architecture-First Matters
+### Why Architecture-First Matters {.unnumbered .unlisted}
 
 The architecture-first approach provides several critical advantages:
 
@@ -599,7 +551,7 @@ The architecture-first approach provides several critical advantages:
 
 **Improves code quality**: When you know where each piece of functionality belongs, you write more focused, single-purpose components.
 
-### Visual Planning Exercises
+### Visual Planning Exercises {.unnumbered .unlisted}
 
 The most effective way to develop architectural thinking is through visual planning. Take a whiteboard, paper, or digital tool and practice breaking down interfaces into components.
 
@@ -622,6 +574,7 @@ Visit a popular website (like GitHub, Twitter, or Medium) and practice identifyi
 - Where should state live for each piece of data?
 
 **Example walkthrough**: Looking at a Twitter-like interface, you might identify:
+
 - `Header` component (logo, navigation, user menu)
 - `TweetComposer` component (text area, character count, post button)
 - `Feed` component (container for tweet list)
@@ -631,7 +584,7 @@ Visit a popular website (like GitHub, Twitter, or Medium) and practice identifyi
 Each component has clear boundaries and responsibilities, making the overall application easier to understand and maintain.
 :::
 
-### Building Your First Component Architecture
+### Building Your First Component Architecture {.unnumbered .unlisted}
 
 Let's put these principles into practice by architecting a real application. We'll design a music practice tracker that demonstrates proper component thinking.
 
@@ -646,6 +599,7 @@ In this section, we're focusing purely on architectural planning and component d
 Before writing code, let's map out our application:
 
 **User interface requirements**:
+
 - Practice session log with filtering and search
 - Session creation form with timer functionality
 - Individual practice entries with editing capabilities
@@ -654,6 +608,7 @@ Before writing code, let's map out our application:
 - Goal setting and tracking
 
 **Data requirements**:
+
 - Fetch practice sessions from API
 - Create new practice sessions
 - Update existing sessions and progress notes
@@ -704,3 +659,4 @@ Each component has clear responsibilities:
 **Architectural thinking in action**
 
 Notice how we've broken down a complex application into manageable pieces without writing a single line of React code. This planning phase is where good React applications are really built—the implementation is just translating these architectural decisions into code. We'll explore how to implement these patterns in subsequent chapters.
+:::

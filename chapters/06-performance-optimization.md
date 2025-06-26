@@ -187,9 +187,7 @@ const MemoizedPracticeSession = React.memo(function PracticeSession({ session })
 
 :::
 
-### Using React.memo effectively {.unnumbered .unlisted}
-
-`React.memo` is React's way of saying "only re-render this component if its props actually changed." But there are some gotchas you need to know about.
+### Using React.memo effectively {.unnumbered .unlisted}`React.memo` is React's way of saying "only re-render this component if its props actually changed." But there are some gotchas you need to know about.
 
 ::: example
 
@@ -294,9 +292,7 @@ Wrapping a component that renders quickly in memo can actually make things slowe
 
 Sometimes the performance problem isn't unnecessary re-renders-it's that your component is doing expensive work on every render. This is where `useMemo` and `useCallback` come in.
 
-### Using useMemo for expensive calculations {.unnumbered .unlisted}
-
-`useMemo` lets you cache the result of expensive computations and only recalculate when specific dependencies change.
+### Using useMemo for expensive calculations {.unnumbered .unlisted}`useMemo` lets you cache the result of expensive computations and only recalculate when specific dependencies change.
 
 ::: example
 
@@ -362,9 +358,7 @@ function PracticeAnalytics({ sessions }) {
 
 :::
 
-### Using useCallback for stable function references {.unnumbered .unlisted}
-
-`useCallback` is like `useMemo` but for functions. It's particularly useful when passing functions to child components that are wrapped in `React.memo`.
+### Using useCallback for stable function references {.unnumbered .unlisted}`useCallback` is like `useMemo` but for functions. It's particularly useful when passing functions to child components that are wrapped in `React.memo`.
 
 ::: example
 
@@ -854,9 +848,7 @@ function App() {
 
 Building performant React apps isn't a one-time task-you need ongoing monitoring and debugging tools to catch performance regressions before they affect users.
 
-### Setting up performance monitoring {.unnumbered .unlisted}
-
-::: example
+### Setting up performance monitoring {.unnumbered .unlisted}::: example
 
 ```jsx
 // Custom hook for performance monitoring
@@ -956,9 +948,7 @@ function App() {
 
 Let me share some of the most common performance mistakes I see in React applications, and how to fix them.
 
-### Anti-pattern 1: Creating objects in render {.unnumbered .unlisted}
-
-::: example
+### Anti-pattern 1: Creating objects in render {.unnumbered .unlisted}::: example
 
 ```jsx
 // BAD: Creating new objects on every render
@@ -989,9 +979,7 @@ function UserProfile({ user }) {
 
 :::
 
-### Anti-pattern 2: Expensive operations in render {.unnumbered .unlisted}
-
-::: example
+### Anti-pattern 2: Expensive operations in render {.unnumbered .unlisted}::: example
 
 ```jsx
 // BAD: Expensive calculation on every render
@@ -1014,9 +1002,7 @@ function PracticeStats({ sessions }) {
 
 :::
 
-### Anti-pattern 3: Overusing Context {.unnumbered .unlisted}
-
-::: example
+### Anti-pattern 3: Overusing Context {.unnumbered .unlisted}::: example
 
 ```jsx
 // BAD: Putting everything in one context
@@ -1091,9 +1077,7 @@ function PlayerProvider({ children }) {
 
 Let me walk you through optimizing a real-world component that initially had serious performance issues.
 
-### The problem component {.unnumbered .unlisted}
-
-::: example
+### The problem component {.unnumbered .unlisted}::: example
 
 ```jsx
 // Initial version - multiple performance issues
@@ -1153,9 +1137,7 @@ function MusicDashboard({ userId }) {
 
 :::
 
-### The optimized version {.unnumbered .unlisted}
-
-::: example
+### The optimized version {.unnumbered .unlisted}::: example
 
 ```jsx
 // Optimized version - addressing all performance issues
@@ -1287,25 +1269,19 @@ The key takeaways:
 
 React performance optimization is about understanding your application's bottlenecks and applying the right tools to solve them. Here are the key principles to remember:
 
-### Performance optimization hierarchy {.unnumbered .unlisted}
-
-1. **Architecture first**: Good component structure prevents many performance problems
+### Performance optimization hierarchy {.unnumbered .unlisted}1. **Architecture first**: Good component structure prevents many performance problems
 2. **Measure and profile**: Use React DevTools Profiler to identify real issues
 3. **Prevent unnecessary work**: Stop components from re-rendering when they don't need to
 4. **Optimize expensive operations**: Use memoization for computationally expensive tasks
 5. **Optimize bundle size**: Use code splitting and tree shaking to reduce initial load times
 6. **Monitor continuously**: Set up performance monitoring to catch regressions
 
-### When to optimize {.unnumbered .unlisted}
-
-- **Profile first**: Never optimize without measuring
+### When to optimize {.unnumbered .unlisted}- **Profile first**: Never optimize without measuring
 - **Focus on user-facing issues**: Prioritize optimizations that improve actual user experience
 - **Consider maintenance cost**: Complex optimizations should provide significant benefits
 - **Test thoroughly**: Ensure optimizations don't introduce bugs
 
-### Common optimization techniques summary {.unnumbered .unlisted}
-
-- **React.memo**: Prevent unnecessary re-renders of expensive components
+### Common optimization techniques summary {.unnumbered .unlisted}- **React.memo**: Prevent unnecessary re-renders of expensive components
 - **useMemo**: Cache expensive calculations
 - **useCallback**: Stabilize function references for memoized components
 - **Code splitting**: Load code on demand with React.lazy and Suspense
