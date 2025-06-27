@@ -1,4 +1,4 @@
-# Testing Advanced Component Patterns
+# Testing advanced component patterns
 
 Testing advanced React patterns requires a sophisticated approach that goes beyond simple unit tests. As covered in detail in Chapter 5, we'll follow behavior-driven development (BDD) principles and focus on testing user workflows rather than implementation details.
 
@@ -8,7 +8,7 @@ Testing advanced React patterns requires a sophisticated approach that goes beyo
 This section provides specific testing strategies for advanced patterns. For comprehensive testing fundamentals, testing setup, and detailed BDD methodology, see Chapter 5: Testing React Components. We'll follow the same BDD style and testing principles established there.
 :::
 
-Testing compound components, provider hierarchies, and custom hooks with state machines isn't straightforward. These patterns have emergent behavior—their real value comes from how multiple pieces work together, not just individual component logic. This means our testing strategies need to focus on integration scenarios and user workflows that reflect real-world usage.
+Testing compound components, provider hierarchies, and custom hooks with state machines isn't straightforward. These patterns have emergent behavior. Their real value comes from how multiple pieces work together, not just individual component logic. This means our testing strategies need to focus on integration scenarios and user workflows that reflect real-world usage.
 
 Advanced testing patterns focus on behavior verification rather than implementation details, enabling tests that remain stable as implementations evolve. These patterns also emphasize testing user workflows and integration scenarios that reflect real-world usage patterns.
 
@@ -18,7 +18,7 @@ Advanced testing patterns focus on behavior verification rather than implementat
 Advanced component testing should focus on user-observable behavior and component contracts rather than internal implementation details. This approach creates more maintainable tests that provide confidence in functionality while allowing for refactoring and optimization.
 :::
 
-## Testing Compound Components with BDD Approach
+## Testing compound components with BDD approach
 
 Following the BDD methodology from Chapter 5, we'll structure our compound component tests around user scenarios and behaviors rather than implementation details.
 

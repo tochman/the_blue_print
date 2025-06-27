@@ -1,12 +1,12 @@
-# Hosting Platform Deployment: Finding the Right Home for Your React App
+# Hosting platform deployment: finding the right home for your React app
 
-After building and testing your React application, you need a place to host it where real users can access it. Think of hosting platforms as the real estate for your digital application—location, features, and price all matter, but the most important factor is finding the right fit for your specific needs.
+After building and testing your React application, you need a place to host it where real users can access it. Think of hosting platforms as the real estate for your digital application. Location, features, and price all matter, but the most important factor is finding the right fit for your specific needs.
 
 Choosing a hosting platform is like choosing where to live. A small studio apartment works great when you're starting out, but you might need a bigger place as your family grows. Similarly, a simple static hosting service might be perfect for your portfolio site, but a complex business application might need serverless functions, database integration, and global content delivery.
 
 ## Why Platform Choice Matters More Than You Think
 
-Let me share a cautionary tale. A friend launched a successful React application on a budget hosting provider. Everything worked great... until they went viral on social media. Their hosting crashed under traffic, their database couldn't handle the load, and they lost potential customers during their biggest growth opportunity. The problem wasn't the code—it was choosing a hosting platform that couldn't scale with their success.
+Let me share a cautionary tale. A friend launched a successful React application on a budget hosting provider. Everything worked great... until they went viral on social media. Their hosting crashed under traffic, their database couldn't handle the load, and they lost potential customers during their biggest growth opportunity. The problem wasn't the code. It was choosing a hosting platform that couldn't scale with their success.
 
 **What hosting platform selection actually determines:**
 
@@ -21,7 +21,7 @@ Let me share a cautionary tale. A friend launched a successful React application
 ::: important
 **The Platform Selection Mindset**
 
-Don't choose a hosting platform based on price alone—choose based on what you want to spend your time on. If you want to focus on building React applications, choose platforms that handle infrastructure complexity for you. If you enjoy managing servers and want maximum control, choose platforms that give you that flexibility.
+Don't choose a hosting platform based on price alone. Choose based on what you want to spend your time on. If you want to focus on building React applications, choose platforms that handle infrastructure complexity for you. If you enjoy managing servers and want maximum control, choose platforms that give you that flexibility.
 
 **Key principle**: Optimize for total cost of ownership, not just hosting bills.
 :::

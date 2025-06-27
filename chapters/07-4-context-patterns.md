@@ -1,13 +1,13 @@
-# Context Patterns for Architectural Dependencies
+# Context patterns for architectural dependencies
 
-React Context extends far beyond simple data passing—it serves as a powerful architectural tool for implementing dependency injection patterns that enhance application structure, testability, and maintainability. Context-based dependency injection eliminates prop drilling, simplifies component testing, and establishes clear separation between business logic and presentation concerns.
+React Context extends far beyond simple data passing. It serves as a powerful architectural tool for implementing dependency injection patterns that enhance application structure, testability, and maintainability. Context-based dependency injection eliminates prop drilling, simplifies component testing, and establishes clear separation between business logic and presentation concerns.
 
 Dependency injection is a design pattern where objects receive their dependencies from external sources rather than creating them internally. In React applications, this pattern prevents prop drilling complications, simplifies testing scenarios, and creates clear architectural boundaries between different application concerns.
 
 ::: important
 **Context vs. Prop Drilling Trade-offs**
 
-Context excels at resolving the "prop drilling" problem where props must traverse multiple component levels to reach deeply nested children. However, Context requires judicious application—not every shared state warrants Context usage. Consider Context when you have genuinely application-wide concerns or when prop drilling becomes architecturally unwieldy.
+Context excels at resolving the "prop drilling" problem where props must traverse multiple component levels to reach deeply nested children. However, Context requires judicious application. Not every shared state warrants Context usage. Consider Context when you have genuinely application-wide concerns or when prop drilling becomes architecturally unwieldy.
 :::
 
 ## Traditional Dependency Injection with Context

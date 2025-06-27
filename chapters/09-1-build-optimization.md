@@ -1,14 +1,14 @@
-# Build Optimization and Production Preparation
+# Build optimization and production preparation
 
 When you've built an amazing React application that works perfectly on your development machine, the next challenge is getting it ready for real users. This transition from "works on my machine" to "works for everyone, everywhere" is what build optimization is all about.
 
-Think of it like preparing a home-cooked meal for a dinner party. You wouldn't just serve the ingredients—you'd carefully prepare, season, and present the meal in the best possible way. Similarly, your React code needs preparation before it can serve real users effectively.
+Think of it like preparing a home-cooked meal for a dinner party. You wouldn't just serve the ingredients. You'd carefully prepare, season, and present the meal in the best possible way. Similarly, your React code needs preparation before it can serve real users effectively.
 
 ## Why Build Optimization Matters More Than You Think
 
 Let me share a story that illustrates why this chapter matters. A talented React developer I know built a beautiful music practice tracking app. It had elegant components, smooth animations, and delightful user interactions. But when they deployed it, users complained it was "slow" and "clunky." 
 
-The problem wasn't the React code—it was that the development version included debugging tools, uncompressed assets, and developer-friendly features that made the app download 15MB of JavaScript just to show a login screen. After proper build optimization, that same app loaded in under 2 seconds instead of 30.
+The problem wasn't the React code. It was that the development version included debugging tools, uncompressed assets, and developer-friendly features that made the app download 15MB of JavaScript just to show a login screen. After proper build optimization, that same app loaded in under 2 seconds instead of 30.
 
 **Here's what production optimization actually solves:**
 
@@ -22,7 +22,7 @@ The problem wasn't the React code—it was that the development version included
 ::: important
 **The Optimization Mindset**
 
-Build optimization isn't about following a checklist—it's about understanding your users' needs and your application's requirements. Every optimization decision should be based on real performance data, not assumptions. Some optimizations that help one app might hurt another.
+Build optimization isn't about following a checklist. It's about understanding your users' needs and your application's requirements. Every optimization decision should be based on real performance data, not assumptions. Some optimizations that help one app might hurt another.
 
 **Key principle**: Measure first, optimize second, validate third.
 :::
@@ -47,7 +47,7 @@ Before diving into specific techniques, let's understand what actually happens w
 - Security through obscuration
 - Maximum browser compatibility
 
-Think of development mode as your workshop—full of tools, spare parts, and helpful labels. Production mode is the finished product—streamlined, polished, and ready for customers.
+Think of development mode as your workshop: full of tools, spare parts, and helpful labels. Production mode is the finished product: streamlined, polished, and ready for customers.
 
 ::: note
 **Why This Distinction Matters**
@@ -65,7 +65,7 @@ When you run `npm run build`, several transformations happen to your code:
 4. **Code Splitting**: Large bundles get split into smaller chunks for faster loading
 5. **Optimization**: Dead code gets removed, variables get shortened, compression gets applied
 
-This isn't just technical magic—each step solves specific user experience problems.
+This isn't just technical magic. Each step solves specific user experience problems.
 
 ## Your First Build Optimization: Getting Started Right
 
@@ -195,7 +195,7 @@ function Dashboard() {
 ::: caution
 **Common Environment Variable Mistakes**
 
-1. **Security leak**: Never put secrets in React environment variables—they're visible to users
+1. **Security leak**: Never put secrets in React environment variables. They're visible to users
 2. **Typos**: `REACT_APP_` prefix is required for custom variables
 3. **Missing validation**: Apps crash in production when expected variables are missing
 4. **Hardcoded assumptions**: Don't assume development values will work in production
@@ -243,7 +243,7 @@ Many tools offer free tiers for personal projects or open source work, making ex
 
 ## Understanding Your Application's Performance Profile
 
-Before diving into optimization techniques, you need to understand what you're optimizing. Think of this like tuning a musical instrument—you need to hear what's off before you can fix it.
+Before diving into optimization techniques, you need to understand what you're optimizing. Think of this like tuning a musical instrument. You need to hear what's off before you can fix it.
 
 ### Step 3: Reading Your Bundle Like a Story {.unnumbered .unlisted}
 
@@ -316,7 +316,7 @@ Let's explore the most effective optimization techniques with a focus on when an
 
 ### Code Splitting: Loading Only What Users Need {.unnumbered .unlisted}
 
-Code splitting is like organizing a toolbox—you keep the tools you use every day close at hand, and store specialized tools separately until needed.
+Code splitting is like organizing a toolbox. You keep the tools you use every day close at hand, and store specialized tools separately until needed.
 
 **The Progressive Approach to Code Splitting:**
 

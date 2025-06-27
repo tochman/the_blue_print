@@ -1,4 +1,4 @@
-# Building React Applications
+# Building React applications
 
 Now that you understand React's fundamentals and component thinking, it's time to explore how to actually build complete React applications. This chapter bridges the gap between understanding React concepts and building real-world applications that users can navigate, interact with, and enjoy.
 
@@ -16,14 +16,14 @@ This chapter covers the practical foundations that every React developer needs:
 - **Build tools**: Setting up efficient development environments with Create React App, Vite, and custom configurations
 - **Styling strategies**: Choosing and implementing styling solutions that scale with your application
 
-These aren't just technical details—they're architectural decisions that will shape your entire development experience.
+These aren't just technical details. They're architectural decisions that will shape your entire development experience.
 :::
 
-## Single Page Applications: The Foundation of Modern Web Apps
+## Single page applications: the foundation of modern web apps
 
 Before diving into React-specific techniques, we need to understand the fundamental shift that React applications represent: the move from traditional multi-page applications to single page applications (SPAs).
 
-### Understanding Traditional Multi-Page Applications {.unnumbered .unlisted}
+### Understanding traditional multi-page applications {.unnumbered .unlisted}
 
 Traditional web applications work like a series of separate documents. When you click a link or submit a form, your browser makes a request to the server, which responds with a completely new HTML page. Your browser then discards the current page and renders the new one from scratch.
 
@@ -59,7 +59,7 @@ But it also has significant drawbacks:
 - **Inefficient**: Re-downloading CSS, JavaScript, and other assets for each page
 - **Difficult state management**: Application state is lost between page loads
 
-### The Single Page Application Approach {.unnumbered .unlisted}
+### The single page application approach {.unnumbered .unlisted}
 
 Single page applications take a fundamentally different approach. Instead of multiple separate pages, you have one HTML page that updates its content dynamically using JavaScript. When the user navigates, JavaScript updates the URL and changes what's displayed, but the browser never loads a new page.
 
@@ -94,7 +94,7 @@ But SPAs also introduce new challenges:
 - **Initial load time**: Larger JavaScript bundles take time to download
 - **Browser history management**: Back/forward buttons need special handling
 
-### Why React and SPAs Are Perfect Together {.unnumbered .unlisted}
+### Why React and SPAs are perfect together {.unnumbered .unlisted}
 
 React's component-based architecture and declarative approach make it ideal for building SPAs. Here's why:
 
@@ -114,9 +114,9 @@ The key difference between SPAs and traditional web apps is the navigation exper
 This difference might seem small, but it fundamentally changes how users interact with your application. SPAs feel more like native applications, which is why they've become the standard for modern web development.
 :::
 
-## React Router: Bringing Navigation to Life
+## React Router: bringing navigation to life
 
-Now that you understand why SPAs need special routing solutions, let's explore React Router—the de facto standard for handling navigation in React applications.
+Now that you understand why SPAs need special routing solutions, let's explore React Router: the de facto standard for handling navigation in React applications.
 
 React Router enables declarative, component-based routing that maintains React's compositional patterns. Instead of having a separate routing configuration file, you define routes using React components, making your routing logic part of your component tree.
 
@@ -294,7 +294,7 @@ URL parameters are essential for creating bookmarkable, shareable URLs. When a u
 
 ### Programmatic Navigation {.unnumbered .unlisted}
 
-Sometimes you need to navigate programmatically—for example, after a form submission or when certain conditions are met:
+Sometimes you need to navigate programmatically (for example, after a form submission or when certain conditions are met):
 
 ::: example
 **Programmatic Navigation**
@@ -1167,9 +1167,9 @@ In this chapter, we've explored the essential foundations for building real-worl
 
 **Styling Strategies**: Choosing and implementing styling solutions that scale with your application, from CSS Modules to CSS-in-JS to utility frameworks.
 
-These aren't just technical details—they're architectural decisions that will shape your entire development experience. A React application without proper routing feels broken. A React application without a proper build setup is difficult to develop and deploy. A React application without thoughtful styling looks unprofessional and is hard to use.
+These aren't just technical details. They're architectural decisions that will shape your entire development experience. A React application without proper routing feels broken. A React application without a proper build setup is difficult to develop and deploy. A React application without thoughtful styling looks unprofessional and is hard to use.
 
-The next chapter will dive deep into state and props—the mechanisms that make your components dynamic and interactive. We'll explore how to manage data flow effectively and create components that communicate cleanly with each other.
+The next chapter will dive deep into state and props: the mechanisms that make your components dynamic and interactive. We'll explore how to manage data flow effectively and create components that communicate cleanly with each other.
 
 ::: important
 **Looking ahead**

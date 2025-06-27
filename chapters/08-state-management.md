@@ -1,6 +1,6 @@
-# State Management Architecture
+# State management architecture
 
-State management represents one of the most critical architectural decisions in React application development. The landscape includes numerous options—Redux, Zustand, Context, useState, useReducer, MobX, Recoil, Jotai—yet most applications don't require complex state management solutions. The key lies in understanding application requirements and selecting appropriately scaled solutions.
+State management represents one of the most critical architectural decisions in React application development. The landscape includes numerous options (Redux, Zustand, Context, useState, useReducer, MobX, Recoil, Jotai), yet most applications don't require complex state management solutions. The key lies in understanding application requirements and selecting appropriately scaled solutions.
 
 Many developers prematurely adopt complex state management libraries without understanding their application's actual needs. Conversely, some teams avoid external libraries entirely, resulting in unwieldy prop drilling scenarios. Effective state management involves matching solutions to specific application requirements while maintaining the flexibility to evolve as applications grow.
 
@@ -18,11 +18,11 @@ This chapter explores the complete spectrum of state management approaches, from
 - Optimize state management performance and implement best practices
 :::
 
-## State Architecture Fundamentals
+## State architecture fundamentals
 
 Before exploring specific tools and libraries, understanding the nature of state and its role in React applications provides the foundation for making appropriate architectural decisions.
 
-## Defining State in React Applications
+## Defining state in React applications
 
 State represents any data that changes over time and influences user interface presentation. State categories include:
 
@@ -34,7 +34,7 @@ State represents any data that changes over time and influences user interface p
 
 Each state category exhibits different characteristics and may benefit from distinct management approaches based on scope, persistence, and performance requirements.
 
-## The State Management Solution Spectrum
+## The state management solution spectrum
 
 State management should be viewed as a spectrum rather than binary choices. Solutions range from simple local component state to sophisticated global state management with advanced debugging capabilities. Most applications require solutions positioned strategically within this spectrum based on specific requirements.
 

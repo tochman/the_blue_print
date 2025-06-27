@@ -1,4 +1,4 @@
-# Understanding Hooks and the Component Lifecycle
+# Understanding hooks and the component lifecycle
 
 React hooks revolutionized how we write components by allowing function components to manage state, side effects, and lifecycle events. This chapter explores how hooks provide a more flexible and intuitive approach to component logic compared to traditional class components.
 
@@ -13,7 +13,7 @@ React hooks revolutionized how we write components by allowing function componen
 - When and how to optimize your components
 :::
 
-## Rethinking Component Lifecycle with Hooks
+## Rethinking component lifecycle with hooks
 
 In class components, lifecycle was managed with methods like `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`. Hooks, especially `useEffect`, allow you to synchronize your component with external systems and data changes in a more granular way.
 
@@ -109,7 +109,7 @@ function PracticeSessionTracker({ sessionId }) {
 
 This example demonstrates how multiple effects can handle different lifecycle concerns independently. Each effect is responsible for a specific piece of logic, making the component easier to reason about and maintain.
 
-## The Mental Model of Effects
+## The mental model of effects
 
 Think of effects as a way to keep your component synchronized with external systems. React checks if any dependencies for an effect have changed after each render. If so, it cleans up the previous effect and runs the new one.
 
@@ -119,7 +119,7 @@ Think of effects as a way to keep your component synchronized with external syst
 Instead of thinking "when the component mounts, fetch data," think "whenever the user ID changes, fetch data for that user." This leads to more robust components that handle data changes gracefully.
 :::
 
-## Advanced Patterns with useEffect
+## Advanced patterns with useEffect
 
 Complex applications often require advanced patterns for handling async operations, managing multiple data sources, and optimizing performance.
 
@@ -316,7 +316,9 @@ Each effect in this example has a specific responsibility, and they communicate 
 
 Beyond `useState` and `useEffect`, React provides several other hooks for common component development problems.
 
-### useRef for Mutable Values and DOM Access {.unnumbered .unlisted}`useRef` is used for holding mutable values that persist across renders without causing re-renders, and for accessing DOM elements directly.
+### useRef for Mutable Values and DOM Access {.unnumbered .unlisted}
+
+`useRef` is used for holding mutable values that persist across renders without causing re-renders, and for accessing DOM elements directly.
 
 ::: important
 **useRef vs useState**

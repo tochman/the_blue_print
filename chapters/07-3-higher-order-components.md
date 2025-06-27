@@ -1,4 +1,4 @@
-# Higher-Order Components: Legacy Patterns and Modern Alternatives
+# Higher-order components: legacy patterns and modern alternatives
 
 Higher-Order Components (HOCs) represent a significant pattern from React's earlier ecosystem that you will encounter in legacy codebases and certain library implementations. While custom hooks have largely superseded HOCs for most modern applications, understanding this pattern remains essential for maintaining existing code and comprehending React's architectural evolution.
 
@@ -297,7 +297,7 @@ When you must implement HOCs, follow these established best practices:
 - Always forward refs when appropriate using `React.forwardRef`
 - Copy static methods from the wrapped component
 - Use display names for easier debugging
-- Don't mutate the original component—return a new one
+- Don't mutate the original component. Return a new one
 - Compose HOCs outside of the render method to avoid unnecessary re-mounting
 :::
 

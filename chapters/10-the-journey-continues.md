@@ -1,10 +1,10 @@
-# The Journey Continues: Your Path Forward in React
+# The journey continues: your path forward in React
 
 You've reached the end of this book, but your React journey is just beginning. Throughout these chapters, you've built a solid foundation in React's core concepts, explored advanced patterns, and learned to think like a React developer. Now comes the exciting part: taking these skills into the real world and continuing to grow as part of one of the most vibrant and innovative communities in web development.
 
 This chapter isn't about learning more syntax or memorizing new APIs. Instead, it's about understanding where you are in your React journey, where the ecosystem is heading, and how to navigate your continued growth as a React developer. Think of it as your roadmap for the adventure ahead.
 
-## Where You Are Now: Recognizing Your Progress
+## Where you are now: recognizing your progress
 
 Before looking ahead, let's acknowledge how far you've come. When you started this book, React might have seemed like a complex maze of concepts, patterns, and tools. Now, you understand:
 
@@ -25,14 +25,14 @@ This foundation is more valuable than you might realize. Many developers spend y
 ::: important
 **The Learning Milestone Achievement**
 
-Take a moment to appreciate this milestone. You're no longer a React beginner—you're a developer who understands React's core principles and can build real applications. This transition from "learning React" to "building with React" is a significant achievement that opens doors to exciting opportunities.
+Take a moment to appreciate this milestone. You're no longer a React beginner. You're a developer who understands React's core principles and can build real applications. This transition from "learning React" to "building with React" is a significant achievement that opens doors to exciting opportunities.
 
 The concepts you've mastered will serve as the foundation for everything you build next, regardless of which specific technologies or patterns you encounter in the future.
 :::
 
 ## React's Transformative Impact: Understanding the Bigger Picture
 
-To understand where React is going, it helps to understand where it came from and how it changed web development. React didn't just introduce JSX and components—it fundamentally shifted how we think about building user interfaces.
+To understand where React is going, it helps to understand where it came from and how it changed web development. React didn't just introduce JSX and components. It fundamentally shifted how we think about building user interfaces.
 
 ### The Philosophy That Changed Everything
 

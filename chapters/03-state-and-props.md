@@ -1,10 +1,10 @@
-# State and Props
+# State and props
 
 Now we get to the heart of React: state and props. These two concepts are absolutely fundamental to everything you'll build with React, and honestly, they're where React starts to feel like magic. Once you understand how state and props work together, you'll have that "aha!" moment where React's entire philosophy suddenly makes sense.
 
 I remember when I first learned React, I kept confusing state and props. "Why do I sometimes pass data as props and sometimes store it as state? What's the difference?" It felt arbitrary and confusing. But here's the thing—the distinction is actually quite elegant once you see the pattern.
 
-Think of state as a component's private memory—data that belongs to the component and can change over time. Props, on the other hand, are like arguments to a function—data that gets passed in from the outside. Together, they create a data flow that's predictable, testable, and surprisingly powerful.
+Think of state as a component's private memory: data that belongs to the component and can change over time. Props, on the other hand, are like arguments to a function: data that gets passed in from the outside. Together, they create a data flow that's predictable, testable, and surprisingly powerful.
 
 ::: tip
 **What you'll learn in this chapter**
@@ -17,9 +17,9 @@ Think of state as a component's private memory—data that belongs to the compon
 - When to optimize and when optimization is premature
 :::
 
-## Understanding State in React
+## Understanding state in React
 
-Let's start with state, because it's probably the more confusing of the two concepts initially. State in React isn't just a variable that holds data—it's your component's way of remembering things between renders and telling React "hey, something changed, you should probably re-render me."
+Let's start with state, because it's probably the more confusing of the two concepts initially. State in React isn't just a variable that holds data. It's your component's way of remembering things between renders and telling React "hey, something changed, you should probably re-render me."
 
 Here's the crucial insight that took me way too long to understand: when you update state, you're not just changing a value. You're telling React that your component needs to re-evaluate what it should look like based on this new information. It's like updating a spreadsheet cell and watching all the dependent formulas recalculate automatically.
 
@@ -29,7 +29,7 @@ Here's the crucial insight that took me way too long to understand: when you upd
 Every time you call a state setter (like `setCount`), React schedules a re-render of your component. During this re-render, React calls your component function again with the new state values, generates a fresh description of what the UI should look like, and updates the DOM to match. It's like having an assistant who automatically redraws your interface whenever you change the underlying data.
 :::
 
-Let me show you what I mean with the classic counter example—but I want you to really think about what's happening here:
+Let me show you what I mean with the classic counter example, but I want you to really think about what's happening here:
 
 ::: example
 ```jsx
@@ -52,9 +52,9 @@ function Counter() {
 ```
 :::
 
-In this example, `count` is state—it starts at zero and changes when the user clicks the button. Each time `setCount` is called, React re-renders the component with the new count value, and the interface updates to reflect this change. The component describes what it should look like for any given count value, and React handles the transformation.
+In this example, `count` is state: it starts at zero and changes when the user clicks the button. Each time `setCount` is called, React re-renders the component with the new count value, and the interface updates to reflect this change. The component describes what it should look like for any given count value, and React handles the transformation.
 
-## Local State vs. Shared State
+## Local state vs. shared state
 
 One of the most important decisions you'll make when building React applications is determining where state should live. React components can manage their own local state, or state can be "lifted up" to parent components when multiple children need access to the same data.
 
@@ -96,19 +96,19 @@ function UserDashboard() {
 ```
 :::
 
-The key insight is that state should live at the lowest level in the component tree where all components that need it can access it. This principle keeps your component hierarchy clean and prevents unnecessary prop drilling—the practice of passing props through multiple component levels just to reach a deeply nested child.
+The key insight is that state should live at the lowest level in the component tree where all components that need it can access it. This principle keeps your component hierarchy clean and prevents unnecessary prop drilling: the practice of passing props through multiple component levels just to reach a deeply nested child.
 
 ::: tip
 **Where should state live?**
 
 - If only one component needs the data, keep it local.
 - If multiple components need the data, lift the state up to their closest common ancestor.
-- Avoid duplicating state in multiple places—this leads to bugs and out-of-sync data.
+- Avoid duplicating state in multiple places. This leads to bugs and out-of-sync data.
 :::
 
-## Props and Component Communication
+## Props and component communication
 
-Now let's talk about props—React's way of letting components communicate. If state is a component's private memory, then props are like the arguments you pass to a function. They're how parent components share data and functionality with their children.
+Now let's talk about props: React's way of letting components communicate. If state is a component's private memory, then props are like the arguments you pass to a function. They're how parent components share data and functionality with their children.
 
 Props create a clear, predictable flow of data in your application. Data flows down from parent to child through props, and communication flows back up through callback functions (which are also passed as props). This structure makes your application's data flow easy to trace and debug.
 
@@ -120,7 +120,7 @@ The key insight is that props are read-only. A child component should never modi
 Think of props as a contract between parent and child components. The parent says "here's the data you need and here's how you can communicate back to me." The child should never break that contract by modifying props directly. If it needs to change data, it uses the communication channels (callback functions) provided by the parent.
 :::
 
-Let me show you how this works with a practical example—a music practice tracker where a parent component manages a list of sessions and child components display individual sessions:
+Let me show you how this works with a practical example: a music practice tracker where a parent component manages a list of sessions and child components display individual sessions:
 
 ::: example
 ```jsx
@@ -208,7 +208,7 @@ Good prop design balances specificity with flexibility. Components should receiv
 
 The `useState` hook is your primary tool for managing component state in modern React. While it appears simple on the surface, understanding its nuances will help you build more efficient and predictable components.
 
-When you call `useState`, you're creating a piece of state that belongs to that specific component instance. React tracks this state internally and provides you with both the current value and a function to update it. The state update function doesn't modify the state immediately—instead, it schedules an update that will take effect during the next render.
+When you call `useState`, you're creating a piece of state that belongs to that specific component instance. React tracks this state internally and provides you with both the current value and a function to update it. The state update function doesn't modify the state immediately. Instead, it schedules an update that will take effect during the next render.
 
 ::: example
 ```jsx
@@ -298,7 +298,7 @@ The functional update pattern becomes especially important when dealing with rap
 
 ## Managing Complex State: Objects and Arrays
 
-As your components grow in complexity, you might need to manage state that consists of objects or arrays. React requires that you treat state as immutable—instead of modifying existing objects or arrays, you create new ones with the desired changes.
+As your components grow in complexity, you might need to manage state that consists of objects or arrays. React requires that you treat state as immutable. Instead of modifying existing objects or arrays, you create new ones with the desired changes.
 
 ::: example
 ```jsx
@@ -399,7 +399,7 @@ The fundamental principle of React's data flow is that data flows down through p
 
 ## Lifting State Up
 
-Here's one of React's most important patterns, and honestly, one that I wish I had understood better earlier in my React journey: lifting state up. The idea is simple—when multiple components need to share the same piece of state, you move that state to their closest common parent.
+Here's one of React's most important patterns, and honestly, one that I wish I had understood better earlier in my React journey: lifting state up. The idea is simple. When multiple components need to share the same piece of state, you move that state to their closest common parent.
 
 I used to fight against this pattern. I'd try to keep state as close to where it was used as possible, thinking that was cleaner. But then I'd run into situations where two sibling components needed to share data, and I'd end up with hacky workarounds or duplicate state that got out of sync. Lifting state up solves this elegantly by creating a single source of truth.
 
@@ -457,7 +457,7 @@ In this structure, the `MusicLibrary` component manages the state that multiple 
 
 ## Component Composition and Prop Drilling
 
-As your component hierarchy grows deeper, you might encounter "prop drilling"—the need to pass props through multiple levels of components just to reach a deeply nested child. While prop drilling isn't inherently bad for shallow hierarchies, it can become cumbersome when props need to travel through many intermediate components.
+As your component hierarchy grows deeper, you might encounter "prop drilling": the need to pass props through multiple levels of components just to reach a deeply nested child. While prop drilling isn't inherently bad for shallow hierarchies, it can become cumbersome when props need to travel through many intermediate components.
 
 ::: important
 **When prop drilling becomes problematic**
@@ -515,7 +515,7 @@ The composition approach reduces the coupling between the `Layout` component and
 
 ## Handling Side Effects with useEffect
 
-While state manages the data that changes over time, many React components also need to perform side effects—operations that interact with the outside world or have effects beyond rendering. The `useEffect` hook provides a structured way to handle these side effects while maintaining React's declarative principles.
+While state manages the data that changes over time, many React components also need to perform side effects: operations that interact with the outside world or have effects beyond rendering. The `useEffect` hook provides a structured way to handle these side effects while maintaining React's declarative principles.
 
 Side effects include network requests, setting up subscriptions, manually changing the DOM, starting timers, and cleaning up resources. The `useEffect` hook lets you perform these operations in a way that's coordinated with React's rendering cycle.
 
@@ -658,7 +658,7 @@ This timer component uses multiple effects to handle different concerns. One eff
 
 ## Form Handling and Controlled Components
 
-Forms represent one of the most common patterns in React applications, and understanding how to handle form state effectively is essential for building interactive user interfaces. React promotes the use of "controlled components"—form elements whose values are controlled by React state rather than their own internal state.
+Forms represent one of the most common patterns in React applications, and understanding how to handle form state effectively is essential for building interactive user interfaces. React promotes the use of "controlled components": form elements whose values are controlled by React state rather than their own internal state.
 
 Controlled components create a single source of truth for form data, making it easier to validate inputs, handle submissions, and integrate forms with the rest of your application state. While this requires more setup than uncontrolled forms, the benefits in terms of predictability and debugging are substantial.
 
@@ -1158,4 +1158,4 @@ Design a small application that demonstrates various communication patterns betw
 - Create a music practice tracker with these components: a piece selector, a practice timer, and a session history. The piece selector should communicate the selected piece to other components, the timer should be able to start/stop/reset based on external actions, and the session history should update when practice sessions are completed.
 - Experiment with different approaches to component communication: direct prop passing, lifting state up, and using callback functions. Consider where each approach works best and what the trade-offs are.
 
-The goal is to understand how different architectural decisions affect the complexity and maintainability of component relationships. There's no single "correct" solution—focus on understanding the implications of your design choices.
+The goal is to understand how different architectural decisions affect the complexity and maintainability of component relationships. There's no single "correct" solution. Focus on understanding the implications of your design choices.

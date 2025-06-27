@@ -1,14 +1,14 @@
-# Quality Assurance: Building Confidence in Your Code
+# Quality assurance: building confidence in your code
 
-Imagine shipping a beautifully designed React application to production, only to discover that it crashes on Internet Explorer, fails for users with disabilities, or has a security vulnerability that exposes user data. Quality assurance isn't just about finding bugs—it's about building systems that give you confidence your application will work reliably for all your users.
+Imagine shipping a beautifully designed React application to production, only to discover that it crashes on Internet Explorer, fails for users with disabilities, or has a security vulnerability that exposes user data. Quality assurance isn't just about finding bugs. It's about building systems that give you confidence your application will work reliably for all your users.
 
 Think of QA like having a co-pilot when flying a plane. You might be an excellent pilot, but having someone systematically check instruments, weather conditions, and flight paths makes everyone safer. In software development, automated QA processes are your co-pilot, catching issues you might miss and ensuring consistent quality standards.
 
 ## Why QA Automation Matters More Than Manual Testing
 
-A story from the trenches: A startup I worked with had a talented team that manually tested every feature before deployment. They were thorough, careful, and caught most issues. But as the team grew and deployment frequency increased, manual testing became a bottleneck. More importantly, they discovered that humans are inconsistent—tired testers miss things, new team members don't know all the edge cases, and time pressure leads to shortcuts.
+A story from the trenches: A startup I worked with had a talented team that manually tested every feature before deployment. They were thorough, careful, and caught most issues. But as the team grew and deployment frequency increased, manual testing became a bottleneck. More importantly, they discovered that humans are inconsistent. Tired testers miss things, new team members don't know all the edge cases, and time pressure leads to shortcuts.
 
-After implementing automated QA, they went from monthly deployments with frequent hotfixes to daily deployments with 90% fewer production issues. The secret wasn't replacing human judgment—it was using automation for the systematic, repetitive checks that computers do better than humans.
+After implementing automated QA, they went from monthly deployments with frequent hotfixes to daily deployments with 90% fewer production issues. The secret wasn't replacing human judgment. It was using automation for the systematic, repetitive checks that computers do better than humans.
 
 **What automated QA actually solves:**
 
@@ -22,7 +22,7 @@ After implementing automated QA, they went from monthly deployments with frequen
 ::: important
 **The QA Mindset Shift**
 
-QA automation isn't about replacing good development practices—it's about amplifying them. The goal is to catch different types of issues at the most appropriate time and cost. A unit test catches logic errors in seconds; a security scan catches vulnerabilities before deployment; user testing catches usability issues automated tools miss.
+QA automation isn't about replacing good development practices. It's about amplifying them. The goal is to catch different types of issues at the most appropriate time and cost. A unit test catches logic errors in seconds; a security scan catches vulnerabilities before deployment; user testing catches usability issues automated tools miss.
 
 **Key principle**: Build quality in at every stage, don't just test quality at the end.
 :::
@@ -33,7 +33,7 @@ Before diving into specific tools and techniques, let's understand what kinds of
 
 ### The QA Pyramid: Different Tests for Different Problems {.unnumbered .unlisted}
 
-Think of your QA strategy like a pyramid—lots of fast, cheap tests at the bottom, fewer expensive tests at the top:
+Think of your QA strategy like a pyramid: lots of fast, cheap tests at the bottom, fewer expensive tests at the top:
 
 **Unit Tests (Bottom of pyramid):**
 
@@ -100,7 +100,7 @@ Many testing tools offer free tiers for personal projects or open source work. T
 
 ## Setting Up Your Testing Foundation
 
-Let's start with the basics and build complexity gradually. You don't need to become a testing expert overnight—start with simple, high-value tests and expand from there.
+Let's start with the basics and build complexity gradually. You don't need to become a testing expert overnight. Start with simple, high-value tests and expand from there.
 
 ### Step 1: Understanding What You're Testing {.unnumbered .unlisted}
 
@@ -204,7 +204,7 @@ test('calculates practice streak correctly', () => {
 - Test what the user would observe, not internal implementation
 - Use descriptive test names that explain the behavior
 - Keep tests simple and focused on one behavior
-- Make tests independent—each test should work regardless of others
+- Make tests independent. Each test should work regardless of others
 :::
 
 ### Step 3: Integration Testing for Real-World Scenarios {.unnumbered .unlisted}
@@ -325,7 +325,7 @@ module.exports = {
 
 ### Accessibility Testing That Actually Works {.unnumbered .unlisted}
 
-Accessibility testing ensures your application works for users with disabilities. This isn't just good practice—it's often legally required.
+Accessibility testing ensures your application works for users with disabilities. This isn't just good practice. It's often legally required.
 
 ::: example
 **Automated Accessibility Testing**
@@ -472,7 +472,7 @@ You've now learned how to build quality assurance processes that actually improv
 
 ### Next Steps: Integrating QA with Deployment {.unnumbered .unlisted}
 
-Quality assurance doesn't end when tests pass—it continues through deployment and into production monitoring. The next chapter will cover CI/CD pipeline implementation, showing how to integrate these QA processes into automated deployment workflows that maintain quality while enabling frequent, confident releases.
+Quality assurance doesn't end when tests pass. It continues through deployment and into production monitoring. The next chapter will cover CI/CD pipeline implementation, showing how to integrate these QA processes into automated deployment workflows that maintain quality while enabling frequent, confident releases.
 
 Remember: Perfect tests are less important than consistent, valuable tests that your team actually runs and maintains.
 

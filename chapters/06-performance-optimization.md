@@ -1,4 +1,4 @@
-# Performance Optimization Strategies
+# Performance optimization strategies
 
 Performance optimization in React applications requires a strategic, measurement-driven approach that addresses architectural foundations rather than superficial symptoms. Most performance problems stem from architectural decisions rather than React-specific issues, making it essential to understand root causes before implementing optimization solutions.
 
@@ -18,11 +18,11 @@ This chapter provides a comprehensive framework for React performance optimizati
 - Debug complex performance issues using real-world strategies
 :::
 
-## React Performance Architecture Fundamentals
+## React performance architecture fundamentals
 
 Before implementing any optimization strategies, understanding the performance characteristics of React applications proves essential. React performance issues typically fall into distinct categories, each requiring specific measurement techniques and optimization approaches.
 
-## Performance Problem Categories
+## Performance problem categories
 
 When developers report "slow React applications," they may be experiencing several distinct performance issues:
 
@@ -39,7 +39,7 @@ Each category requires specific measurement techniques and distinct optimization
 Systematic performance measurement must precede optimization efforts. Human perception of performance proves notoriously unreliable, and premature optimization continues to be the root of unnecessary complexity. React's built-in profiling tools provide excellent measurement capabilities for identifying actual performance bottlenecks.
 :::
 
-## React Rendering Process Analysis
+## React rendering process analysis
 
 Understanding React's rendering process enables targeted performance optimization. The rendering process involves several distinct phases:
 
@@ -58,11 +58,11 @@ Performance problems can occur at any phase:
 - **Heavy DOM Updates**: Excessive or complex DOM changes occur simultaneously
 - **Expensive Effects**: useEffect callbacks perform excessive work
 
-## Performance Measurement with React DevTools Profiler
+## Performance measurement with React DevTools Profiler
 
 The React DevTools Profiler provides comprehensive performance analysis capabilities for React applications. Effective profiler usage enables identification of actual performance bottlenecks rather than perceived issues.
 
-## Profiler Setup and Configuration
+## Profiler setup and configuration
 
 The React Developer Tools browser extension includes a "Profiler" tab in development mode. For production profiling, manual enablement is required, though development mode analysis is recommended for most performance investigations.
 

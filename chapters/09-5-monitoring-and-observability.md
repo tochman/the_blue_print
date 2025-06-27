@@ -1,8 +1,8 @@
-# Monitoring and Observability: Understanding Your Application's Real-World Performance
+# Monitoring and observability: understanding your application's real-world performance
 
 Picture this scenario: Your React application passes all tests, deploys successfully, and shows green status indicators. Yet users are abandoning shopping carts, reporting slow loading times, and encountering errors you've never seen. The gap between "working in development" and "working for users" is what monitoring and observability help you bridge.
 
-This chapter transforms how you think about application health—from basic uptime checks to understanding the complete user experience. You'll learn to build monitoring systems that tell meaningful stories about your application's performance and help you make data-driven improvements.
+This chapter transforms how you think about application health: from basic uptime checks to understanding the complete user experience. You'll learn to build monitoring systems that tell meaningful stories about your application's performance and help you make data-driven improvements.
 
 ## The Hidden Reality of Production Applications
 
@@ -52,7 +52,7 @@ Before diving into tools and implementation, you need a clear strategy that matc
 
 ### The Monitoring Maturity Pyramid
 
-Think of monitoring capabilities as a pyramid—build strong foundations before adding complexity:
+Think of monitoring capabilities as a pyramid: build strong foundations before adding complexity:
 
 **Foundation Layer: Essential Visibility**
 - Error detection and alerting
@@ -106,7 +106,7 @@ Different applications need different monitoring strategies. Here's how to decid
 ::: note
 **Tool Examples: Guidance, Not Gospel**
 
-Throughout this chapter, we'll reference tools like Google Analytics, Sentry, New Relic, Datadog, and others. These are examples to illustrate monitoring concepts and capabilities—not specific recommendations or endorsements.
+Throughout this chapter, we'll reference tools like Google Analytics, Sentry, New Relic, Datadog, and others. These are examples to illustrate monitoring concepts and capabilities, not specific recommendations or endorsements.
 
 The monitoring tool landscape evolves rapidly. What matters most is understanding what each type of monitoring accomplishes, so you can evaluate current options and choose what fits your specific needs, budget, and team expertise. Many tools offer free tiers that let you start small and grow your monitoring sophistication over time.
 :::
@@ -464,7 +464,7 @@ Before implementing monitoring tools, you need to understand what actually matte
 
 ### The User Experience Monitoring Pyramid {.unnumbered .unlisted}
 
-Just like testing, monitoring should follow a pyramid structure—more basic checks at the bottom, fewer complex checks at the top:
+Just like testing, monitoring should follow a pyramid structure: more basic checks at the bottom, fewer complex checks at the top:
 
 **Foundation Layer - Core Functionality:**
 

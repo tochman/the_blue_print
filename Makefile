@@ -38,7 +38,7 @@ EXTRA_OPTS = --memory=8g
 # Main targets
 .PHONY: all clean eisvogel eisvogel-simple eisvogel-chunked add_cover merge-pdfs
 
-all: eisvogel
+all: eisvogel-chunked
 
 clean:
 	rm -rf $(BUILD)
@@ -57,37 +57,123 @@ $(BUILD)/eisvogel/$(BOOKNAME).pdf: $(TITLE) $(CHAPTERS)
 		--include-in-header=clean-table-styling.tex \
 		-o /data/$@ $^  --from markdown --template eisvogel --listings --filter pandoc-latex-environment --top-level-division=chapter
 
-# Build book in chunks to avoid memory issues (if needed)
+# Build book in chunks to avoid memory issues with proper TOC
 CHUNK1 = front-matter.md chapters/01-introduction-and-fundamentals.md chapters/02-building-react-applications.md chapters/03-state-and-props.md chapters/04-hooks-and-lifecycle.md
 CHUNK2 = chapters/05-testing-react-components.md chapters/06-performance-optimization.md chapters/07-1-compound-components.md chapters/07-2-render-props.md chapters/07-3-higher-order-components.md
 CHUNK3 = chapters/07-4-context-patterns.md chapters/07-5-advanced-hooks.md chapters/07-6-provider-patterns.md chapters/07-7-error-boundaries.md chapters/07-8-advanced-composition.md
 CHUNK4 = chapters/07-9-performance-optimization.md chapters/07-10-testing-patterns.md chapters/07-11-exercises.md chapters/08-state-management.md
 CHUNK5 = chapters/09-production-deployment.md chapters/09-1-build-optimization.md chapters/09-2-quality-assurance.md chapters/09-3-cicd-pipeline-implementation.md chapters/09-4-hosting-platform-deployment.md chapters/09-5-monitoring-and-observability.md chapters/09-6-operational-excellence.md chapters/10-the-journey-continues.md
 
-eisvogel-chunked: $(BUILD)/eisvogel/$(BOOKNAME)_chunk1.pdf $(BUILD)/eisvogel/$(BOOKNAME)_chunk2.pdf $(BUILD)/eisvogel/$(BOOKNAME)_chunk3.pdf $(BUILD)/eisvogel/$(BOOKNAME)_chunk4.pdf $(BUILD)/eisvogel/$(BOOKNAME)_chunk5.pdf
-	@echo "Combining chunks..."
-	@cpdf $(BUILD)/eisvogel/$(BOOKNAME)_chunk1.pdf $(BUILD)/eisvogel/$(BOOKNAME)_chunk2.pdf $(BUILD)/eisvogel/$(BOOKNAME)_chunk3.pdf $(BUILD)/eisvogel/$(BOOKNAME)_chunk4.pdf $(BUILD)/eisvogel/$(BOOKNAME)_chunk5.pdf -o $(BUILD)/eisvogel/$(BOOKNAME).pdf
-	@echo "Complete book generated at $(BUILD)/eisvogel/$(BOOKNAME).pdf"
+eisvogel-chunked: $(BUILD)/eisvogel/$(BOOKNAME).pdf
+	@echo "Chunked book generated successfully!"
 
-$(BUILD)/eisvogel/$(BOOKNAME)_chunk1.pdf: $(TITLE) $(CHUNK1)
-	mkdir -p $(BUILD)/eisvogel 
-	docker run --rm $(EXTRA_OPTS) --volume `pwd`:/data pandoc/extra --pdf-engine=xelatex --pdf-engine-opt=--interaction=nonstopmode -V toc-title="Content" -V lang=en-GB --include-in-header=clean-table-styling.tex -o /data/$@ $^ --from markdown --template eisvogel --listings --filter pandoc-latex-environment --top-level-division=chapter
+# First generate a lightweight TOC-only document to get proper page structure
+$(BUILD)/eisvogel/toc_reference.pdf: $(TITLE) $(CHAPTERS)
+	mkdir -p $(BUILD)/eisvogel
+	@echo "Generating TOC reference..."
+	docker run --rm $(EXTRA_OPTS) \
+		--volume `pwd`:/data pandoc/extra \
+		--pdf-engine=xelatex \
+		--pdf-engine-opt=--interaction=nonstopmode \
+		--toc --toc-depth=3 \
+		-V toc-title="Table of Contents" \
+		-V lang=en-GB \
+		--include-in-header=clean-table-styling-simple.tex \
+		-o /data/$@ $^ \
+		--from markdown --template eisvogel \
+		--top-level-division=chapter \
+		--pdf-engine-opt=--halt-on-error || echo "TOC reference generated with warnings"
 
-$(BUILD)/eisvogel/$(BOOKNAME)_chunk2.pdf: $(CHUNK2)
+# Build chunks with proper template and page numbering
+$(BUILD)/eisvogel/$(BOOKNAME)_chunk1.pdf: $(TITLE) $(CHUNK1) $(BUILD)/eisvogel/toc_reference.pdf
 	mkdir -p $(BUILD)/eisvogel 
-	docker run --rm $(EXTRA_OPTS) --volume `pwd`:/data pandoc/extra --pdf-engine=xelatex --pdf-engine-opt=--interaction=nonstopmode -V lang=en-GB --include-in-header=clean-table-styling.tex -o /data/$@ $^ --from markdown --template eisvogel --listings --filter pandoc-latex-environment --top-level-division=chapter
+	@echo "Building chunk 1 with front matter..."
+	docker run --rm $(EXTRA_OPTS) \
+		--volume `pwd`:/data pandoc/extra \
+		--pdf-engine=xelatex \
+		--pdf-engine-opt=--interaction=nonstopmode \
+		--toc --toc-depth=3 \
+		-V toc-title="Table of Contents" \
+		-V lang=en-GB \
+		-V book=true \
+		--include-in-header=clean-table-styling.tex \
+		-o /data/$@ $(TITLE) $(CHUNK1) \
+		--from markdown --template eisvogel --listings \
+		--filter pandoc-latex-environment \
+		--top-level-division=chapter
 
-$(BUILD)/eisvogel/$(BOOKNAME)_chunk3.pdf: $(CHUNK3)
+$(BUILD)/eisvogel/$(BOOKNAME)_chunk2.pdf: $(CHUNK2) $(BUILD)/eisvogel/toc_reference.pdf
 	mkdir -p $(BUILD)/eisvogel 
-	docker run --rm $(EXTRA_OPTS) --volume `pwd`:/data pandoc/extra --pdf-engine=xelatex --pdf-engine-opt=--interaction=nonstopmode -V lang=en-GB --include-in-header=clean-table-styling.tex -o /data/$@ $^ --from markdown --template eisvogel --listings --filter pandoc-latex-environment --top-level-division=chapter
+	@echo "Building chunk 2..."
+	docker run --rm $(EXTRA_OPTS) \
+		--volume `pwd`:/data pandoc/extra \
+		--pdf-engine=xelatex \
+		--pdf-engine-opt=--interaction=nonstopmode \
+		-V lang=en-GB \
+		-V book=true \
+		--include-in-header=clean-table-styling.tex \
+		-o /data/$@ $< \
+		--from markdown --template eisvogel --listings \
+		--filter pandoc-latex-environment \
+		--top-level-division=chapter
 
-$(BUILD)/eisvogel/$(BOOKNAME)_chunk4.pdf: $(CHUNK4)
+$(BUILD)/eisvogel/$(BOOKNAME)_chunk3.pdf: $(CHUNK3) $(BUILD)/eisvogel/toc_reference.pdf
 	mkdir -p $(BUILD)/eisvogel 
-	docker run --rm $(EXTRA_OPTS) --volume `pwd`:/data pandoc/extra --pdf-engine=xelatex --pdf-engine-opt=--interaction=nonstopmode -V lang=en-GB --include-in-header=clean-table-styling.tex -o /data/$@ $^ --from markdown --template eisvogel --listings --filter pandoc-latex-environment --top-level-division=chapter
+	@echo "Building chunk 3..."
+	docker run --rm $(EXTRA_OPTS) \
+		--volume `pwd`:/data pandoc/extra \
+		--pdf-engine=xelatex \
+		--pdf-engine-opt=--interaction=nonstopmode \
+		-V lang=en-GB \
+		-V book=true \
+		--include-in-header=clean-table-styling.tex \
+		-o /data/$@ $(CHUNK3) \
+		--from markdown --template eisvogel --listings \
+		--filter pandoc-latex-environment \
+		--top-level-division=chapter
 
-$(BUILD)/eisvogel/$(BOOKNAME)_chunk5.pdf: $(CHUNK5)
+$(BUILD)/eisvogel/$(BOOKNAME)_chunk4.pdf: $(CHUNK4) $(BUILD)/eisvogel/toc_reference.pdf
 	mkdir -p $(BUILD)/eisvogel 
-	docker run --rm $(EXTRA_OPTS) --volume `pwd`:/data pandoc/extra --pdf-engine=xelatex --pdf-engine-opt=--interaction=nonstopmode -V lang=en-GB --include-in-header=clean-table-styling.tex -o /data/$@ $^ --from markdown --template eisvogel --listings --filter pandoc-latex-environment --top-level-division=chapter
+	@echo "Building chunk 4..."
+	docker run --rm $(EXTRA_OPTS) \
+		--volume `pwd`:/data pandoc/extra \
+		--pdf-engine=xelatex \
+		--pdf-engine-opt=--interaction=nonstopmode \
+		-V lang=en-GB \
+		-V book=true \
+		--include-in-header=clean-table-styling.tex \
+		-o /data/$@ $(CHUNK4) \
+		--from markdown --template eisvogel --listings \
+		--filter pandoc-latex-environment \
+		--top-level-division=chapter
+
+$(BUILD)/eisvogel/$(BOOKNAME)_chunk5.pdf: $(CHUNK5) $(BUILD)/eisvogel/toc_reference.pdf
+	mkdir -p $(BUILD)/eisvogel 
+	@echo "Building chunk 5..."
+	docker run --rm $(EXTRA_OPTS) \
+		--volume `pwd`:/data pandoc/extra \
+		--pdf-engine=xelatex \
+		--pdf-engine-opt=--interaction=nonstopmode \
+		-V lang=en-GB \
+		-V book=true \
+		--include-in-header=clean-table-styling.tex \
+		-o /data/$@ $(CHUNK5) \
+		--from markdown --template eisvogel --listings \
+		--filter pandoc-latex-environment \
+		--top-level-division=chapter
+
+# Combine all chunks into final PDF using cpdf (maintaining bookmarks)
+$(BUILD)/eisvogel/$(BOOKNAME).pdf: $(BUILD)/eisvogel/$(BOOKNAME)_chunk1.pdf $(BUILD)/eisvogel/$(BOOKNAME)_chunk2.pdf $(BUILD)/eisvogel/$(BOOKNAME)_chunk3.pdf $(BUILD)/eisvogel/$(BOOKNAME)_chunk4.pdf $(BUILD)/eisvogel/$(BOOKNAME)_chunk5.pdf
+	@echo "Combining chunks into final PDF..."
+	@if command -v cpdf >/dev/null 2>&1; then \
+		cpdf $(BUILD)/eisvogel/$(BOOKNAME)_chunk1.pdf $(BUILD)/eisvogel/$(BOOKNAME)_chunk2.pdf $(BUILD)/eisvogel/$(BOOKNAME)_chunk3.pdf $(BUILD)/eisvogel/$(BOOKNAME)_chunk4.pdf $(BUILD)/eisvogel/$(BOOKNAME)_chunk5.pdf -o $(BUILD)/eisvogel/$(BOOKNAME).pdf; \
+		echo "Complete book generated at $(BUILD)/eisvogel/$(BOOKNAME).pdf"; \
+	else \
+		echo "cpdf not found. Trying alternative merge..."; \
+		gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=$(BUILD)/eisvogel/$(BOOKNAME).pdf $(BUILD)/eisvogel/$(BOOKNAME)_chunk1.pdf $(BUILD)/eisvogel/$(BOOKNAME)_chunk2.pdf $(BUILD)/eisvogel/$(BOOKNAME)_chunk3.pdf $(BUILD)/eisvogel/$(BOOKNAME)_chunk4.pdf $(BUILD)/eisvogel/$(BOOKNAME)_chunk5.pdf; \
+		echo "Complete book generated at $(BUILD)/eisvogel/$(BOOKNAME).pdf (using Ghostscript)"; \
+	fi
+
 test-chapters: $(BUILD)/eisvogel/$(BOOKNAME)_test.pdf
 
 $(BUILD)/eisvogel/$(BOOKNAME)_test.pdf: $(TITLE) chapters/01-introduction-and-fundamentals.md chapters/02-building-react-applications.md chapters/03-state-and-props.md
@@ -192,9 +278,12 @@ add_cover: $(BUILD)/eisvogel/$(BOOKNAME).pdf
 # Help target
 help:
 	@echo "Available targets:"
-	@echo "  eisvogel-simple  - Build PDF using basic Eisvogel template (default)"
-	@echo "  eisvogel         - Build PDF using full-featured Eisvogel template"
+	@echo "  eisvogel         - Build complete PDF using full-featured Eisvogel template (may hit memory limits)"
+	@echo "  eisvogel-chunked - Build PDF in chunks to avoid memory issues (recommended for complete book)"
+	@echo "  eisvogel-simple  - Build PDF using basic Eisvogel template"
+	@echo "  test-chapters    - Build a test PDF with just the first few chapters"
 	@echo "  add_cover        - Add front and back covers to existing PDF"
-	@echo "  merge-pdfs       - Helper target for merging multiple PDFs"
 	@echo "  clean            - Remove build directory"
-	@echo "  all              - Build eisvogel-simple PDF (default)"
+	@echo "  all              - Build eisvogel PDF (default)"
+	@echo ""
+	@echo "For memory-constrained builds, use: make eisvogel-chunked"

@@ -1,4 +1,4 @@
-# Performance Optimization Patterns and Strategies
+# Performance optimization patterns and strategies
 
 Performance optimization represents a critical aspect of sophisticated React application development. These patterns enable applications to render extensive datasets efficiently, handle frequent updates without interface degradation, and maintain responsiveness under demanding user interactions and complex state changes.
 
@@ -14,7 +14,7 @@ Performance patterns must balance optimization benefits with code complexity and
 Performance optimization should always be driven by actual measurements rather than assumptions. Advanced performance patterns are powerful tools, but they add complexity to your codebase. Apply them judiciously where they provide meaningful benefits, and always validate their impact with real performance metrics.
 :::
 
-## Virtual Scrolling and Windowing Implementation
+## Virtual scrolling and windowing implementation
 
 Virtual scrolling patterns enable efficient rendering of large datasets by rendering only visible items and maintaining the illusion of complete lists through strategic positioning and event handling mechanisms.
 

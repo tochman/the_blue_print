@@ -1,4 +1,4 @@
-# Advanced Custom Hook Patterns
+# Advanced custom hook patterns
 
 Custom hooks represent the pinnacle of React's composability philosophy. While basic custom hooks provide foundational reusability, advanced custom hook patterns enable sophisticated architectural solutions that manage state machines, coordinate complex asynchronous operations, and serve as comprehensive abstraction layers for application logic.
 
@@ -7,7 +7,7 @@ The true power of custom hooks emerges through their composability and architect
 ::: important
 **Hooks as Architectural Boundaries**
 
-Advanced custom hooks function as more than state management tools—they serve as architectural boundaries that encapsulate business logic, coordinate side effects, and provide stable interfaces between components and complex application concerns. Well-designed hooks can eliminate the need for external state management libraries in many scenarios.
+Advanced custom hooks function as more than state management tools. They serve as architectural boundaries that encapsulate business logic, coordinate side effects, and provide stable interfaces between components and complex application concerns. Well-designed hooks can eliminate the need for external state management libraries in many scenarios.
 :::
 
 ## State Machine Patterns with Custom Hooks

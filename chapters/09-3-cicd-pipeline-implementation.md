@@ -1,8 +1,8 @@
-# CI/CD Pipeline Implementation: Your Code's Journey to Production
+# CI/CD pipeline implementation: your code's journey to production
 
-Picture this: You've just fixed a critical bug in your React application. In the old days, this meant manually building the project, running tests, uploading files to a server, and hoping nothing breaks. With CI/CD pipelines, you simply push your code to a branch, and within minutes, your fix is automatically tested, built, and deployed to production—safely and reliably.
+Picture this: You've just fixed a critical bug in your React application. In the old days, this meant manually building the project, running tests, uploading files to a server, and hoping nothing breaks. With CI/CD pipelines, you simply push your code to a branch, and within minutes, your fix is automatically tested, built, and deployed to production safely and reliably.
 
-CI/CD (Continuous Integration/Continuous Deployment) is like having a smart, reliable assistant that never sleeps. This assistant takes your code changes, runs all your tests, checks for quality issues, builds your application, and deploys it to the right environment—all without human intervention.
+CI/CD (Continuous Integration/Continuous Deployment) is like having a smart, reliable assistant that never sleeps. This assistant takes your code changes, runs all your tests, checks for quality issues, builds your application, and deploys it to the right environment, all without human intervention.
 
 ## Why CI/CD Transforms How Teams Ship Software
 
@@ -23,7 +23,7 @@ After implementing a proper CI/CD pipeline, they went from weekly deployments to
 ::: important
 **The CI/CD Mindset**
 
-CI/CD isn't just about automation—it's about building a culture of quality and reliability. The goal is to make deployment so routine and reliable that it becomes boring. When deployment is boring, you can focus on building features instead of managing deployment anxiety.
+CI/CD isn't just about automation. It's about building a culture of quality and reliability. The goal is to make deployment so routine and reliable that it becomes boring. When deployment is boring, you can focus on building features instead of managing deployment anxiety.
 
 **Key principle**: Small, frequent changes are safer and more manageable than large, infrequent releases.
 :::

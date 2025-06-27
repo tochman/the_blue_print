@@ -1,4 +1,4 @@
-# Error Boundaries and Resilient Error Handling
+# Error boundaries and resilient error handling
 
 Error boundaries represent one of React's most critical architectural patterns for building resilient applications. While error handling may not be the most exciting development topic, it distinguishes professional applications from experimental projects and ensures positive user experiences when inevitable failures occur.
 
@@ -7,12 +7,12 @@ Effective error handling transforms potentially catastrophic failures into manag
 ::: important
 **Error Boundaries as Application Resilience**
 
-Error boundaries provide React's mechanism for graceful failure handling—when components fail, error boundaries prevent application crashes by displaying fallback interfaces instead of blank screens. Advanced error handling patterns combine error boundaries with monitoring systems, retry logic, and fallback strategies to create robust error management architectures.
+Error boundaries provide React's mechanism for graceful failure handling. When components fail, error boundaries prevent application crashes by displaying fallback interfaces instead of blank screens. Advanced error handling patterns combine error boundaries with monitoring systems, retry logic, and fallback strategies to create robust error management architectures.
 :::
 
 Modern React applications require comprehensive error handling strategies that gracefully degrade functionality, provide meaningful user feedback, and maintain application stability even when individual features fail. Advanced error handling patterns integrate error boundaries with context providers, custom hooks, and monitoring systems to establish resilient error management architectures.
 
-## Error Boundary Architecture Fundamentals
+## Error boundary architecture fundamentals
 
 Before exploring advanced patterns, understanding error boundary capabilities and limitations proves essential. Error boundaries catch JavaScript errors throughout child component trees, log error details, and display fallback interfaces instead of crashed component hierarchies.
 
@@ -22,7 +22,7 @@ Before exploring advanced patterns, understanding error boundary capabilities an
 Error boundaries do not catch errors inside event handlers, asynchronous code (e.g., `setTimeout` or `requestAnimationFrame` callbacks), or errors thrown during server-side rendering. For these scenarios, additional error handling strategies are required.
 :::
 
-## Advanced Error Boundary Implementation Patterns
+## Advanced error boundary implementation patterns
 
 Modern error boundaries extend beyond simple try-catch wrappers to provide comprehensive error management with retry logic, fallback strategies, and integrated error reporting capabilities.
 
@@ -293,7 +293,7 @@ function PracticeErrorBoundary({ children, feature }) {
 ```
 :::
 
-## Implementing Context-Based Error Management
+## Implementing context-based error management
 
 Context patterns can create application-wide error management systems that coordinate error handling across different features and provide centralized error reporting and recovery.
 
@@ -592,7 +592,7 @@ function PracticeSessionPlayer({ sessionId }) {
 ```
 :::
 
-## Mastering Asynchronous Error Handling
+## Mastering asynchronous error handling
 
 Modern React applications heavily rely on asynchronous operations, requiring sophisticated patterns for handling async errors, implementing retry logic, and managing loading states with proper error boundaries.
 

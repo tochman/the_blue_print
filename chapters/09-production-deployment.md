@@ -1,4 +1,4 @@
-# Production Deployment: From Development to Real-World Success
+# Production deployment: from development to real-world success
 
 You've built a React application that works beautifully in development. Tests pass, features work as expected, and everything feels ready for users. But there's a crucial gap between "working on your machine" and "working reliably for thousands of users worldwide." This chapter bridges that gap.
 

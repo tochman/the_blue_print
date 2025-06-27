@@ -1,4 +1,4 @@
-# Render Props and Function-as-Children Patterns
+# Render props and function-as-children patterns
 
 Render props are a powerful pattern for sharing logic between components while giving consumers complete control over rendering. Instead of passing data or configuration through props, you pass a function that returns JSX. This approach separates logic from presentation, making your components more reusable and flexible.
 
@@ -121,7 +121,7 @@ function SessionGridView({ userId }) {
 
 The render props pattern allows the same data fetching logic to power completely different presentations. The `SessionDataProvider` component focuses solely on managing the data and state, while the consumer components control how that data is displayed.
 
-## Function-as-Children Pattern
+## Function-as-children pattern
 
 The function-as-children pattern is a specific variant of render props where the render function is passed as the `children` prop. This pattern often feels more natural and readable, especially when the render prop is the only or primary prop.
 
@@ -211,7 +211,7 @@ function CompactTimer() {
 
 This pattern is particularly powerful because the timer logic is completely reusable across different contexts, while each implementation can render the timer information in the way that best fits its specific use case.
 
-## Advanced Render Props Patterns
+## Advanced render props patterns
 
 Render props can be enhanced with additional patterns to handle more complex scenarios:
 
@@ -275,7 +275,7 @@ function SessionManagerApp() {
 ```
 :::
 
-## When to Choose Render Props
+## When to choose render props
 
 Render props are ideal when you need to:
 

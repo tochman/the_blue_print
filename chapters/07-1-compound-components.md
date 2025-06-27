@@ -1,4 +1,4 @@
-# Advanced React Patterns
+# Advanced React patterns
 
 This chapter marks a significant step forward in your React journey. If you've mastered components, state, and hooks, you're ready to explore the advanced patterns that distinguish great React developers. These patterns will help you build applications that scale gracefully, handle complexity elegantly, and impress your peers with their flexibility and maintainability.
 
@@ -10,9 +10,9 @@ These are advanced patterns that even experienced developers sometimes struggle 
 
 As your React applications grow beyond simple todo lists and basic forms, you'll encounter challenges that basic component composition can't solve. Need to share complex logic between components? There's a pattern for that. Want to create components that are flexible enough for a design system but simple enough for junior developers? We've got you covered. Need to coordinate complex state across many components? Let's talk about provider patterns.
 
-## Compound Components: Building Flexible APIs
+## Compound components: building flexible APIs
 
-Compound components are a powerful pattern for building flexible, intuitive APIs. Instead of creating a component with dozens of props to control every detail, you let users compose the component using child components. This approach is like giving someone LEGO blocks instead of a pre-built house—much more flexible and often more intuitive.
+Compound components are a powerful pattern for building flexible, intuitive APIs. Instead of creating a component with dozens of props to control every detail, you let users compose the component using child components. This approach is like giving someone LEGO blocks instead of a pre-built house: much more flexible and often more intuitive.
 
 ::: important
 **The compound component advantage**

@@ -1,6 +1,6 @@
-# Operational Excellence: Building Reliable and Secure React Applications
+# Operational excellence: building reliable and secure React applications
 
-Operational excellence isn't achieved after deployment—it's designed into your application and processes from the beginning. It's the difference between applications that quietly serve users reliably for years and those that require constant firefighting and stress.
+Operational excellence isn't achieved after deployment. It's designed into your application and processes from the beginning. It's the difference between applications that quietly serve users reliably for years and those that require constant firefighting and stress.
 
 This chapter focuses on building operational maturity that grows with your application. You'll learn to think beyond "getting to production" and develop systems that maintain themselves, recover gracefully from problems, and provide the security and reliability your users depend on.
 
@@ -14,7 +14,7 @@ Consider two React applications launched simultaneously. Both pass their tests, 
 
 **Application B** runs smoothly with minimal intervention, automatically handles traffic spikes, detects and resolves issues before users notice, and the team focuses on delivering value to users.
 
-The difference isn't luck—it's operational excellence designed from the start.
+The difference isn't luck. It's operational excellence designed from the start.
 
 ### What Operational Excellence Actually Means
 

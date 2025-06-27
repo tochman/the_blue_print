@@ -1,4 +1,4 @@
-# Advanced Component Composition Techniques
+# Advanced component composition techniques
 
 Advanced composition techniques represent the sophisticated edge of React component architecture. These patterns transform component composition from basic JSX assembly into a refined architectural discipline that enables incredibly flexible systems while maintaining code clarity and maintainability.
 
@@ -14,7 +14,7 @@ Modern React applications benefit from composition patterns that cleanly separat
 Advanced composition patterns favor flexible component assembly over rigid configuration approaches. By creating composable building blocks, you can construct complex interfaces from simple, well-tested components while maintaining the ability to customize behavior at any level of the component hierarchy.
 :::
 
-## Slot-Based Composition Architecture
+## Slot-based composition architecture
 
 Slot-based composition provides a powerful alternative to traditional prop-based customization, enabling components to accept complex, nested content while maintaining clean interfaces and predictable behavior patterns.
 

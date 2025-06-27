@@ -1,4 +1,4 @@
-# Practical Implementation Exercises
+# Practical implementation exercises
 
 These hands-on exercises provide opportunities to implement the advanced patterns covered throughout this chapter. Each exercise challenges you to apply theoretical concepts in practical scenarios, deepening your understanding of when and how to use these sophisticated React patterns effectively.
 
@@ -6,7 +6,7 @@ These exercises are designed to be challenging and comprehensive. They require g
 
 Focus on exercises that align with problems you're currently facing in your projects. If complex notification systems aren't immediately relevant, prioritize state management or provider pattern exercises instead. These patterns are architectural tools, and tools are best mastered when you have genuine use cases for applying them.
 
-## Exercise 1: Compound Notification System
+## Exercise 1: compound notification system
 
 Create a sophisticated compound component system for displaying notifications that supports various types, actions, and extensive customization options.
 
