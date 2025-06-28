@@ -1182,7 +1182,10 @@ describe('usePracticeSessions', () => {
 
 Context providers often contain important application state and logic, making them crucial to test. Here's how to approach testing them effectively:
 
-### Testing your context providers {.unnumbered .unlisted}::: example
+### Testing your context providers {.unnumbered .unlisted}
+
+
+::: example
 
 ```jsx
 // PracticeSessionProvider.jsx

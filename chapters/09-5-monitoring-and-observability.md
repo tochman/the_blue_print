@@ -1,4 +1,4 @@
-# Monitoring and observability: understanding your application's real-world performance
+# Monitoring and observability
 
 Picture this scenario: Your React application passes all tests, deploys successfully, and shows green status indicators. Yet users are abandoning shopping carts, reporting slow loading times, and encountering errors you've never seen. The gap between "working in development" and "working for users" is what monitoring and observability help you bridge.
 
@@ -6,7 +6,7 @@ This chapter transforms how you think about application health: from basic uptim
 
 ## The hidden reality of production applications
 
-### When "Working" Isn't Really Working {.unnumbered .unlisted}
+### When "working" isn't really working {.unnumbered .unlisted}
 
 Here's a real-world wake-up call: A successful startup celebrated their React e-commerce platform's 99.9% uptime and perfect test suite. Everything appeared healthy until they implemented comprehensive user monitoring.
 
@@ -20,7 +20,7 @@ Here's a real-world wake-up call: A successful startup celebrated their React e-
 
 The application was technically "up" but functionally broken for many users. This gap between technical metrics and user experience is why monitoring matters.
 
-### From Server-Centric to User-Centric Thinking {.unnumbered .unlisted}
+### From server-centric to user-centric thinking {.unnumbered .unlisted}
 
 Traditional monitoring focuses on infrastructure: "Is the server running?" Modern observability asks better questions: "Are users successful?" This shift changes everything about how you approach application health.
 
@@ -46,11 +46,11 @@ Effective monitoring tells stories about user success, not just system status. Y
 **Core principle**: Observe user journeys, not just system metrics.
 :::
 
-## Building Your Monitoring Strategy: A Decision Framework 
+## Building your monitoring strategy: A decision framework 
 
 Before diving into tools and implementation, you need a clear strategy that matches your application's needs and your team's capacity.
 
-### The Monitoring Maturity Pyramid {.unnumbered .unlisted}
+### The monitoring maturity pyramid {.unnumbered .unlisted}
 
 Think of monitoring capabilities as a pyramid: build strong foundations before adding complexity:
 
@@ -75,7 +75,7 @@ Think of monitoring capabilities as a pyramid: build strong foundations before a
 **Why this progression works:**
  Each layer provides value independently while enabling the next level. You can stop at any layer and still have meaningful monitoring, but each addition compounds the value of previous investments.
 
-### Choosing Your Monitoring Approach {.unnumbered .unlisted}
+### Choosing your monitoring approach {.unnumbered .unlisted}
 
 Different applications need different monitoring strategies. Here's how to decide what's right for your situation:
 
@@ -111,7 +111,7 @@ Throughout this chapter, we'll reference tools like Google Analytics, Sentry, Ne
 The monitoring tool landscape evolves rapidly. What matters most is understanding what each type of monitoring accomplishes, so you can evaluate current options and choose what fits your specific needs, budget, and team expertise. Many tools offer free tiers that let you start small and grow your monitoring sophistication over time.
 :::
 
-### Building Your Monitoring Decision Tree {.unnumbered .unlisted}
+### Building your monitoring decision tree {.unnumbered .unlisted}
 
 Use this framework to determine what monitoring capabilities to implement first:
 
@@ -133,11 +133,11 @@ Use this framework to determine what monitoring capabilities to implement first:
 - Operational efficiency: Monitor system health and team productivity
 - Compliance requirements: Implement audit trails and security monitoring
 
-## Essential Monitoring Categories: What Really Matters
+## Essential monitoring categories: What really matters
 
 Let's explore the key types of monitoring every React application should consider, starting with the most critical and building complexity gradually.
 
-### 1. Error Detection and Tracking {.unnumbered .unlisted}
+### 1. Error detection and tracking {.unnumbered .unlisted}
 
 **Why it's critical:**
  If users encounter errors and you don't know about them, you can't fix them. Error tracking is your safety net for maintaining application quality.
@@ -163,7 +163,7 @@ Let's explore the key types of monitoring every React application should conside
 3. **Enhance reporting**: Add error categorization and impact metrics
 4. **Optimize response**: Create automated alerts and resolution workflows
 
-### 2. Performance Monitoring {.unnumbered .unlisted}
+### 2. Performance monitoring {.unnumbered .unlisted}
 
 **Why it matters:**
  Performance directly affects user experience, conversion rates, and business success. Slow applications lose users, regardless of functionality.
@@ -188,7 +188,7 @@ Let's explore the key types of monitoring every React application should conside
 3. **Optimization**: Implement performance budgets and regression detection
 4. **Advanced**: Create custom performance metrics for your specific application
 
-### 3. User Experience and Behavior Monitoring {.unnumbered .unlisted}
+### 3. User experience and behavior monitoring {.unnumbered .unlisted}
 
 **Why it's valuable:**
  Understanding how users actually interact with your application helps you identify improvement opportunities and validate design decisions.
@@ -207,7 +207,7 @@ Let's explore the key types of monitoring every React application should conside
 - Technical performance impact on business metrics
 - User satisfaction and retention patterns
 
-### 4. Application Health and Availability {.unnumbered .unlisted}
+### 4. Application health and availability {.unnumbered .unlisted}
 
 **Why it's fundamental:**
  While user-centric metrics are crucial, you still need to ensure your application's basic infrastructure is healthy.
@@ -219,9 +219,9 @@ Let's explore the key types of monitoring every React application should conside
 - Database performance and connectivity
 - Third-party service dependencies
 
-## Implementing Monitoring: A Practical Approach
+## Implementing monitoring: A practical approach
 
-### Starting with Error Tracking {.unnumbered .unlisted}
+### Starting with error tracking {.unnumbered .unlisted}
 
 The most important monitoring you can implement is error detection. Here's a practical approach to get meaningful error insights quickly:
 
@@ -263,7 +263,7 @@ class ErrorBoundary extends React.Component {
 - Gives users a graceful error experience
 - Integrates easily with external monitoring services
 
-### Progressive Performance Monitoring {.unnumbered .unlisted}
+### Progressive performance monitoring {.unnumbered .unlisted}
 
 Start with browser-native performance APIs, then enhance based on your needs:
 
@@ -295,9 +295,9 @@ window.addEventListener('load', () => {
 - Easy integration with monitoring services
 - Immediate feedback on performance changes
 
-## Troubleshooting Common Monitoring Challenges
+## Troubleshooting common monitoring challenges
 
-### Challenge: Alert Fatigue and Noise {.unnumbered .unlisted}
+### Challenge: Alert fatigue and noise {.unnumbered .unlisted}
 
 **Problem**: Too many alerts make it hard to identify real issues.
 
@@ -310,7 +310,7 @@ window.addEventListener('load', () => {
 
 **Practical approach**: Start with fewer, high-impact alerts. Add more specific monitoring as you understand your application's normal behavior patterns.
 
-### Challenge: Performance Monitoring Overhead {.unnumbered .unlisted}
+### Challenge: Performance monitoring overhead {.unnumbered .unlisted}
 
 **Problem**: Monitoring itself impacts application performance.
 
@@ -323,7 +323,7 @@ window.addEventListener('load', () => {
 
 **Balance strategy**: The insights from monitoring should significantly outweigh the performance cost. If monitoring noticeably slows your application, you're over-monitoring.
 
-### Challenge: Data Privacy and Compliance {.unnumbered .unlisted}
+### Challenge: Data privacy and compliance {.unnumbered .unlisted}
 
 **Problem**: Monitoring can inadvertently collect sensitive user information.
 
@@ -336,7 +336,7 @@ window.addEventListener('load', () => {
 
 **Best practice**: Design monitoring with privacy-by-default principles. Collect the minimum data needed for actionable insights.
 
-### Challenge: Making Monitoring Data Actionable {.unnumbered .unlisted}
+### Challenge: Making monitoring data actionable {.unnumbered .unlisted}
 
 **Problem**: Having lots of monitoring data but struggling to use it effectively.
 
@@ -349,9 +349,9 @@ window.addEventListener('load', () => {
 
 **Key mindset**: Every piece of monitoring data should either help you make a decision or improve user experience. If it doesn't, consider whether you need to collect it.
 
-## Choosing and Implementing Monitoring Tools
+## Choosing and implementing monitoring tools
 
-### Evaluation Framework for Monitoring Tools {.unnumbered .unlisted}
+### Evaluation framework for monitoring tools {.unnumbered .unlisted}
 
 When selecting monitoring solutions, consider these factors:
 
@@ -376,7 +376,7 @@ When selecting monitoring solutions, consider these factors:
 - Customization options for advanced needs
 - Migration path if you outgrow the tool
 
-### Popular Monitoring Tool Categories {.unnumbered .unlisted}
+### Popular monitoring tool categories {.unnumbered .unlisted}
 
 **All-in-One Application Performance Monitoring (APM):**
 
@@ -406,7 +406,7 @@ When selecting monitoring solutions, consider these factors:
 - Strengths: Maximum customization, cost control
 - Considerations: Higher setup complexity, ongoing maintenance
 
-### Implementation Best Practices {.unnumbered .unlisted}
+### Implementation best practices {.unnumbered .unlisted}
 
 **Start Small and Grow:**
 
@@ -429,7 +429,7 @@ When selecting monitoring solutions, consider these factors:
 - Create backup plans for monitoring service outages
 - Regular review and cleanup of unused monitoring configurations
 
-## Summary: Building Effective Application Observability
+## Summary: Building effective application observability
 
 Monitoring and observability transform your React application from a black box into a transparent, continuously improving system. The key to success is starting with clear goals, implementing monitoring progressively, and always connecting technical metrics to user experience and business outcomes.
 
@@ -458,11 +458,11 @@ Remember that monitoring tools and technologies will continue to evolve, but the
 
 The investment you make in proper monitoring pays dividends in application reliability, user satisfaction, and team confidence. Start with the basics, iterate based on what you learn, and build monitoring systems that help your React applications truly succeed in the real world.
 
-## Understanding What Matters: A Monitoring Strategy
+## Understanding what matters: A monitoring strategy
 
 Before implementing monitoring tools, you need to understand what actually matters for your specific application and users.
 
-### The User Experience Monitoring Pyramid {.unnumbered .unlisted}
+### The user experience monitoring pyramid {.unnumbered .unlisted}
 
 Just like testing, monitoring should follow a pyramid structure: more basic checks at the bottom, fewer complex checks at the top:
 
@@ -490,7 +490,7 @@ Just like testing, monitoring should follow a pyramid structure: more basic chec
 Basic functionality monitoring catches the big problems quickly and cheaply. Performance monitoring helps you understand user experience. Business monitoring connects technical metrics to actual impact. This layered approach prevents alert fatigue while ensuring important issues get attention.
 :::
 
-### Building Your Monitoring Decision Framework {.unnumbered .unlisted}
+### Building your monitoring decision framework {.unnumbered .unlisted}
 
 Not every application needs the same monitoring approach. Here's how to decide what matters for your situation:
 
@@ -520,11 +520,11 @@ Throughout this chapter, we'll mention specific tools like Google Analytics, Sen
 Many monitoring tools offer free tiers that let you start small and grow. The key is understanding what each type of monitoring accomplishes so you can choose the right approach for your needs.
 :::
 
-## Getting Started: Essential Monitoring for React Applications
+## Getting started: Essential monitoring for React applications
 
 Let's implement basic but effective monitoring step by step, starting with the most important insights and building from there.
 
-### Step 1: Error Tracking - Know When Things Break {.unnumbered .unlisted}
+### Step 1: Error tracking - Know when things break {.unnumbered .unlisted}
 
 Error tracking is the most important monitoring you can implement. If users encounter errors and you don't know about them, you can't fix them.
 
@@ -670,11 +670,11 @@ export default ErrorBoundary
 - Easy to extend with additional monitoring services
 :::
 
-### Step 2: Performance Monitoring - Understand User Experience {.unnumbered .unlisted}
+### Step 2: Performance monitoring - Understand user experience {.unnumbered .unlisted}
 
 Performance monitoring helps you understand how your application actually feels to users, not just how fast it loads in ideal conditions.
 
-### Real User Monitoring (RUM) {.unnumbered .unlisted}
+### Real user monitoring (RUM) {.unnumbered .unlisted}
 
 Implement comprehensive user experience monitoring:
 
@@ -922,7 +922,7 @@ export const performanceMonitor = new PerformanceMonitor()
 ```
 :::
 
-### Component Performance Tracking {.unnumbered .unlisted}
+### Component performance tracking {.unnumbered .unlisted}
 
 Monitor React component performance and rendering patterns:
 
@@ -1075,11 +1075,11 @@ export function usePerformanceTracking(componentName) {
 ```
 :::
 
-## Error Tracking and Monitoring
+## Error tracking and monitoring
 
 Implement comprehensive error tracking systems that capture, categorize, and alert on application errors.
 
-### Advanced Error Boundary Implementation {.unnumbered .unlisted}
+### Advanced error boundary implementation {.unnumbered .unlisted}
 
 Create robust error boundaries with detailed error reporting:
 
@@ -1329,7 +1329,7 @@ export const SentryErrorBoundary = Sentry.withErrorBoundary(ErrorBoundary, {
 ```
 :::
 
-### Unhandled Error Monitoring {.unnumbered .unlisted}
+### Unhandled error monitoring {.unnumbered .unlisted}
 
 Capture and report unhandled errors and promise rejections:
 
@@ -1578,11 +1578,11 @@ export const globalErrorHandler = new GlobalErrorHandler()
 ```
 :::
 
-## User Analytics and Behavior Monitoring
+## User analytics and behavior monitoring
 
 Track user interactions, feature usage, and application performance from the user perspective.
 
-### Comprehensive User Analytics {.unnumbered .unlisted}
+### Comprehensive user analytics {.unnumbered .unlisted}
 
 Implement detailed user behavior tracking:
 

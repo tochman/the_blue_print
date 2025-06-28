@@ -20,11 +20,14 @@ The problem wasn't the React code. It was that the development version included 
 - **Professional credibility**: Fast apps feel professional; slow apps feel broken
 
 ::: important
+
 **The Optimization Mindset**
 
 Build optimization isn't about following a checklist. It's about understanding your users' needs and your application's requirements. Every optimization decision should be based on real performance data, not assumptions. Some optimizations that help one app might hurt another.
 
-**Key principle**: Measure first, optimize second, validate third.
+**Key principle:**
+
+Measure first, optimize second, validate third.
 :::
 
 ## Understanding the build process: From development to production

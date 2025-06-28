@@ -4,9 +4,9 @@ Operational excellence isn't achieved after deployment. It's designed into your 
 
 This chapter focuses on building operational maturity that grows with your application. You'll learn to think beyond "getting to production" and develop systems that maintain themselves, recover gracefully from problems, and provide the security and reliability your users depend on.
 
-## Understanding Operational Excellence
+## Understanding operational excellence 
 
-### The Hidden Costs of Poor Operations
+### The hidden costs of poor operations {.unnumbered .unlisted}
 
 Consider two React applications launched simultaneously. Both pass their tests, deploy successfully, and serve initial users well. Six months later:
 
@@ -16,7 +16,7 @@ Consider two React applications launched simultaneously. Both pass their tests, 
 
 The difference isn't luck. It's operational excellence designed from the start.
 
-### What Operational Excellence Actually Means
+### What operational excellence actually means {.unnumbered .unlisted}
 
 Operational excellence encompasses four core areas that work together to create reliable, secure, and maintainable applications:
 
@@ -40,11 +40,11 @@ Think of operational excellence as building a car versus building a race car. A 
 Operational excellence prioritizes long-term sustainability over short-term speed. Every decision considers: "How will this choice affect our ability to operate this application successfully over the next two years?"
 :::
 
-## Building Security Into Your React Applications
+## Building security into your React applications
 
 Security isn't a feature you add later — it's a foundation you build upon. Modern React applications face diverse security challenges, from client-side vulnerabilities to data protection requirements.
 
-### Understanding the React Security Landscape
+### Understanding the React security landscape {.unnumbered .unlisted}
 
 **Client-side security challenges:**
 
@@ -62,7 +62,7 @@ Security isn't a feature you add later — it's a foundation you build upon. Mod
 - Secure communication with external services
 - User data privacy and compliance requirements
 
-### The Security Maturity Path
+### The security maturity path {.unnumbered .unlisted}
 
 **Foundation Level: Essential Protection**
 - Content Security Policy (CSP) implementation
@@ -82,7 +82,7 @@ Security isn't a feature you add later — it's a foundation you build upon. Mod
 - Compliance framework implementation
 - Advanced threat detection and response
 
-### Practical Security Implementation
+### Practical security implementation {.unnumbered .unlisted}
 
 **Content Security Policy: Your First Line of Defense**
 
@@ -132,7 +132,7 @@ Implement secure authentication patterns that protect user accounts:
 - Add multi-factor authentication for sensitive operations
 - Use secure password requirements and storage
 
-### Security Decision Framework
+### Security decision framework {.unnumbered .unlisted}
 
 When making security decisions, consider these factors:
 
@@ -149,11 +149,11 @@ When making security decisions, consider these factors:
 2. **High-impact, moderate-effort**: Authentication security, API protection
 3. **Lower-impact, high-effort**: Advanced monitoring, compliance frameworks
 
-## Disaster Recovery and Business Continuity
+## Disaster recovery and business continuity
 
 Disaster recovery isn't just about server failures—it's about maintaining service when things go wrong, whether that's a cloud provider outage, a critical bug, or a security incident.
 
-### Understanding Recovery Scenarios
+### Understanding recovery scenarios {.unnumbered .unlisted}
 
 **Infrastructure Failures:**
 
@@ -176,7 +176,7 @@ Disaster recovery isn't just about server failures—it's about maintaining serv
 - Team member unavailability during critical issues
 - Communication and coordination breakdowns
 
-### Building Recovery Capability
+### Building recovery capability {.unnumbered .unlisted}
 
 **Recovery Time Objectives (RTO) and Recovery Point Objectives (RPO)**
 
@@ -191,7 +191,7 @@ Define clear expectations for how quickly you can recover from different types o
 - **Business applications**: RTO 1 hour, RPO 15 minutes  
 - **Critical business applications**: RTO 15 minutes, RPO 5 minutes
 
-### Practical Recovery Planning
+### Practical recovery planning {.unnumbered .unlisted}
 
 **Backup Strategy Implementation:**
 
@@ -214,7 +214,7 @@ Define clear expectations for how quickly you can recover from different types o
 - Stakeholder notification procedures
 - Post-incident review and improvement processes
 
-### Recovery Decision Framework
+### Recovery decision framework {.unnumbered .unlisted}
 
 **Immediate Response (0-15 minutes):**
 
@@ -237,11 +237,11 @@ Define clear expectations for how quickly you can recover from different types o
 - Update procedures based on lessons learned
 - Improve monitoring and prevention capabilities
 
-## Scaling and Performance Operations
+## Scaling and performance operations 
 
 Operational excellence includes ensuring your application performs well as it grows, both in terms of user load and application complexity.
 
-### Understanding Performance at Scale
+### Understanding performance at scale {.unnumbered .unlisted}
 
 **Traffic Scaling Challenges:**
 
@@ -257,7 +257,7 @@ Operational excellence includes ensuring your application performs well as it gr
 - State management performance at scale
 - User experience consistency across different usage patterns
 
-### Performance Monitoring and Optimization
+### Performance Monitoring and Optimization {.unnumbered .unlisted}
 
 **Key Performance Metrics:**
 
@@ -273,7 +273,7 @@ Operational excellence includes ensuring your application performs well as it gr
 - A/B testing for performance improvements
 - Performance regression detection in CI/CD
 
-### Capacity Planning and Auto-scaling
+### Capacity Planning and Auto-scaling {.unnumbered .unlisted}
 
 **Infrastructure Scaling Strategies:**
 
@@ -289,9 +289,9 @@ Operational excellence includes ensuring your application performs well as it gr
 - Progressive enhancement for different device capabilities
 - Feature flag systems for gradual rollouts
 
-## Troubleshooting Common Operational Challenges
+## Troubleshooting common operational challenges
 
-### Challenge: Balancing Security and User Experience
+### Challenge: Balancing security and user experience {.unnumbered .unlisted}
 
 **Problem**: Security measures can impact application performance and user experience.
 
@@ -304,7 +304,7 @@ Operational excellence includes ensuring your application performs well as it gr
 
 **Practical approach**: Start with essential security measures, then add more sophisticated protections as you understand their impact on your specific application and users.
 
-### Challenge: Managing Operational Complexity
+### Challenge: Managing operational complexity {.unnumbered .unlisted}
 
 **Problem**: As applications grow, operational complexity can overwhelm teams.
 
@@ -317,7 +317,7 @@ Operational excellence includes ensuring your application performs well as it gr
 
 **Balance strategy**: Focus on automating the operations that happen frequently and cause the most team stress. Manual procedures are acceptable for rare events.
 
-### Challenge: Keeping Security Up to Date
+### Challenge: Keeping security up to date {.unnumbered .unlisted}
 
 **Problem**: Security landscape changes rapidly, making it hard to stay current.
 
@@ -330,7 +330,7 @@ Operational excellence includes ensuring your application performs well as it gr
 
 **Maintenance approach**: Build security review into your regular development workflow rather than treating it as a separate concern.
 
-### Challenge: Incident Response and Learning
+### Challenge: Incident response and learning {.unnumbered .unlisted}
 
 **Problem**: When things go wrong, teams focus on immediate fixes rather than long-term improvements.
 
@@ -343,9 +343,9 @@ Operational excellence includes ensuring your application performs well as it gr
 
 **Growth mindset**: Treat incidents as learning opportunities that make your systems and team stronger over time.
 
-## Building Operational Maturity
+## Building operational maturity
 
-### The Operational Maturity Journey
+### The operational maturity journey {.unnumbered .unlisted}
 
 **Level 1: Reactive Operations**
 - Manual deployments and monitoring
@@ -371,7 +371,7 @@ Operational excellence includes ensuring your application performs well as it gr
 - Advanced analytics and optimization
 - Operational excellence as a team capability
 
-### Choosing Your Operational Investment
+### Choosing your operational investment {.unnumbered .unlisted}
 
 **For Individual Projects and Learning:**
 
@@ -394,7 +394,7 @@ Operational excellence includes ensuring your application performs well as it gr
 - Create dedicated operational processes and tools
 - Build operational expertise as a team capability
 
-## Summary: Sustainable Operational Excellence
+## Summary: Sustainable operational excellence
 
 Operational excellence is a journey, not a destination. It's about building systems and processes that enable your React application to serve users reliably over time while allowing your team to focus on delivering value rather than fighting fires.
 
@@ -423,11 +423,11 @@ Remember that operational excellence tools and best practices continue to evolve
 
 The investment you make in operational excellence compounds over time—every hour spent building better operations saves multiple hours of future incident response and enables your team to move faster with confidence.
 
-## Security Best Practices
+## Security best practices
 
 Implement comprehensive security frameworks that protect React applications, user data, and infrastructure from evolving threats.
 
-### Content Security Policy (CSP) Implementation {.unnumbered .unlisted}
+### Content Security Policy (CSP) implementation {.unnumbered .unlisted}
 
 Establish robust CSP configurations that prevent XSS attacks and unauthorized resource loading:
 
@@ -569,7 +569,7 @@ export class CSPNoncePlugin {
 ```
 :::
 
-### Environment Security Configuration {.unnumbered .unlisted}
+### Environment security configuration {.unnumbered .unlisted}
 
 Implement secure environment variable management and secret handling:
 
@@ -766,7 +766,7 @@ export const secretManager = new SecretManager()
 ```
 :::
 
-### API Security Implementation {.unnumbered .unlisted}
+### API security implementation {.unnumbered .unlisted}
 
 Secure API communications and implement proper authentication/authorization:
 
@@ -1000,11 +1000,11 @@ export function protectEndpoint(options = {}) {
 ```
 :::
 
-## Disaster Recovery and Backup Strategies
+## Disaster recovery and backup strategies
 
 Implement comprehensive backup and recovery procedures that ensure rapid restoration of service in case of failures.
 
-### Automated Backup Systems {.unnumbered .unlisted}
+### Automated backup systems {.unnumbered .unlisted}
 
 Establish automated backup procedures for application data and configurations:
 
@@ -1362,7 +1362,7 @@ export const backupManager = new BackupManager()
 ```
 :::
 
-### Disaster Recovery Procedures {.unnumbered .unlisted}
+### Disaster recovery procedures {.unnumbered .unlisted}
 
 Implement comprehensive disaster recovery planning and automated failover systems:
 

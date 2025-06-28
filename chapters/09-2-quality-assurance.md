@@ -1,4 +1,4 @@
-# Quality assurance: building confidence in your code
+# Quality assurance
 
 Imagine shipping a beautifully designed React application to production, only to discover that it crashes on Internet Explorer, fails for users with disabilities, or has a security vulnerability that exposes user data. Quality assurance isn't just about finding bugs. It's about building systems that give you confidence your application will work reliably for all your users.
 
