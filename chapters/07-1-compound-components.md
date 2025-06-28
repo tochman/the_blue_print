@@ -42,7 +42,7 @@ Consider how a practice session player might work with compound components:
 
 The compound component version is more verbose but provides much greater flexibility. Users can rearrange components, omit pieces they don't need, and the intent is clear from the JSX structure.
 
-### Implementing Compound Components with Context {.unnumbered .unlisted}
+### Implementing compound components with Context {.unnumbered .unlisted}
 
 The most robust way to implement compound components is using React Context to share state between the parent and child components. This allows the child components to access shared state without prop drilling.
 
@@ -257,7 +257,7 @@ This implementation demonstrates several key aspects of compound components:
 - **Clean APIs**: Each component has a focused responsibility.
 - **Type safety**: The custom hook ensures components are used within the correct context.
 
-### When to Use Compound Components {.unnumbered .unlisted}
+### When to use compound components {.unnumbered .unlisted}
 
 Compound components are ideal for UI elements with multiple related parts that users may want to customize or rearrange. They are especially effective for:
 

@@ -998,7 +998,7 @@ describe('usePracticeTimer', () => {
     expect(screen.getByText('Start')).toBeInTheDocument();
 });
 
-### Testing Custom Hooks: When Components Need Help {.unnumbered .unlisted}
+### Testing custom hooks: When components need help {.unnumbered .unlisted}
 
 Testing custom hooks requires a different approach since hooks can't be called outside of components. Let's explore testing strategies with our `usePracticeSessions` hook:
   const [sessions, setSessions] = useState([]);

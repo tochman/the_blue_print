@@ -10,7 +10,7 @@ Dependency injection is a design pattern where objects receive their dependencie
 Context excels at resolving the "prop drilling" problem where props must traverse multiple component levels to reach deeply nested children. However, Context requires judicious application. Not every shared state warrants Context usage. Consider Context when you have genuinely application-wide concerns or when prop drilling becomes architecturally unwieldy.
 :::
 
-## Traditional Dependency Injection with Context
+## Traditional dependency injection with Context
 
 Consider how a music practice application might inject various services throughout the component tree:
 
@@ -80,7 +80,7 @@ function PracticeHistory() {
 ```
 :::
 
-## Service Container Implementation with Context
+## Service container implementation with Context
 
 A service container functions as a centralized registry that manages the creation and lifecycle of application services. This pattern proves particularly valuable for managing API clients, analytics services, storage adapters, and other cross-cutting architectural concerns.
 
@@ -191,7 +191,7 @@ export function useNotifications() {
 ```
 :::
 
-## Multi-Context State Management Architectures
+## Multi-context state management architectures
 
 Complex applications require multiple Context providers that collaborate to manage different aspects of application state and services effectively.
 
@@ -311,7 +311,7 @@ function App() {
 ```
 :::
 
-## Hierarchical Provider Architecture
+## Hierarchical provider architecture
 
 Complex applications benefit from hierarchical provider structures that enable granular control over dependencies and state scope. This architectural pattern allows different application sections to access distinct sets of services and state management.
 
@@ -388,7 +388,7 @@ function AppProviders({ providers, children }) {
 ```
 :::
 
-## Performance Optimization Strategies
+## Performance optimization strategies
 
 Provider architectures require careful performance optimization to prevent unnecessary re-renders and maintain smooth user experiences.
 
@@ -446,7 +446,7 @@ function UserActions() {
 ```
 :::
 
-## When to Use Context for Dependency Injection
+## When to use Context for dependency injection
 
 Context-based dependency injection works best for:
 

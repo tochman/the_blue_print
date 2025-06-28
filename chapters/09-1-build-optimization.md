@@ -4,7 +4,7 @@ When you've built an amazing React application that works perfectly on your deve
 
 Think of it like preparing a home-cooked meal for a dinner party. You wouldn't just serve the ingredients. You'd carefully prepare, season, and present the meal in the best possible way. Similarly, your React code needs preparation before it can serve real users effectively.
 
-## Why Build Optimization Matters More Than You Think
+## Why build optimization matters more than you think
 
 Let me share a story that illustrates why this chapter matters. A talented React developer I know built a beautiful music practice tracking app. It had elegant components, smooth animations, and delightful user interactions. But when they deployed it, users complained it was "slow" and "clunky." 
 
@@ -27,11 +27,11 @@ Build optimization isn't about following a checklist. It's about understanding y
 **Key principle**: Measure first, optimize second, validate third.
 :::
 
-## Understanding the Build Process: From Development to Production
+## Understanding the build process: From development to production
 
 Before diving into specific techniques, let's understand what actually happens when you "build" a React application. This mental model will help you make better optimization decisions.
 
-### Development vs Production: Two Different Worlds {.unnumbered .unlisted}
+### Development vs production: Two different worlds {.unnumbered .unlisted}
 
 **Development mode prioritizes:**
 
@@ -55,7 +55,7 @@ Think of development mode as your workshop: full of tools, spare parts, and help
 Many React developers never think about this difference until deployment problems arise. Understanding this fundamental distinction helps you make sense of why build optimization exists and why certain techniques are necessary.
 :::
 
-### The Build Pipeline: What Actually Happens {.unnumbered .unlisted}
+### The build pipeline: What actually happens {.unnumbered .unlisted}
 
 When you run `npm run build`, several transformations happen to your code:
 
@@ -67,11 +67,11 @@ When you run `npm run build`, several transformations happen to your code:
 
 This isn't just technical magic. Each step solves specific user experience problems.
 
-## Your First Build Optimization: Getting Started Right
+## Your first build optimization: Getting started right
 
 Let's start with the basics and build complexity gradually. You don't need to become a webpack expert to deploy React applications successfully.
 
-### Step 1: Understanding Your Current Build {.unnumbered .unlisted}
+### Step 1: Understanding your current build {.unnumbered .unlisted}
 
 Before optimizing anything, you need to understand what you're starting with. Most React projects use Create React App or Vite, which provide good defaults but can be improved.
 
@@ -119,7 +119,7 @@ Don't guess what needs optimization. Use tools to measure:
 **Start with measurement, then optimize the biggest problems first.**
 :::
 
-### Step 2: Environment Configuration That Actually Makes Sense {.unnumbered .unlisted}
+### Step 2: Environment configuration that actually makes sense {.unnumbered .unlisted}
 
 Environment variables in React can be confusing because they work differently than in backend applications. Here's a practical approach that won't bite you later.
 
@@ -201,11 +201,11 @@ function Dashboard() {
 4. **Hardcoded assumptions**: Don't assume development values will work in production
 :::
 
-## Making Smart Optimization Decisions
+## Making smart optimization decisions
 
 Now that you understand the basics, let's explore how to make informed decisions about which optimizations to apply. Not every technique is right for every project.
 
-### Decision Framework: When to Use Which Optimization {.unnumbered .unlisted}
+### Decision framework: When to use which optimization {.unnumbered .unlisted}
 
 Instead of applying every optimization technique blindly, use this decision tree:
 
@@ -241,11 +241,11 @@ Throughout this chapter, we'll mention specific tools like webpack-bundle-analyz
 Many tools offer free tiers for personal projects or open source work, making experimentation accessible. The key is understanding the principles so you can adapt as tools evolve.
 :::
 
-## Understanding Your Application's Performance Profile
+## Understanding your application's performance profile
 
 Before diving into optimization techniques, you need to understand what you're optimizing. Think of this like tuning a musical instrument. You need to hear what's off before you can fix it.
 
-### Step 3: Reading Your Bundle Like a Story {.unnumbered .unlisted}
+### Step 3: Reading your bundle like a story {.unnumbered .unlisted}
 
 Your application's bundle tells a story about your code. Large files, unexpected dependencies, and duplicate code all have reasons. Learning to read this story helps you make smarter optimization decisions.
 
@@ -280,7 +280,7 @@ npx webpack-bundle-analyzer build/static/js/*.js
 - Can I replace this heavy library with a lighter alternative?
 :::
 
-### Step 4: Making Optimization Decisions That Matter {.unnumbered .unlisted}
+### Step 4: Making optimization decisions that matter {.unnumbered .unlisted}
 
 Not all optimizations are worth the complexity they add. Here's how to decide what's worth your time:
 
@@ -310,11 +310,11 @@ Focus on the optimizations that give you the biggest user experience improvement
 **Start with**: Bundle analysis → Image optimization → Route splitting → Dependency audit
 :::
 
-## Practical Bundle Optimization Techniques
+## Practical bundle optimization techniques
 
 Let's explore the most effective optimization techniques with a focus on when and why to use each approach.
 
-### Code Splitting: Loading Only What Users Need {.unnumbered .unlisted}
+### Code splitting: Loading only what users need {.unnumbered .unlisted}
 
 Code splitting is like organizing a toolbox. You keep the tools you use every day close at hand, and store specialized tools separately until needed.
 
@@ -358,7 +358,7 @@ function App() {
 - Immediate performance impact
 :::
 
-### Smart Dependency Management {.unnumbered .unlisted}
+### Smart dependency management {.unnumbered .unlisted}
 
 Dependencies often become the largest part of your bundle without you realizing it. Here's how to stay in control:
 
@@ -399,11 +399,11 @@ const unique = uniq(array);
 4. Monitor for any functionality regressions
 :::
 
-## Asset Optimization: The Often-Forgotten Performance Win
+## Asset optimization: The often-forgotten performance win
 
 Images, fonts, and other assets often account for 60-80% of your application's total download size, yet many developers focus only on JavaScript optimization.
 
-### Image Optimization That Actually Works {.unnumbered .unlisted}
+### Image optimization that actually works {.unnumbered .unlisted}
 
 Images are usually the easiest place to get dramatic performance improvements with minimal code changes.
 
@@ -473,7 +473,7 @@ function SmartImage({ src, alt, className, sizes }) {
 - Smooth loading transitions for better UX
 :::
 
-### Font Optimization: Small Changes, Big Impact {.unnumbered .unlisted}
+### Font optimization: Small changes, big impact {.unnumbered .unlisted}
 
 Fonts can significantly impact your app's loading performance, especially if you're using custom fonts or multiple font weights.
 
@@ -511,11 +511,11 @@ body {
 ```
 :::
 
-## Advanced Optimization Strategies
+## Advanced optimization strategies
 
 Once you've implemented the basics, these advanced techniques can provide additional performance improvements for applications with specific needs.
 
-### Intelligent Code Splitting {.unnumbered .unlisted}
+### Intelligent code splitting {.unnumbered .unlisted}
 
 Beyond basic route splitting, you can implement more sophisticated strategies based on user behavior and feature usage.
 
@@ -562,7 +562,7 @@ function Dashboard() {
 - Third-party integrations (social sharing, analytics dashboards)
 :::
 
-### Resource Hints for Faster Loading {.unnumbered .unlisted}
+### Resource hints for faster loading {.unnumbered .unlisted}
 
 Resource hints tell the browser about resources it might need soon, allowing it to start downloading them early.
 
@@ -603,11 +603,11 @@ function preloadRoute(route) {
 - **preconnect**: Establish connections to third-party domains early
 :::
 
-## Troubleshooting Common Build Optimization Issues
+## Troubleshooting common build optimization issues
 
 Even with careful planning, optimization can introduce unexpected problems. Here's how to diagnose and fix the most common issues.
 
-### When Code Splitting Goes Wrong {.unnumbered .unlisted}
+### When code splitting goes wrong {.unnumbered .unlisted}
 
 **Problem**: Loading spinners everywhere, poor user experience
 **Cause**: Too aggressive code splitting or poor loading states
@@ -621,7 +621,7 @@ Even with careful planning, optimization can introduce unexpected problems. Here
 **Cause**: Circular dependencies or incorrect import/export structure
 **Solution**: Restructure imports, use proper default exports
 
-### Build Configuration Issues {.unnumbered .unlisted}
+### Build configuration issues {.unnumbered .unlisted}
 
 **Problem**: Environment variables not working in production
 **Cause**: Missing REACT_APP_ prefix or build-time vs runtime confusion
@@ -645,11 +645,11 @@ Even with careful planning, optimization can introduce unexpected problems. Here
 5. **Monitor real user performance**: Tools like Google Analytics can show actual impact
 :::
 
-## Measuring Success: How to Know Your Optimizations Worked
+## Measuring success: How to know your optimizations worked
 
 Optimization without measurement is just guessing. Here's how to validate that your changes actually improve user experience.
 
-### Performance Metrics That Matter {.unnumbered .unlisted}
+### Performance metrics that matter {.unnumbered .unlisted}
 
 **User-Centric Metrics:**
 
@@ -693,7 +693,7 @@ function PerformanceMonitor() {
 ```
 :::
 
-### Before and After Comparison {.unnumbered .unlisted}
+### Before and after comparison {.unnumbered .unlisted}
 
 Always measure performance before implementing optimizations so you can validate improvements:
 
@@ -713,7 +713,7 @@ Always measure performance before implementing optimizations so you can validate
 Remember: These are examples to illustrate measurement concepts. Choose tools that fit your workflow and budget.
 :::
 
-## Chapter Summary: Your Production-Ready Foundation
+## Chapter summary: Your production-ready foundation
 
 You've now built a solid foundation for deploying React applications that perform well for real users. Let's recap the key principles that will serve you throughout your development career:
 
@@ -738,7 +738,7 @@ You've now built a solid foundation for deploying React applications that perfor
 - Ignoring real users: Test on devices and networks your users actually use
 - Optimization tunnel vision: Sometimes simpler code is better than optimized code
 
-### Next Steps: Beyond Basic Optimization {.unnumbered .unlisted}
+### Next steps: Beyond basic optimization {.unnumbered .unlisted}
 
 The techniques in this chapter handle the majority of React application optimization needs. As you gain experience, you might explore:
 

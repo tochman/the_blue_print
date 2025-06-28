@@ -120,7 +120,7 @@ Now that you understand why SPAs need special routing solutions, let's explore R
 
 React Router enables declarative, component-based routing that maintains React's compositional patterns. Instead of having a separate routing configuration file, you define routes using React components, making your routing logic part of your component tree.
 
-### Essential React Router Setup {.unnumbered .unlisted}
+### Essential React Router setup {.unnumbered .unlisted}
 
 Let's start with a complete, working example that demonstrates the core concepts:
 
@@ -227,7 +227,7 @@ export default App
 ```
 :::
 
-### Understanding React Router Components {.unnumbered .unlisted}
+### Understanding React Router components {.unnumbered .unlisted}
 
 Let's break down the key components and concepts:
 
@@ -241,7 +241,7 @@ Let's break down the key components and concepts:
 
 **NavLink**: Like Link, but with additional features for styling active links.
 
-### Working with URL Parameters {.unnumbered .unlisted}
+### Working with URL parameters {.unnumbered .unlisted}
 
 One of React Router's most powerful features is the ability to capture parts of the URL as parameters:
 
@@ -292,7 +292,7 @@ function ReviewDetail() {
 
 URL parameters are essential for creating bookmarkable, shareable URLs. When a user visits `/user/123`, your component automatically receives `123` as the `userId` parameter.
 
-### Programmatic Navigation {.unnumbered .unlisted}
+### Programmatic navigation {.unnumbered .unlisted}
 
 Sometimes you need to navigate programmatically (for example, after a form submission or when certain conditions are met):
 
@@ -355,7 +355,7 @@ function UserProfile() {
 ```
 :::
 
-### Advanced Routing Patterns {.unnumbered .unlisted}
+### Advanced routing patterns {.unnumbered .unlisted}
 
 As your application grows, you'll need more sophisticated routing patterns:
 
@@ -433,7 +433,7 @@ function App() {
 ```
 :::
 
-### Loading States and Code Splitting {.unnumbered .unlisted}
+### Loading states and code splitting {.unnumbered .unlisted}
 
 Modern React applications often use code splitting to reduce initial bundle size. React Router works beautifully with React's lazy loading:
 
@@ -481,11 +481,11 @@ function App() {
 ```
 :::
 
-## Build Tools: Setting Up Your Development Environment
+## Build tools: Setting up your development environment
 
 React applications require a build process to transform JSX, handle modules, optimize assets, and create production-ready bundles. While you could set this up manually, several tools make this process much easier.
 
-### Create React App: The Traditional Starting Point {.unnumbered .unlisted}
+### Create React App: The traditional starting point {.unnumbered .unlisted}
 
 Create React App (CRA) has been the go-to solution for React applications for years. It provides a complete development environment with zero configuration:
 
@@ -519,7 +519,7 @@ npm test
 
 CRA handles complex webpack configuration behind the scenes, allowing you to focus on building your application rather than configuring build tools.
 
-### Vite: The Modern Alternative {.unnumbered .unlisted}
+### Vite: The modern alternative {.unnumbered .unlisted}
 
 Vite (pronounced "veet") has emerged as a faster, more modern alternative to Create React App. It leverages native ES modules and esbuild for significantly faster development builds:
 

@@ -10,7 +10,7 @@ The true power of custom hooks emerges through their composability and architect
 Advanced custom hooks function as more than state management tools. They serve as architectural boundaries that encapsulate business logic, coordinate side effects, and provide stable interfaces between components and complex application concerns. Well-designed hooks can eliminate the need for external state management libraries in many scenarios.
 :::
 
-## State Machine Patterns with Custom Hooks
+## State machine patterns with custom hooks
 
 Complex user interactions often benefit from explicit state machine modeling. Custom hooks can encapsulate state machines that manage intricate workflows with clearly defined state transitions and coordinated side effects.
 
@@ -145,7 +145,7 @@ function usePracticeSessionStateMachine(initialSession = null) {
 
 This state machine hook provides a robust foundation for managing complex practice session workflows with clear state transitions and side effect management.
 
-## Advanced Data Synchronization and Caching Strategies
+## Advanced data synchronization and caching strategies
 
 Modern applications require sophisticated data coordination from multiple sources while maintaining consistency and optimal performance. Custom hooks can provide advanced caching and synchronization strategies that handle complex data flows seamlessly.
 
@@ -303,7 +303,7 @@ function PracticeStatsDashboard({ userId }) {
 ```
 :::
 
-## Async Coordination and Effect Management
+## Async coordination and effect management
 
 Complex applications often need to coordinate multiple asynchronous operations with sophisticated error handling and dependency management.
 
@@ -477,7 +477,7 @@ function usePracticeSessionInitialization(sessionConfig) {
 ```
 :::
 
-## Resource Management and Cleanup Patterns
+## Resource management and cleanup patterns
 
 Advanced hooks often need to manage complex resources with sophisticated cleanup strategies to prevent memory leaks and resource contention.
 
@@ -605,7 +605,7 @@ function usePracticeSessionResources() {
 ```
 :::
 
-## Composable Hook Factories
+## Composable hook factories
 
 Advanced patterns often involve creating hooks that generate other hooks, providing flexible abstractions for common patterns.
 

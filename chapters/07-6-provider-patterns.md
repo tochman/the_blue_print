@@ -10,7 +10,7 @@ The provider pattern's architectural strength emerges through its ability to cre
 Well-designed provider patterns form the foundational infrastructure of scalable React applications. They provide dependency injection, state management, and service coordination while maintaining clear separation of concerns. Advanced provider architectures can eliminate the need for external state management libraries in many application scenarios.
 :::
 
-## Hierarchical Provider Composition Strategies
+## Hierarchical provider composition strategies
 
 Complex applications benefit from hierarchical provider structures that enable granular control over dependencies and state scope. This architectural pattern allows different application sections to access distinct sets of services and state management capabilities.
 
@@ -91,7 +91,7 @@ function AppProviders({ providers, children }) {
 ```
 :::
 
-## Service Container Patterns
+## Service container patterns
 
 Service containers provide sophisticated dependency injection with lazy loading, service decoration, and complex service resolution patterns.
 
@@ -216,7 +216,7 @@ function useService(serviceName) {
 ```
 :::
 
-## Performance Optimization Strategies
+## Performance optimization strategies
 
 Provider architectures require careful performance optimization to prevent unnecessary re-renders and maintain smooth user experiences.
 
@@ -300,7 +300,7 @@ function UserActions() {
 ```
 :::
 
-## Multi-Tenant Provider Architecture
+## Multi-tenant provider architecture
 
 For applications that need to support multiple contexts or tenants, advanced provider patterns can manage isolated state while sharing common services.
 
@@ -386,7 +386,7 @@ function App() {
 ```
 :::
 
-## Event-Driven Provider Patterns
+## Event-driven provider patterns
 
 Advanced provider architectures can incorporate event-driven patterns for loose coupling and reactive updates.
 
@@ -516,7 +516,7 @@ function AnalyticsProvider({ children }) {
 ```
 :::
 
-## When to Use Advanced Provider Patterns
+## When to use advanced provider patterns
 
 Advanced provider patterns work best for:
 

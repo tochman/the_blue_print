@@ -962,7 +962,7 @@ Zustand is perfect when you need:
 - Easy state subscription and derived state
 - Minimal learning curve for the team
 
-### Server state: React Query / TanStack Query {.unnumbered .unlisted}
+### Server state: React Query/TanStack Query {.unnumbered .unlisted}
 
 Here's something that took me years to fully appreciate: server state is fundamentally different from client state. Server state is:
 

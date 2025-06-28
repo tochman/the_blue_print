@@ -192,7 +192,7 @@ function PracticeSessionItem({ session, onUpdate }) {
 
 In this example, the `PracticeSessionList` owns the sessions state and passes individual session data down to `PracticeSessionItem` components as props. When a session item needs to update its notes, it calls the `onUpdate` callback function passed down from the parent, which updates the parent's state and triggers a re-render with the new data.
 
-## Designing Prop Interfaces
+## Designing prop interfaces
 
 Well-designed props create clear contracts between components. They define what data a component expects to receive and what functions it might call. This contract-like nature makes components more predictable and easier to test, as you can provide specific props and verify the component's behavior.
 
@@ -204,7 +204,7 @@ When designing component props, consider both the immediate needs and potential 
 Good prop design balances specificity with flexibility. Components should receive the data they need to function without being tightly coupled to the specific shape of your application's data structures. Consider using transformation functions or adapter patterns when necessary to maintain clean component interfaces.
 :::
 
-## The useState Hook in Depth
+## The useState hook in depth
 
 The `useState` hook is your primary tool for managing component state in modern React. While it appears simple on the surface, understanding its nuances will help you build more efficient and predictable components.
 
@@ -261,7 +261,7 @@ function TimerComponent() {
 
 This timer component demonstrates several important concepts about state management. The component maintains two pieces of state: the elapsed seconds and whether the timer is currently running. Notice how the `useEffect` hook depends on the `isRunning` state, creating a reactive relationship where changes to one piece of state trigger side effects.
 
-## State Updates: Functional vs. Direct
+## State updates: Functional vs. direct
 
 One crucial aspect of `useState` is understanding when to use functional updates versus direct updates. When your new state depends on the previous state, you should use the functional form to ensure you're working with the most recent value.
 
@@ -296,7 +296,7 @@ function CounterWithIncrement() {
 
 The functional update pattern becomes especially important when dealing with rapid state changes or when multiple state updates might occur in quick succession. The functional form ensures that each update receives the most recent state value, preventing issues with stale closures.
 
-## Managing Complex State: Objects and Arrays
+## Managing complex state: Objects and arrays
 
 As your components grow in complexity, you might need to manage state that consists of objects or arrays. React requires that you treat state as immutable. Instead of modifying existing objects or arrays, you create new ones with the desired changes.
 
@@ -391,13 +391,13 @@ function PracticeSessionForm() {
 
 This form component demonstrates how to manage complex state while maintaining immutability. Each update creates a new state object rather than modifying the existing one, which ensures that React can properly detect changes and trigger re-renders.
 
-## Data Flow Patterns and Communication Strategies
+## Data flow patterns and communication strategies
 
 Effective data flow is the backbone of maintainable React applications. Understanding how to structure communication between components prevents many common architectural problems and makes your applications easier to debug and extend.
 
 The fundamental principle of React's data flow is that data flows down through props and actions flow up through callback functions. This unidirectional pattern creates predictable relationships between components and makes it easier to trace how data changes propagate through your application.
 
-## Lifting State Up
+## Lifting state up
 
 Here's one of React's most important patterns, and honestly, one that I wish I had understood better earlier in my React journey: lifting state up. The idea is simple. When multiple components need to share the same piece of state, you move that state to their closest common parent.
 
@@ -455,7 +455,7 @@ function MusicLibrary() {
 
 In this structure, the `MusicLibrary` component manages the state that multiple child components need. The selected piece flows down to components that need to display or work with it, while actions like selecting a piece or completing a practice session flow back up through callback functions.
 
-## Component Composition and Prop Drilling
+## Component composition and prop drilling
 
 As your component hierarchy grows deeper, you might encounter "prop drilling": the need to pass props through multiple levels of components just to reach a deeply nested child. While prop drilling isn't inherently bad for shallow hierarchies, it can become cumbersome when props need to travel through many intermediate components.
 
@@ -513,7 +513,7 @@ function Layout({ header, children }) {
 
 The composition approach reduces the coupling between the `Layout` component and the user data, making the layout more reusable and the data flow more explicit.
 
-## Handling Side Effects with useEffect
+## Handling side effects with useEffect
 
 While state manages the data that changes over time, many React components also need to perform side effects: operations that interact with the outside world or have effects beyond rendering. The `useEffect` hook provides a structured way to handle these side effects while maintaining React's declarative principles.
 
@@ -525,7 +525,7 @@ Side effects include network requests, setting up subscriptions, manually changi
 Effects run after the component has rendered to the DOM. This ensures that your side effects don't block the browser's ability to paint the screen, keeping your application responsive. Effects also have access to the current props and state values from the render they're associated with.
 :::
 
-## Basic Effect Patterns
+## Basic effect patterns
 
 The most common use of `useEffect` is to fetch data when a component mounts or when certain dependencies change. Understanding the dependency array is crucial for controlling when effects run and preventing infinite loops.
 
@@ -587,7 +587,7 @@ function PracticeSessionDetails({ sessionId }) {
 
 This component demonstrates several important patterns for data fetching with `useEffect`. The effect includes proper error handling, loading states, and cleanup to prevent memory leaks if the component unmounts during a fetch operation.
 
-## Effect Cleanup and Resource Management
+## Effect cleanup and resource management
 
 Many effects need cleanup to prevent memory leaks or other issues. Event listeners, timers, subscriptions, and network requests should all be cleaned up when components unmount or when effect dependencies change.
 
@@ -656,13 +656,13 @@ function PracticeTimer({ onTick, onComplete }) {
 
 This timer component uses multiple effects to handle different concerns. One effect manages the timer interval, while another watches for the completion condition. Each effect includes proper cleanup to prevent resource leaks.
 
-## Form Handling and Controlled Components
+## Form handling and controlled components
 
 Forms represent one of the most common patterns in React applications, and understanding how to handle form state effectively is essential for building interactive user interfaces. React promotes the use of "controlled components": form elements whose values are controlled by React state rather than their own internal state.
 
 Controlled components create a single source of truth for form data, making it easier to validate inputs, handle submissions, and integrate forms with the rest of your application state. While this requires more setup than uncontrolled forms, the benefits in terms of predictability and debugging are substantial.
 
-## Building Controlled Form Components
+## Building controlled form components
 
 A controlled form component manages all input values in React state and handles changes through event handlers. This approach gives you complete control over the form data and makes it easy to implement features like validation, formatting, and conditional logic.
 
@@ -813,7 +813,7 @@ function NewPieceForm({ onSubmit, onCancel }) {
 
 This form component demonstrates several important patterns for form handling in React. It maintains all form data in state, provides real-time validation feedback, handles loading states during submission, and prevents multiple submissions.
 
-## Custom Hooks for Form Management
+## Custom hooks for form management
 
 As your forms become more complex, you might find yourself repeating similar patterns for form state management. Custom hooks provide a way to extract and reuse form logic across multiple components.
 
@@ -951,13 +951,13 @@ function SimplePieceForm({ onSubmit }) {
 
 This custom hook encapsulates common form logic and can be reused across different forms in your application. It handles field updates, validation, error management, and provides a clean interface for form components.
 
-## Performance Considerations and Optimization
+## Performance considerations and optimization
 
 As your React applications grow in complexity, understanding how state changes affect performance becomes increasingly important. React is generally fast, but inefficient state management can lead to unnecessary re-renders and degraded user experience.
 
 The key to performance optimization in React is understanding when components re-render and minimizing unnecessary work. Every state update triggers a re-render of the component and potentially its children, so designing your state structure thoughtfully can have significant performance implications.
 
-## Minimizing Re-renders Through State Design
+## Minimizing re-renders through state design
 
 The structure of your state directly affects how often components re-render. State that changes frequently should be isolated from state that remains stable, and components should only re-render when the data they actually use has changed.
 
@@ -1120,7 +1120,7 @@ function PracticeSessionList() {
 
 Notice how the parent component uses `useCallback` to memoize the callback functions. This prevents the memoized child components from re-rendering due to new function references being created on every render.
 
-## Practical Exercises
+## Practical exercises
 
 To solidify your understanding of state and props, work through these progressively challenging exercises. Each builds on the concepts covered in this chapter and encourages you to think about component design and data flow.
 

@@ -132,7 +132,7 @@ describe('SessionPlayer Compound Component', () => {
 
 :::
 
-## Testing Custom Hooks with BDD Style
+## Testing custom hooks with BDD style
 
 Following Chapter 5's approach, we'll test custom hooks by focusing on their behavior and the scenarios they handle, not their internal implementation.
 

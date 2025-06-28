@@ -1,4 +1,4 @@
-# Introduction and Fundamentals
+# Introduction and fundamentals
 
 ## The blueprint approach {.unnumbered .unlisted}
 

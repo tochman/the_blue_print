@@ -10,7 +10,7 @@ A higher-order component is a function that accepts a component as an argument a
 While HOCs were once the primary pattern for sharing logic between components, custom hooks now provide a cleaner, more composable alternative for most use cases. However, HOCs remain relevant when you need to enhance components at the component level rather than the hook level, or when working with class components that cannot utilize hooks.
 :::
 
-## Traditional HOC Implementation
+## Traditional HOC implementation
 
 Consider a fundamental example of adding authentication checks to components:
 
@@ -78,7 +78,7 @@ function PracticeSessionView() {
 
 The hook approach provides superior clarity because it makes data dependencies explicit and avoids creating additional component layers in React DevTools.
 
-## Advanced HOC Implementation Patterns
+## Advanced HOC implementation patterns
 
 While HOCs are less common in contemporary development, understanding their implementation patterns proves valuable when maintaining existing codebases or integrating with certain library APIs.
 
@@ -185,7 +185,7 @@ function usePracticeSessionsData(userId) {
 
 :::
 
-## Managing HOC Composition Challenges
+## Managing HOC composition challenges
 
 One of the significant challenges with HOCs involves composition complexity when multiple enhancements are required. This complexity represents a key factor in the community's shift toward hooks as the preferred pattern.
 
@@ -233,7 +233,7 @@ function PracticeSessionView() {
 
 The hook approach provides significantly cleaner composition and makes component dependencies more explicit and manageable.
 
-## Appropriate Use Cases for HOCs
+## Appropriate use cases for HOCs
 
 Despite being largely superseded by hooks, specific scenarios still warrant HOC usage:
 
@@ -287,7 +287,7 @@ function withErrorBoundary(WrappedComponent) {
 
 :::
 
-## Essential HOC Best Practices
+## Essential HOC best practices
 
 When you must implement HOCs, follow these established best practices:
 
