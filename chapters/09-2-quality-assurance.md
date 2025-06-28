@@ -4,7 +4,7 @@ Imagine shipping a beautifully designed React application to production, only to
 
 Think of QA like having a co-pilot when flying a plane. You might be an excellent pilot, but having someone systematically check instruments, weather conditions, and flight paths makes everyone safer. In software development, automated QA processes are your co-pilot, catching issues you might miss and ensuring consistent quality standards.
 
-## Why QA Automation Matters More Than Manual Testing
+## Why QA automation matters more than manual testing
 
 A story from the trenches: A startup I worked with had a talented team that manually tested every feature before deployment. They were thorough, careful, and caught most issues. But as the team grew and deployment frequency increased, manual testing became a bottleneck. More importantly, they discovered that humans are inconsistent. Tired testers miss things, new team members don't know all the edge cases, and time pressure leads to shortcuts.
 
@@ -27,11 +27,11 @@ QA automation isn't about replacing good development practices. It's about ampli
 **Key principle**: Build quality in at every stage, don't just test quality at the end.
 :::
 
-## Understanding Your QA Strategy: Building the Right Safety Net
+## Understanding your QA strategy: Building the right safety net
 
 Before diving into specific tools and techniques, let's understand what kinds of issues you're trying to prevent and which approaches work best for each.
 
-### The QA Pyramid: Different Tests for Different Problems {.unnumbered .unlisted}
+### The QA pyramid: Different tests for different problems {.unnumbered .unlisted}
 
 Think of your QA strategy like a pyramid: lots of fast, cheap tests at the bottom, fewer expensive tests at the top:
 
@@ -62,7 +62,7 @@ Think of your QA strategy like a pyramid: lots of fast, cheap tests at the botto
 Fast tests give you immediate feedback while developing. Slow tests catch complex issues but can't run constantly. This pyramid ensures you catch most issues quickly and cheaply, while still catching the complex problems that only show up in realistic conditions.
 :::
 
-### Building Your QA Decision Framework {.unnumbered .unlisted}
+### Building your QA decision framework {.unnumbered .unlisted}
 
 Not every application needs every type of testing. Here's how to decide what's worth your time:
 
@@ -98,11 +98,11 @@ Throughout this chapter, we'll mention specific tools like Jest, Cypress, ESLint
 Many testing tools offer free tiers for personal projects or open source work. The key is understanding what each type of testing accomplishes so you can choose tools that fit your project's needs and constraints.
 :::
 
-## Setting Up Your Testing Foundation
+## Setting up your testing foundation
 
 Let's start with the basics and build complexity gradually. You don't need to become a testing expert overnight. Start with simple, high-value tests and expand from there.
 
-### Step 1: Understanding What You're Testing {.unnumbered .unlisted}
+### Step 1: Understanding what you're testing {.unnumbered .unlisted}
 
 Before writing any tests, you need to understand what behavior matters most in your application. Not all code is equally important to test.
 
@@ -207,7 +207,7 @@ test('calculates practice streak correctly', () => {
 - Make tests independent. Each test should work regardless of others
 :::
 
-### Step 3: Integration Testing for Real-World Scenarios {.unnumbered .unlisted}
+### Step 3: Integration testing for real-world scenarios {.unnumbered .unlisted}
 
 Integration tests verify that multiple parts of your application work together correctly. These are especially valuable for testing complete user workflows.
 
@@ -256,11 +256,11 @@ test('user can log in and see dashboard', async () => {
 - User data displays correctly on dashboard
 :::
 
-## Advanced QA Strategies: Beyond Basic Testing
+## Advanced QA strategies: Beyond basic testing
 
 Once you have solid unit and integration testing, these advanced techniques help catch issues that basic tests miss.
 
-### Code Quality Automation {.unnumbered .unlisted}
+### Code quality automation {.unnumbered .unlisted}
 
 Automated code quality tools catch issues that humans often miss and ensure consistent coding standards across your team.
 
@@ -323,7 +323,7 @@ module.exports = {
 - Improved code maintainability
 :::
 
-### Accessibility Testing That Actually Works {.unnumbered .unlisted}
+### Accessibility testing that actually works {.unnumbered .unlisted}
 
 Accessibility testing ensures your application works for users with disabilities. This isn't just good practice. It's often legally required.
 
@@ -368,11 +368,11 @@ test('form has proper labels and keyboard navigation', () => {
 ```
 :::
 
-## Troubleshooting Common QA Issues
+## Troubleshooting common QA issues
 
 Even with good QA processes, you'll encounter issues. Here's how to diagnose and fix the most common problems.
 
-### When Tests Keep Breaking {.unnumbered .unlisted}
+### When tests keep breaking {.unnumbered .unlisted}
 
 **Problem**: Tests fail every time you make small changes
 **Cause**: Tests are too tightly coupled to implementation details
@@ -386,7 +386,7 @@ Even with good QA processes, you'll encounter issues. Here's how to diagnose and
 **Cause**: Too many expensive tests or inefficient test setup
 **Solution**: Optimize test setup, parallelize test execution, move slow tests to separate suite
 
-### False Positives and Negatives {.unnumbered .unlisted}
+### False positives and negatives {.unnumbered .unlisted}
 
 **Problem**: Tests pass but bugs still reach production
 **Cause**: Tests don't cover the right scenarios or edge cases
@@ -406,11 +406,11 @@ Even with good QA processes, you'll encounter issues. Here's how to diagnose and
 5. **Tool obsession**: Don't choose tools before understanding what you need to test
 :::
 
-## Measuring QA Effectiveness
+## Measuring QA effectiveness
 
 How do you know if your QA processes are working? Here are the metrics that actually matter:
 
-### Quality Metrics That Drive Better Decisions {.unnumbered .unlisted}
+### Quality metrics that drive better decisions {.unnumbered .unlisted}
 
 **Leading Indicators (predict future quality):**
 
@@ -444,7 +444,7 @@ console.log('QA Metrics:', qaMetrics);
 ```
 :::
 
-## Chapter Summary: Building Confidence Through Systematic Quality
+## Chapter summary: building confidence through systematic quality
 
 You've now learned how to build quality assurance processes that actually improve your application's reliability. The key insights to remember:
 
@@ -470,7 +470,7 @@ You've now learned how to build quality assurance processes that actually improv
 - Learn from production issues to improve testing strategies
 - Balance thoroughness with development velocity
 
-### Next Steps: Integrating QA with Deployment {.unnumbered .unlisted}
+### Next steps: integrating QA with deployment {.unnumbered .unlisted}
 
 Quality assurance doesn't end when tests pass. It continues through deployment and into production monitoring. The next chapter will cover CI/CD pipeline implementation, showing how to integrate these QA processes into automated deployment workflows that maintain quality while enabling frequent, confident releases.
 

@@ -4,7 +4,7 @@ After building and testing your React application, you need a place to host it w
 
 Choosing a hosting platform is like choosing where to live. A small studio apartment works great when you're starting out, but you might need a bigger place as your family grows. Similarly, a simple static hosting service might be perfect for your portfolio site, but a complex business application might need serverless functions, database integration, and global content delivery.
 
-## Why Platform Choice Matters More Than You Think
+## Why platform choice matters more than you think
 
 Let me share a cautionary tale. A friend launched a successful React application on a budget hosting provider. Everything worked great... until they went viral on social media. Their hosting crashed under traffic, their database couldn't handle the load, and they lost potential customers during their biggest growth opportunity. The problem wasn't the code. It was choosing a hosting platform that couldn't scale with their success.
 
@@ -26,11 +26,11 @@ Don't choose a hosting platform based on price alone. Choose based on what you w
 **Key principle**: Optimize for total cost of ownership, not just hosting bills.
 :::
 
-## Understanding Your Hosting Needs
+## Understanding your hosting needs
 
 Before exploring specific platforms, let's understand what your React application actually needs from hosting and how those needs change as your project grows.
 
-### Application Hosting Requirements Analysis {.unnumbered .unlisted}
+### Application hosting requirements analysis {.unnumbered .unlisted}
 
 Not all React applications have the same hosting requirements. Understanding your specific needs helps you choose the right platform and avoid over-engineering or under-serving your application.
 
@@ -62,7 +62,7 @@ Not all React applications have the same hosting requirements. Understanding you
 Your hosting needs will evolve as your application grows. Start with platforms that can grow with you rather than requiring complete migration when you need more features. Many successful applications start on simple platforms and evolve their hosting strategy as requirements change.
 :::
 
-### Decision Framework: Choosing the Right Platform {.unnumbered .unlisted}
+### Decision framework: Choosing the right platform {.unnumbered .unlisted}
 
 Use this framework to evaluate hosting platforms based on your specific situation:
 
@@ -98,11 +98,11 @@ Throughout this chapter, we'll mention specific platforms like Vercel, Netlify, 
 Many platforms offer free tiers that let you experiment before committing. The key is understanding what each platform approach offers so you can evaluate current and future options effectively.
 :::
 
-## Getting Started: Your First Professional Deployment
+## Getting started: Your first professional deployment
 
 Let's walk through deploying a React application professionally, starting with the basics and building toward production-ready configurations.
 
-### Step 1: Preparing Your Application for Deployment {.unnumbered .unlisted}
+### Step 1: Preparing your application for deployment {.unnumbered .unlisted}
 
 Before deploying to any platform, your React application needs proper configuration for production hosting.
 
@@ -178,7 +178,7 @@ export default config;
 - Basic SEO meta tags in place
 :::
 
-### Step 2: Platform-Agnostic Deployment Configuration {.unnumbered .unlisted}
+### Step 2: Platform-agnostic deployment configuration {.unnumbered .unlisted}
 
 Create deployment configuration that works across multiple platforms, giving you flexibility and avoiding vendor lock-in.
 
@@ -265,11 +265,11 @@ services:
 - Migration between platforms becomes simpler
 :::
 
-## Popular Hosting Platforms: Strengths and Trade-offs
+## Popular hosting platforms: Strengths and trade-offs
 
 Let's explore the most popular hosting platforms for React applications, focusing on when each makes sense and what trade-offs you're making.
 
-### Modern JAMstack Platforms {.unnumbered .unlisted}
+### Modern JAMstack platforms {.unnumbered .unlisted}
 
 These platforms specialize in static sites and serverless functions, making them ideal for most React applications.
 
@@ -370,7 +370,7 @@ vercel
 ```
 :::
 
-### Cloud Platform Solutions {.unnumbered .unlisted}
+### Cloud platform solutions {.unnumbered .unlisted}
 
 These platforms offer more control and integration with broader cloud ecosystems but require more configuration.
 
@@ -404,11 +404,11 @@ These platforms offer more control and integration with broader cloud ecosystems
 - Limited customization options
 - Pricing can be unpredictable for large applications
 
-## Troubleshooting Common Deployment Issues
+## Troubleshooting common deployment issues
 
 Even with good preparation, deployments can encounter problems. Here's how to diagnose and fix the most common issues:
 
-### Build and Configuration Problems {.unnumbered .unlisted}
+### Build and configuration problems {.unnumbered .unlisted}
 
 **Problem**: Build succeeds locally but fails on hosting platform
 **Cause**: Environment differences (Node version, dependencies, environment variables)
@@ -422,7 +422,7 @@ Even with good preparation, deployments can encounter problems. Here's how to di
 **Cause**: CORS issues, incorrect API URLs, HTTPS/HTTP mixing
 **Solution**: Verify API endpoints, check CORS configuration, ensure HTTPS everywhere
 
-### Performance and Caching Issues {.unnumbered .unlisted}
+### Performance and caching issues {.unnumbered .unlisted}
 
 **Problem**: Slow loading times despite optimization
 **Cause**: Poor CDN configuration, large bundle sizes, inefficient caching
@@ -442,11 +442,11 @@ Even with good preparation, deployments can encounter problems. Here's how to di
 5. **Single point of failure**: Have rollback plans and monitoring in place
 :::
 
-## Scaling Your Hosting Strategy
+## Scaling your hosting strategy
 
 As your application grows, your hosting needs will evolve. Here's how to plan for growth:
 
-### Performance Scaling Strategies {.unnumbered .unlisted}
+### Performance scaling strategies {.unnumbered .unlisted}
 
 **Traffic Growth Patterns:**
 
@@ -460,7 +460,7 @@ As your application grows, your hosting needs will evolve. Here's how to plan fo
 - Optimize assets and bundles to reduce bandwidth costs
 - Consider reserved capacity for predictable usage patterns
 
-### Team and Process Scaling {.unnumbered .unlisted}
+### Team and process scaling {.unnumbered .unlisted}
 
 **Multi-Environment Strategy:**
 
@@ -474,7 +474,7 @@ As your application grows, your hosting needs will evolve. Here's how to plan fo
 - Audit trails for deployments
 - Security scanning and compliance monitoring
 
-## Chapter Summary: Reliable Hosting Foundation
+## Chapter summary: Reliable hosting foundation
 
 You've now learned how to choose and configure hosting platforms that grow with your React applications. The key insights to remember:
 
@@ -499,7 +499,7 @@ You've now learned how to choose and configure hosting platforms that grow with 
 - Security and compliance considerations
 - Disaster recovery and business continuity planning
 
-### Next Steps: Monitoring and Observability {.unnumbered .unlisted}
+### Next steps: Monitoring and observability {.unnumbered .unlisted}
 
 Deploying your application is just the beginning. The next chapter will cover monitoring and observability, showing how to track your application's health, performance, and user experience in production. Good monitoring helps you catch issues before users notice them and provides insights for continuous improvement.
 
@@ -593,11 +593,11 @@ deployToAmplify()
 ```
 :::
 
-## Additional Hosting Platforms
+## Additional hosting platforms
 
 Explore alternative hosting solutions for specific use cases and requirements.
 
-### Firebase Hosting {.unnumbered .unlisted}
+### Firebase hosting {.unnumbered .unlisted}
 
 Deploy React applications with Firebase for real-time features:
 
@@ -685,7 +685,7 @@ echo "Application URL: https://${PROJECT_ID}.web.app"
 ```
 :::
 
-### GitHub Pages Deployment {.unnumbered .unlisted}
+### GitHub Pages deployment {.unnumbered .unlisted}
 
 Deploy React applications to GitHub Pages:
 

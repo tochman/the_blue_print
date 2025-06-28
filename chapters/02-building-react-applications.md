@@ -552,7 +552,7 @@ npm run preview
 - More flexible configuration
 :::
 
-### Understanding the Build Process {.unnumbered .unlisted}
+### Understanding the build process {.unnumbered .unlisted}
 
 Regardless of which tool you choose, the build process performs several crucial transformations:
 
@@ -583,7 +583,7 @@ function App() {
 ```
 :::
 
-### Custom Webpack Configuration {.unnumbered .unlisted}
+### Custom webpack configuration {.unnumbered .unlisted}
 
 For more control, you can eject from Create React App or set up a custom webpack configuration:
 
@@ -636,7 +636,7 @@ module.exports = {
 ```
 :::
 
-### Environment Configuration {.unnumbered .unlisted}
+### Environment configuration {.unnumbered .unlisted}
 
 Modern React applications need different configurations for development, testing, and production:
 
@@ -674,7 +674,7 @@ function App() {
 
 Styling React applications requires careful consideration of maintainability, scalability, and developer experience. Let's explore the most effective approaches.
 
-### CSS Modules: Scoped Styling {.unnumbered .unlisted}
+### CSS modules: scoped styling {.unnumbered .unlisted}
 
 CSS Modules provide locally scoped CSS classes, preventing the global nature of CSS from causing conflicts:
 
@@ -734,7 +734,7 @@ function App() {
 ```
 :::
 
-### Styled Components: CSS-in-JS {.unnumbered .unlisted}
+### Styled components: CSS-in-JS {.unnumbered .unlisted}
 
 Styled Components brings CSS into your JavaScript, enabling dynamic styling based on props:
 
@@ -784,7 +784,7 @@ function App() {
 ```
 :::
 
-### Tailwind CSS: Utility-First Styling {.unnumbered .unlisted}
+### Tailwind CSS: utility-first styling {.unnumbered .unlisted}
 
 Tailwind CSS provides low-level utility classes that you combine to build custom designs:
 
@@ -856,7 +856,7 @@ function Dashboard() {
 ```
 :::
 
-### Design System Integration {.unnumbered .unlisted}
+### Design system integration {.unnumbered .unlisted}
 
 For larger applications, consider using established design systems:
 
@@ -920,7 +920,7 @@ function Dashboard() {
 ```
 :::
 
-### Choosing the Right Styling Approach {.unnumbered .unlisted}
+### Choosing the right styling approach {.unnumbered .unlisted}
 
 Consider these factors when choosing a styling approach:
 
@@ -946,7 +946,7 @@ For most React applications, I recommend starting with either:
 Choose based on your team's preferences and project requirements, but avoid mixing too many approaches in the same application.
 :::
 
-## Putting It All Together: A Complete React Application
+## Putting it all together: a complete React application
 
 Let's combine everything we've learned into a complete, working React application that demonstrates all the concepts covered in this chapter.
 
@@ -1155,7 +1155,7 @@ This complete example demonstrates:
 - **Context providers** for global state management
 - **Proper component organization** and separation of concerns
 
-## Chapter Summary
+## Chapter summary
 
 In this chapter, we've explored the essential foundations for building real-world React applications:
 

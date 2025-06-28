@@ -497,7 +497,7 @@ As you continue learning React, you'll encounter challenges. Here's how to handl
 
 As you develop expertise in React, consider how it fits into your broader career goals:
 
-### Career paths for React developers
+### Career paths for React developers {.unnumbered .unlisted}
 
 **Frontend Specialist:**
  Deep expertise in user interface development, design systems, accessibility, and user experience.
@@ -534,7 +534,7 @@ As you develop expertise in React, consider how it fits into your broader career
 - Mentoring abilities for helping team members grow
 - Problem-solving approaches that work across technologies
 
-### Staying relevant in a changing field
+### Staying relevant in a changing field {.unnumbered .unlisted}
 
 **Continuous Learning Mindset:**
  Technology changes, but the ability to learn and adapt remains valuable.
@@ -776,7 +776,7 @@ As you advance in React development, consider which direction aligns with your i
 
 **Mentor Others**: Help newer developers learn React. Teaching others reinforces your own knowledge and builds leadership skills.
 
-## Future Directions: Where React is Heading
+## Future directions: where React is heading
 
 Understanding where React is headed helps you prepare for the future and make informed decisions about what to learn next.
 
@@ -822,7 +822,7 @@ React is embracing new web platform capabilities:
 
 **Performance APIs**: Integration with browser performance measurement APIs.
 
-## Your Next Steps
+## Your next steps
 
 As we conclude this book, here are practical next steps for continuing your React journey:
 
@@ -848,7 +848,7 @@ As we conclude this book, here are practical next steps for continuing your Reac
 
 4. **Stay Current**: Follow React's development, participate in beta testing, and understand emerging patterns.
 
-## Final Thoughts: The Philosophy of Continuous Learning
+## Final thoughts: the philosophy of continuous learning
 
 React's ecosystem changes rapidly, which can feel overwhelming. But remember that the fundamental principles you've learned in this book—component thinking, declarative programming, and careful state management—remain constant even as specific APIs and libraries evolve.
 
@@ -910,7 +910,7 @@ As you advance in your React journey, think beyond just building applications. C
 
 **Stay Curious**: The React ecosystem rewards curiosity and experimentation. Don't be afraid to explore new ideas and patterns.
 
-## A Personal Reflection: Why React Matters
+## A personal reflection: why React matters
 
 As we conclude this journey through React's fundamentals and ecosystem, it's worth reflecting on why React has had such a profound impact on web development and why it continues to evolve and thrive.
 
@@ -920,7 +920,7 @@ But perhaps most importantly, React created a community that values learning, sh
 
 Your journey with React is part of this larger story. Every component you build, every problem you solve, and every insight you share contributes to the collective knowledge that makes React development better for everyone.
 
-## The Road Ahead
+## The road ahead
 
 React's future is bright, with server components, concurrent features, and continued developer experience improvements on the horizon. But React's real strength isn't in any specific feature—it's in its ability to evolve while maintaining the core principles that made it successful.
 
@@ -934,7 +934,7 @@ As you continue your React journey, remember that mastery comes not from knowing
 
 These principles will serve you well regardless of which specific React technologies you use or how the ecosystem evolves.
 
-## Thank You for This Journey
+## Thank you for this journey
 
 Thank you for taking this journey through React with me. You've learned the fundamentals, explored advanced patterns, and gained insight into React's broader ecosystem. But most importantly, you've developed the foundation for continued learning and growth.
 

@@ -257,7 +257,7 @@ Operational excellence includes ensuring your application performs well as it gr
 - State management performance at scale
 - User experience consistency across different usage patterns
 
-### Performance Monitoring and Optimization {.unnumbered .unlisted}
+### Performance monitoring and optimization {.unnumbered .unlisted}
 
 **Key Performance Metrics:**
 
@@ -273,7 +273,7 @@ Operational excellence includes ensuring your application performs well as it gr
 - A/B testing for performance improvements
 - Performance regression detection in CI/CD
 
-### Capacity Planning and Auto-scaling {.unnumbered .unlisted}
+### Capacity planning and auto-scaling {.unnumbered .unlisted}
 
 **Infrastructure Scaling Strategies:**
 

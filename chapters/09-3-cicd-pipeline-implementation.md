@@ -4,7 +4,7 @@ Picture this: You've just fixed a critical bug in your React application. In the
 
 CI/CD (Continuous Integration/Continuous Deployment) is like having a smart, reliable assistant that never sleeps. This assistant takes your code changes, runs all your tests, checks for quality issues, builds your application, and deploys it to the right environment, all without human intervention.
 
-## Why CI/CD Transforms How Teams Ship Software
+## Why CI/CD transforms how teams ship software
 
 Let me share a transformation story. A startup team I worked with used to deploy manually every Friday afternoon. The process took 3-4 hours, often failed, and regularly led to weekend emergency fixes. Team members dreaded deployment days, and features took weeks to reach users.
 
@@ -28,11 +28,11 @@ CI/CD isn't just about automation. It's about building a culture of quality and 
 **Key principle**: Small, frequent changes are safer and more manageable than large, infrequent releases.
 :::
 
-## Understanding CI/CD: Breaking Down the Process
+## Understanding CI/CD: Breaking down the process
 
 Before diving into implementation, let's understand what actually happens in a well-designed CI/CD pipeline and why each step matters.
 
-### Continuous Integration (CI): The Quality Gate {.unnumbered .unlisted}
+### Continuous integration (CI): The quality gate {.unnumbered .unlisted}
 
 Continuous Integration ensures that code changes integrate cleanly with the existing codebase. Think of CI as a quality gate that every code change must pass through.
 
@@ -48,7 +48,7 @@ Continuous Integration ensures that code changes integrate cleanly with the exis
 7. **Build verification**: Ensure the application builds successfully
 8. **Artifact creation**: Packaged, deployable version of your application
 
-### Continuous Deployment (CD): The Safe Delivery {.unnumbered .unlisted}
+### Continuous deployment (CD): The safe delivery {.unnumbered .unlisted}
 
 Continuous Deployment takes your tested, verified application and delivers it to users safely and efficiently.
 
@@ -70,11 +70,11 @@ Continuous Deployment takes your tested, verified application and delivers it to
 Separating CI and CD allows you to control your deployment strategy. You might run CI on every commit but only deploy to production when you're ready. This separation also lets you deploy the same tested artifact to multiple environments (staging, production, etc.).
 :::
 
-## Getting Started: Your First CI/CD Pipeline
+## Getting started: Your first CI/CD pipeline
 
 Let's build a CI/CD pipeline step by step, starting with the basics and adding complexity gradually.
 
-### Step 1: Organizing Your Code for Automation {.unnumbered .unlisted}
+### Step 1: Organizing your code for automation {.unnumbered .unlisted}
 
 Before implementing CI/CD, your code repository needs to be organized in a way that supports automated processes.
 
@@ -137,7 +137,7 @@ coverage/
 ```
 :::
 
-### Step 2: Creating Your First CI Pipeline {.unnumbered .unlisted}
+### Step 2: Creating your first CI pipeline {.unnumbered .unlisted}
 
 A basic CI pipeline should verify that your code works correctly and meets quality standards. Start simple and add complexity as needed.
 
@@ -193,7 +193,7 @@ jobs:
 - Saves the build artifacts for potential deployment
 :::
 
-### Step 3: Understanding Branching Strategy for Teams {.unnumbered .unlisted}
+### Step 3: Understanding branching strategy for teams {.unnumbered .unlisted}
 
 Your CI/CD pipeline needs to match your team's branching strategy. Different strategies work better for different team sizes and release cycles.
 
@@ -219,11 +219,11 @@ Throughout this chapter, we'll mention specific tools like GitHub Actions, GitLa
 Many CI/CD platforms offer free tiers for personal projects or open source work. The key is understanding the pipeline stages and quality gates so you can implement them on any platform.
 :::
 
-## Building Robust Quality Gates
+## Building robust quality gates
 
 Quality gates are checkpoints in your pipeline that prevent bad code from reaching production. Think of them as tollbooths that require payment (in the form of passing tests) before allowing passage.
 
-### The Progressive Quality Gate Strategy {.unnumbered .unlisted}
+### The progressive quality gate strategy {.unnumbered .unlisted}
 
 Instead of one massive quality check, use multiple smaller gates that fail fast and provide clear feedback:
 
@@ -322,11 +322,11 @@ jobs:
 - Parallel execution where possible for speed
 :::
 
-## Advanced Deployment Strategies
+## Advanced deployment strategies
 
 Once your CI pipeline is solid, you can implement sophisticated deployment strategies that minimize risk and downtime.
 
-### Deployment Environments and Promotion {.unnumbered .unlisted}
+### Deployment environments and promotion {.unnumbered .unlisted}
 
 Professional applications typically use multiple environments where code is tested before reaching users:
 
@@ -400,11 +400,11 @@ jobs:
 ```
 :::
 
-## Troubleshooting Common CI/CD Issues
+## Troubleshooting common CI/CD issues
 
 Even well-designed pipelines encounter problems. Here's how to diagnose and fix the most common issues:
 
-### Pipeline Performance Problems {.unnumbered .unlisted}
+### Pipeline performance problems {.unnumbered .unlisted}
 
 **Problem**: Pipeline takes too long, developers stop waiting for feedback
 **Cause**: Inefficient dependency caching, too many serial steps
@@ -418,7 +418,7 @@ Even well-designed pipelines encounter problems. Here's how to diagnose and fix 
 **Cause**: Environment differences, missing dependencies
 **Solution**: Lock dependency versions, use container-based builds
 
-### Security and Access Issues {.unnumbered .unlisted}
+### Security and access issues {.unnumbered .unlisted}
 
 **Problem**: Deployment fails due to authentication errors
 **Cause**: Incorrect credentials, expired tokens
@@ -438,11 +438,11 @@ Even well-designed pipelines encounter problems. Here's how to diagnose and fix 
 5. **Ignoring pipeline maintenance**: Outdated tools and practices accumulate technical debt
 :::
 
-## Measuring CI/CD Effectiveness
+## Measuring CI/CD effectiveness
 
 How do you know if your CI/CD pipeline is working well? Here are the metrics that matter:
 
-### Pipeline Health Metrics {.unnumbered .unlisted}
+### Pipeline health metrics {.unnumbered .unlisted}
 
 **Speed Metrics:**
 
@@ -487,7 +487,7 @@ console.log('Pipeline Metrics:', JSON.stringify(pipelineMetrics));
 ```
 :::
 
-## Chapter Summary: Reliable Software Delivery
+## Chapter summary: Reliable software delivery
 
 You've now learned how to build CI/CD pipelines that make deployment routine and reliable. The key insights to remember:
 
@@ -512,7 +512,7 @@ You've now learned how to build CI/CD pipelines that make deployment routine and
 - Learn from deployment issues to improve processes
 - Treat pipeline code with the same care as application code
 
-### Next Steps: Production Infrastructure {.unnumbered .unlisted}
+### Next steps: Production infrastructure {.unnumbered .unlisted}
 
 CI/CD pipelines deliver your application, but they need somewhere to deliver it to. The next chapter will cover hosting platform deployment, showing how to choose and configure production infrastructure that supports your CI/CD process and provides a reliable foundation for your React applications.
 
@@ -609,11 +609,11 @@ Remember: A good CI/CD pipeline should make you confident about deploying, not a
 ```
 :::
 
-## Advanced Pipeline Features
+## Advanced pipeline features
 
 Professional CI/CD pipelines incorporate advanced features for enhanced reliability and efficiency.
 
-### Deployment Approval Workflows {.unnumbered .unlisted}
+### Deployment approval workflows {.unnumbered .unlisted}
 
 Implement human approval gates for critical deployments:
 
@@ -657,7 +657,7 @@ deploy-production:
 ```
 :::
 
-### Blue-Green Deployment Strategy {.unnumbered .unlisted}
+### Blue-green deployment strategy {.unnumbered .unlisted}
 
 Implement zero-downtime deployments with blue-green strategy:
 
@@ -715,7 +715,7 @@ blue-green-deploy:
 ```
 :::
 
-### Rollback Automation {.unnumbered .unlisted}
+### Rollback automation {.unnumbered .unlisted}
 
 Implement automated rollback capabilities:
 

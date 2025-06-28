@@ -1130,28 +1130,28 @@ To solidify your understanding of state and props, work through these progressiv
 Create a new React project or use an existing development environment. You'll be building components that manage various types of state and communicate through props. Focus on applying the patterns and principles discussed rather than creating a polished user interface.
 :::
 
-### Exercise 1: Counter Variations {.unnumbered .unlisted}
+### Exercise 1: counter variations {.unnumbered .unlisted}
 
 Build a counter component with multiple variations to practice different state patterns:
 
 - Create a `MultiCounter` component that manages multiple independent counters. Each counter should have its own increment, decrement, and reset functionality. Add a "Reset All" button that resets all counters to zero simultaneously.
 - Consider how to structure the state (array of numbers vs. object with counter IDs) and what the performance implications might be for each approach. Implement both approaches and compare them.
 
-### Exercise 2: Form with Dynamic Fields {.unnumbered .unlisted}
+### Exercise 2: form with dynamic fields {.unnumbered .unlisted}
 
 Build a practice log form that allows users to add and remove practice techniques dynamically:
 
 - The form should start with basic fields (piece name, duration, date) and allow users to add multiple technique entries. Each technique entry should have a name and notes field. Users should be able to remove individual techniques and reorder them.
 - Focus on managing the dynamic array state properly, handling validation for dynamic fields, and ensuring the form submission includes all the dynamic data.
 
-### Exercise 3: Data Fetching with Error Handling {.unnumbered .unlisted}
+### Exercise 3: data fetching with error handling {.unnumbered .unlisted}
 
 Create a component that fetches and displays practice session data with comprehensive error handling:
 
 - Build a `PracticeSessionViewer` that fetches session data based on a session ID prop. Handle loading states, network errors, and missing data appropriately. Include retry functionality and ensure proper cleanup if the component unmounts during a fetch operation.
 - Consider edge cases like what happens when the session ID changes while a request is in flight, and how to prevent race conditions between multiple requests.
 
-### Exercise 4: Component Communication Patterns {.unnumbered .unlisted}
+### Exercise 4: component communication patterns {.unnumbered .unlisted}
 
 Design a small application that demonstrates various communication patterns between components:
 
