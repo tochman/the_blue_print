@@ -21,27 +21,27 @@ RUN apk add --no-cache \
     # Enhanced TeX packages
     && echo "Configuring TeX for high memory usage..."
 
-# Create custom texmf.cnf with increased memory limits
+# Create custom texmf.cnf with significantly increased memory limits for very large books
 RUN mkdir -p /opt/texlive/texmf-local/web2c && \
-    echo "% Custom configuration for high-memory LaTeX builds" > /opt/texlive/texmf-local/web2c/texmf.cnf && \
-    echo "main_memory = 12000000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
-    echo "extra_mem_top = 10000000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
-    echo "extra_mem_bot = 10000000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
-    echo "font_mem_size = 8000000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
-    echo "pool_size = 6250000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
-    echo "buf_size = 5000000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
-    echo "nest_size = 5000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
-    echo "max_strings = 500000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
-    echo "pool_free = 47500" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
-    echo "string_vacancies = 90000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
+    echo "% Custom configuration for ultra-high-memory LaTeX builds" > /opt/texlive/texmf-local/web2c/texmf.cnf && \
+    echo "main_memory = 200000000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
+    echo "extra_mem_top = 100000000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
+    echo "extra_mem_bot = 100000000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
+    echo "font_mem_size = 80000000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
+    echo "pool_size = 60000000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
+    echo "buf_size = 40000000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
+    echo "nest_size = 50000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
+    echo "max_strings = 10000000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
+    echo "pool_free = 1000000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
+    echo "string_vacancies = 2000000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
     echo "max_print_line = 1000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
-    echo "save_size = 80000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
-    echo "stack_size = 10000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
-    echo "dvi_buf_size = 16384" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
+    echo "save_size = 1000000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
+    echo "stack_size = 200000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
+    echo "dvi_buf_size = 131072" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
     echo "error_line = 254" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
     echo "half_error_line = 238" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
     echo "max_in_open = 127" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
-    echo "param_size = 10000" >> /opt/texlive/texmf-local/web2c/texmf.cnf
+    echo "param_size = 200000" >> /opt/texlive/texmf-local/web2c/texmf.cnf
 
 # Update TeX configuration
 RUN if command -v mktexlsr >/dev/null 2>&1; then mktexlsr; fi
@@ -55,13 +55,13 @@ RUN echo '#!/bin/sh' > /usr/local/bin/xelatex-highmem && \
     echo 'ulimit -m unlimited 2>/dev/null || true' >> /usr/local/bin/xelatex-highmem && \
     echo 'ulimit -s unlimited 2>/dev/null || true' >> /usr/local/bin/xelatex-highmem && \
     echo '' >> /usr/local/bin/xelatex-highmem && \
-    echo '# Set TeX environment variables for high memory' >> /usr/local/bin/xelatex-highmem && \
-    echo 'export main_memory=12000000' >> /usr/local/bin/xelatex-highmem && \
-    echo 'export extra_mem_top=10000000' >> /usr/local/bin/xelatex-highmem && \
-    echo 'export extra_mem_bot=10000000' >> /usr/local/bin/xelatex-highmem && \
-    echo 'export font_mem_size=8000000' >> /usr/local/bin/xelatex-highmem && \
-    echo 'export pool_size=6250000' >> /usr/local/bin/xelatex-highmem && \
-    echo 'export buf_size=5000000' >> /usr/local/bin/xelatex-highmem && \
+    echo '# Set TeX environment variables for ultra-high memory' >> /usr/local/bin/xelatex-highmem && \
+    echo 'export main_memory=200000000' >> /usr/local/bin/xelatex-highmem && \
+    echo 'export extra_mem_top=100000000' >> /usr/local/bin/xelatex-highmem && \
+    echo 'export extra_mem_bot=100000000' >> /usr/local/bin/xelatex-highmem && \
+    echo 'export font_mem_size=80000000' >> /usr/local/bin/xelatex-highmem && \
+    echo 'export pool_size=60000000' >> /usr/local/bin/xelatex-highmem && \
+    echo 'export buf_size=40000000' >> /usr/local/bin/xelatex-highmem && \
     echo '' >> /usr/local/bin/xelatex-highmem && \
     echo '# Use the original xelatex with optimized settings' >> /usr/local/bin/xelatex-highmem && \
     echo 'exec xelatex \\' >> /usr/local/bin/xelatex-highmem && \
