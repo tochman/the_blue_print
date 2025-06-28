@@ -1,0 +1,82 @@
+# High-memory Pandoc Docker image for large book builds
+# Based on pandoc/extra but with enhanced memory configuration for XeLaTeX
+
+FROM pandoc/extra:latest
+
+# Set environment variables for increased memory limits
+ENV TEXMFVAR=/tmp/texmf-var
+ENV TEXMFCONFIG=/tmp/texmf-config
+
+# Install additional memory management tools and configure TeX
+RUN apk add --no-cache \
+    # Memory management tools
+    util-linux \
+    procps \
+    # Additional fonts for better rendering
+    font-noto \
+    font-noto-cjk \
+    font-noto-emoji \
+    # PDF manipulation tools
+    ghostscript \
+    # Enhanced TeX packages
+    && echo "Configuring TeX for high memory usage..."
+
+# Create custom texmf.cnf with increased memory limits
+RUN mkdir -p /opt/texlive/texmf-local/web2c && \
+    echo "% Custom configuration for high-memory LaTeX builds" > /opt/texlive/texmf-local/web2c/texmf.cnf && \
+    echo "main_memory = 12000000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
+    echo "extra_mem_top = 10000000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
+    echo "extra_mem_bot = 10000000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
+    echo "font_mem_size = 8000000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
+    echo "pool_size = 6250000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
+    echo "buf_size = 5000000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
+    echo "nest_size = 5000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
+    echo "max_strings = 500000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
+    echo "pool_free = 47500" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
+    echo "string_vacancies = 90000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
+    echo "max_print_line = 1000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
+    echo "save_size = 80000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
+    echo "stack_size = 10000" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
+    echo "dvi_buf_size = 16384" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
+    echo "error_line = 254" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
+    echo "half_error_line = 238" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
+    echo "max_in_open = 127" >> /opt/texlive/texmf-local/web2c/texmf.cnf && \
+    echo "param_size = 10000" >> /opt/texlive/texmf-local/web2c/texmf.cnf
+
+# Update TeX configuration
+RUN if command -v mktexlsr >/dev/null 2>&1; then mktexlsr; fi
+
+# Create a custom XeLaTeX wrapper script with memory optimizations
+RUN echo '#!/bin/sh' > /usr/local/bin/xelatex-highmem && \
+    echo '# High-memory XeLaTeX wrapper' >> /usr/local/bin/xelatex-highmem && \
+    echo '' >> /usr/local/bin/xelatex-highmem && \
+    echo '# Set memory limits' >> /usr/local/bin/xelatex-highmem && \
+    echo 'ulimit -v unlimited 2>/dev/null || true' >> /usr/local/bin/xelatex-highmem && \
+    echo 'ulimit -m unlimited 2>/dev/null || true' >> /usr/local/bin/xelatex-highmem && \
+    echo 'ulimit -s unlimited 2>/dev/null || true' >> /usr/local/bin/xelatex-highmem && \
+    echo '' >> /usr/local/bin/xelatex-highmem && \
+    echo '# Set TeX environment variables for high memory' >> /usr/local/bin/xelatex-highmem && \
+    echo 'export main_memory=12000000' >> /usr/local/bin/xelatex-highmem && \
+    echo 'export extra_mem_top=10000000' >> /usr/local/bin/xelatex-highmem && \
+    echo 'export extra_mem_bot=10000000' >> /usr/local/bin/xelatex-highmem && \
+    echo 'export font_mem_size=8000000' >> /usr/local/bin/xelatex-highmem && \
+    echo 'export pool_size=6250000' >> /usr/local/bin/xelatex-highmem && \
+    echo 'export buf_size=5000000' >> /usr/local/bin/xelatex-highmem && \
+    echo '' >> /usr/local/bin/xelatex-highmem && \
+    echo '# Use the original xelatex with optimized settings' >> /usr/local/bin/xelatex-highmem && \
+    echo 'exec xelatex \\' >> /usr/local/bin/xelatex-highmem && \
+    echo '    --interaction=nonstopmode \\' >> /usr/local/bin/xelatex-highmem && \
+    echo '    --shell-escape \\' >> /usr/local/bin/xelatex-highmem && \
+    echo '    --synctex=1 \\' >> /usr/local/bin/xelatex-highmem && \
+    echo '    --file-line-error \\' >> /usr/local/bin/xelatex-highmem && \
+    echo '    "$@"' >> /usr/local/bin/xelatex-highmem && \
+    chmod +x /usr/local/bin/xelatex-highmem
+
+# Set working directory and default command
+WORKDIR /data
+ENTRYPOINT ["/usr/local/bin/pandoc"]
+
+# Add metadata
+LABEL maintainer="The Blue Print Book Build"
+LABEL description="High-memory Pandoc image for large technical book builds"
+LABEL version="1.0"

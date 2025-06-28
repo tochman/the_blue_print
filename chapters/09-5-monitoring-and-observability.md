@@ -4,9 +4,9 @@ Picture this scenario: Your React application passes all tests, deploys successf
 
 This chapter transforms how you think about application health: from basic uptime checks to understanding the complete user experience. You'll learn to build monitoring systems that tell meaningful stories about your application's performance and help you make data-driven improvements.
 
-## The Hidden Reality of Production Applications
+## The hidden reality of production applications
 
-### When "Working" Isn't Really Working
+### When "Working" Isn't Really Working {.unnumbered .unlisted}
 
 Here's a real-world wake-up call: A successful startup celebrated their React e-commerce platform's 99.9% uptime and perfect test suite. Everything appeared healthy until they implemented comprehensive user monitoring.
 
@@ -20,7 +20,7 @@ Here's a real-world wake-up call: A successful startup celebrated their React e-
 
 The application was technically "up" but functionally broken for many users. This gap between technical metrics and user experience is why monitoring matters.
 
-### From Server-Centric to User-Centric Thinking
+### From Server-Centric to User-Centric Thinking {.unnumbered .unlisted}
 
 Traditional monitoring focuses on infrastructure: "Is the server running?" Modern observability asks better questions: "Are users successful?" This shift changes everything about how you approach application health.
 
@@ -46,11 +46,11 @@ Effective monitoring tells stories about user success, not just system status. Y
 **Core principle**: Observe user journeys, not just system metrics.
 :::
 
-## Building Your Monitoring Strategy: A Decision Framework
+## Building Your Monitoring Strategy: A Decision Framework 
 
 Before diving into tools and implementation, you need a clear strategy that matches your application's needs and your team's capacity.
 
-### The Monitoring Maturity Pyramid
+### The Monitoring Maturity Pyramid {.unnumbered .unlisted}
 
 Think of monitoring capabilities as a pyramid: build strong foundations before adding complexity:
 
@@ -75,7 +75,7 @@ Think of monitoring capabilities as a pyramid: build strong foundations before a
 **Why this progression works:**
  Each layer provides value independently while enabling the next level. You can stop at any layer and still have meaningful monitoring, but each addition compounds the value of previous investments.
 
-### Choosing Your Monitoring Approach
+### Choosing Your Monitoring Approach {.unnumbered .unlisted}
 
 Different applications need different monitoring strategies. Here's how to decide what's right for your situation:
 
@@ -111,7 +111,7 @@ Throughout this chapter, we'll reference tools like Google Analytics, Sentry, Ne
 The monitoring tool landscape evolves rapidly. What matters most is understanding what each type of monitoring accomplishes, so you can evaluate current options and choose what fits your specific needs, budget, and team expertise. Many tools offer free tiers that let you start small and grow your monitoring sophistication over time.
 :::
 
-### Building Your Monitoring Decision Tree
+### Building Your Monitoring Decision Tree {.unnumbered .unlisted}
 
 Use this framework to determine what monitoring capabilities to implement first:
 
@@ -137,7 +137,7 @@ Use this framework to determine what monitoring capabilities to implement first:
 
 Let's explore the key types of monitoring every React application should consider, starting with the most critical and building complexity gradually.
 
-### 1. Error Detection and Tracking
+### 1. Error Detection and Tracking {.unnumbered .unlisted}
 
 **Why it's critical:**
  If users encounter errors and you don't know about them, you can't fix them. Error tracking is your safety net for maintaining application quality.
@@ -163,7 +163,7 @@ Let's explore the key types of monitoring every React application should conside
 3. **Enhance reporting**: Add error categorization and impact metrics
 4. **Optimize response**: Create automated alerts and resolution workflows
 
-### 2. Performance Monitoring
+### 2. Performance Monitoring {.unnumbered .unlisted}
 
 **Why it matters:**
  Performance directly affects user experience, conversion rates, and business success. Slow applications lose users, regardless of functionality.
@@ -188,7 +188,7 @@ Let's explore the key types of monitoring every React application should conside
 3. **Optimization**: Implement performance budgets and regression detection
 4. **Advanced**: Create custom performance metrics for your specific application
 
-### 3. User Experience and Behavior Monitoring
+### 3. User Experience and Behavior Monitoring {.unnumbered .unlisted}
 
 **Why it's valuable:**
  Understanding how users actually interact with your application helps you identify improvement opportunities and validate design decisions.
@@ -207,7 +207,7 @@ Let's explore the key types of monitoring every React application should conside
 - Technical performance impact on business metrics
 - User satisfaction and retention patterns
 
-### 4. Application Health and Availability
+### 4. Application Health and Availability {.unnumbered .unlisted}
 
 **Why it's fundamental:**
  While user-centric metrics are crucial, you still need to ensure your application's basic infrastructure is healthy.
@@ -221,7 +221,7 @@ Let's explore the key types of monitoring every React application should conside
 
 ## Implementing Monitoring: A Practical Approach
 
-### Starting with Error Tracking
+### Starting with Error Tracking {.unnumbered .unlisted}
 
 The most important monitoring you can implement is error detection. Here's a practical approach to get meaningful error insights quickly:
 
@@ -263,7 +263,7 @@ class ErrorBoundary extends React.Component {
 - Gives users a graceful error experience
 - Integrates easily with external monitoring services
 
-### Progressive Performance Monitoring
+### Progressive Performance Monitoring {.unnumbered .unlisted}
 
 Start with browser-native performance APIs, then enhance based on your needs:
 
@@ -297,7 +297,7 @@ window.addEventListener('load', () => {
 
 ## Troubleshooting Common Monitoring Challenges
 
-### Challenge: Alert Fatigue and Noise
+### Challenge: Alert Fatigue and Noise {.unnumbered .unlisted}
 
 **Problem**: Too many alerts make it hard to identify real issues.
 
@@ -310,7 +310,7 @@ window.addEventListener('load', () => {
 
 **Practical approach**: Start with fewer, high-impact alerts. Add more specific monitoring as you understand your application's normal behavior patterns.
 
-### Challenge: Performance Monitoring Overhead
+### Challenge: Performance Monitoring Overhead {.unnumbered .unlisted}
 
 **Problem**: Monitoring itself impacts application performance.
 
@@ -323,7 +323,7 @@ window.addEventListener('load', () => {
 
 **Balance strategy**: The insights from monitoring should significantly outweigh the performance cost. If monitoring noticeably slows your application, you're over-monitoring.
 
-### Challenge: Data Privacy and Compliance
+### Challenge: Data Privacy and Compliance {.unnumbered .unlisted}
 
 **Problem**: Monitoring can inadvertently collect sensitive user information.
 
@@ -336,7 +336,7 @@ window.addEventListener('load', () => {
 
 **Best practice**: Design monitoring with privacy-by-default principles. Collect the minimum data needed for actionable insights.
 
-### Challenge: Making Monitoring Data Actionable
+### Challenge: Making Monitoring Data Actionable {.unnumbered .unlisted}
 
 **Problem**: Having lots of monitoring data but struggling to use it effectively.
 
@@ -351,7 +351,7 @@ window.addEventListener('load', () => {
 
 ## Choosing and Implementing Monitoring Tools
 
-### Evaluation Framework for Monitoring Tools
+### Evaluation Framework for Monitoring Tools {.unnumbered .unlisted}
 
 When selecting monitoring solutions, consider these factors:
 
@@ -376,7 +376,7 @@ When selecting monitoring solutions, consider these factors:
 - Customization options for advanced needs
 - Migration path if you outgrow the tool
 
-### Popular Monitoring Tool Categories
+### Popular Monitoring Tool Categories {.unnumbered .unlisted}
 
 **All-in-One Application Performance Monitoring (APM):**
 
@@ -406,7 +406,7 @@ When selecting monitoring solutions, consider these factors:
 - Strengths: Maximum customization, cost control
 - Considerations: Higher setup complexity, ongoing maintenance
 
-### Implementation Best Practices
+### Implementation Best Practices {.unnumbered .unlisted}
 
 **Start Small and Grow:**
 

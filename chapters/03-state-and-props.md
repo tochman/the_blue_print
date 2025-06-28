@@ -1034,7 +1034,7 @@ function PracticeTimer() {
 
 By separating concerns and keeping fast-changing state localized, the improved version ensures that timer updates don't cause unnecessary re-renders of other components.
 
-## Using React.memo for Component Optimization
+## Using React.memo for component optimization
 
 React.memo is a higher-order component that prevents re-renders when a component's props haven't changed. This optimization is particularly useful for components that receive complex objects as props or render expensive content.
 

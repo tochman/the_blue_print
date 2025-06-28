@@ -4,9 +4,9 @@ You've built a React application that works beautifully in development. Tests pa
 
 Production deployment isn't just about moving files to a server—it's about creating systems that maintain application quality, performance, and reliability over time. It's the difference between shipping once and shipping confidently, repeatedly, at scale.
 
-## Why Production Deployment Requires Its Own Expertise
+## Why production deployment requires its own expertise
 
-### The Reality Gap: Development vs. Production
+### The Reality Gap: Development vs. Production {.unnumbered .unlisted}
 
 Here's a humbling story from the industry: A team spent months building a perfect e-commerce React application. Every feature worked flawlessly in development, tests had 100% coverage, and the code review process was thorough. They deployed to production with confidence.
 
@@ -19,7 +19,7 @@ Within the first week:
 
 **What went wrong?** The gap between development and production environments revealed assumptions that weren't tested, edge cases that weren't considered, and the reality that production is fundamentally different from development.
 
-### Understanding the Production Environment Challenge
+### Understanding the Production Environment Challenge {.unnumbered .unlisted}
 
 Production environments differ from development in critical ways:
 
@@ -59,11 +59,11 @@ Production deployment success requires shifting from "making it work" to "making
 **Key principle**: Design for production realities, not just development convenience.
 :::
 
-## Your Production Deployment Journey: A Learning Roadmap
+## Your production deployment journey: a learning roadmap
 
 This chapter provides a comprehensive but approachable path to production deployment mastery. Rather than overwhelming you with every possible configuration, we'll build your expertise progressively.
 
-### The Journey Structure
+### The Journey Structure{.unnumbered .unlisted}
 
 **Foundation: Building for Production**
 - Understanding build optimization and performance
@@ -80,7 +80,7 @@ This chapter provides a comprehensive but approachable path to production deploy
 - Disaster recovery and business continuity
 - Performance optimization at scale
 
-### What You'll Gain
+### What You'll Gain {.unnumbered .unlisted}
 
 By the end of this chapter, you'll understand:
 
@@ -105,55 +105,55 @@ By the end of this chapter, you'll understand:
 - How to balance feature development time with operational investment
 - How to measure and optimize for business impact
 
-## Chapter Organization: Progressive Learning
+## Chapter organization: progressive learning
 
 Each section in this chapter builds on previous concepts while remaining useful independently:
 
-### Section 1: Build Optimization and Preparation
+### Section 1: Build Optimization and Preparation {.unnumbered .unlisted}
 *Foundation for production-ready applications*
 
 Learn to optimize your React application for real-world performance. You'll understand bundle analysis, performance budgets, and how to prepare your application for the unpredictable conditions of production environments.
 
 **Key outcomes**: Applications that load fast and work well across different devices and network conditions.
 
-### Section 2: Quality Assurance and Testing
+### Section 2: Quality Assurance and Testing {.unnumbered .unlisted}
 *Ensuring consistent application quality*
 
 Implement automated quality checks that catch issues before they reach users. You'll learn to balance comprehensive testing with development velocity, creating quality gates that build confidence without slowing progress.
 
 **Key outcomes**: Deployment processes that maintain quality while enabling frequent releases.
 
-### Section 3: CI/CD Pipeline Implementation  
+### Section 3: CI/CD Pipeline Implementation  {.unnumbered .unlisted}
 *Automating reliable deployments*
 
 Build deployment pipelines that handle the complexity of modern applications. You'll learn to automate testing, building, and deployment while maintaining human oversight for critical decisions.
 
 **Key outcomes**: Reliable, repeatable deployments that reduce human error and enable faster release cycles.
 
-### Section 4: Hosting Platform Deployment
+### Section 4: Hosting Platform Deployment {.unnumbered .unlisted}
 *Choosing and configuring production infrastructure*
 
 Navigate the hosting landscape to choose platforms that match your application's needs. You'll learn platform-specific optimizations while understanding the trade-offs between different hosting approaches.
 
 **Key outcomes**: Informed hosting decisions that balance cost, performance, and operational complexity.
 
-### Section 5: Monitoring and Observability
+### Section 5: Monitoring and Observability {.unnumbered .unlisted}
 *Understanding production application behavior*
 
 Implement monitoring that tells meaningful stories about user experience and application health. You'll learn to balance comprehensive observability with manageable complexity.
 
 **Key outcomes**: Monitoring systems that help you understand user experience and catch issues before they impact business goals.
 
-### Section 6: Operational Excellence
+### Section 6: Operational Excellence {.unnumbered .unlisted}
 *Building long-term reliability and security*
 
 Develop operational practices that scale with your application and team. You'll learn to balance security, reliability, and maintainability while supporting continuous improvement.
 
 **Key outcomes**: Operational practices that enable confident, sustainable application management over time.
 
-## Practical Learning Approach
+## Practical learning approach
 
-### Tool Agnostic Principles
+### Tool Agnostic Principles {.unnumbered .unlisted}
 
 Throughout this chapter, we'll mention specific tools and services like Vercel, Netlify, AWS, GitHub Actions, and others. These are examples to illustrate concepts, not specific endorsements. The deployment landscape changes rapidly, and the best choice depends on your specific situation.
 
@@ -164,7 +164,7 @@ Throughout this chapter, we'll mention specific tools and services like Vercel, 
 - Which capabilities matter most for your use case
 - How to evaluate new tools as they emerge
 
-### Progressive Implementation
+### Progressive Implementation {.unnumbered .unlisted}
 
 Each section provides multiple levels of implementation:
 
@@ -174,7 +174,7 @@ Each section provides multiple levels of implementation:
 
 This approach lets you start simple and grow your deployment sophistication as your application and team mature.
 
-### Real-World Context
+### Real-World Context {.unnumbered .unlisted}
 
 Every technique and tool recommendation includes:
 - When and why you'd use this approach
@@ -182,7 +182,7 @@ Every technique and tool recommendation includes:
 - How to troubleshoot common issues
 - How to evaluate whether it's working effectively
 
-## Success Metrics: Measuring Production Excellence
+## Success metrics: measuring production excellence
 
 Your production deployment success can be measured across multiple dimensions:
 
@@ -207,7 +207,7 @@ Your production deployment success can be measured across multiple dimensions:
 - Risk mitigation and business continuity
 - Scalability to support business growth
 
-## Getting Started: Your First Production Deployment
+## Getting started: your first production deployment
 
 Ready to begin your production deployment journey? Start with the build optimization section, which provides the foundation for everything that follows. Each section builds logically on previous concepts while remaining useful independently.
 

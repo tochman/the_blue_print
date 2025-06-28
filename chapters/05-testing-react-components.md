@@ -842,7 +842,9 @@ Key testing patterns for stateful components:
 
 Custom hooks are some of the most important things to test in React applications because they often contain your business logic. The React Testing Library provides a `renderHook` utility specifically for this purpose.
 
-### Starting with simple hooks {.unnumbered .unlisted}::: example
+### Starting with simple hooks {.unnumbered .unlisted}
+
+::: example
 
 ```jsx
 // usePracticeTimer.js
@@ -1642,7 +1644,9 @@ describe('PracticeTimer Component', () => {
 - Testing components that integrate with external libraries
 - When you want to see your components running in a real browser
 
-### Other tools in the testing ecosystem {.unnumbered .unlisted}**Mocha + Chai**: Alternative to Jest, popular in the JavaScript ecosystem
+### Other tools in the testing ecosystem {.unnumbered .unlisted}
+
+**Mocha + Chai**: Alternative to Jest, popular in the JavaScript ecosystem
 - Mocha provides the test runner and structure
 - Chai provides assertions
 - More modular but requires more configuration
@@ -1661,7 +1665,9 @@ describe('PracticeTimer Component', () => {
 
 Integration tests verify that multiple components work together correctly. They're especially valuable for testing user workflows and data flow between components.
 
-### Testing multiple components together {.unnumbered .unlisted}::: example
+### Testing multiple components together {.unnumbered .unlisted}
+
+::: example
 
 ```jsx
 // PracticeWorkflow.jsx - A complex component that integrates multiple pieces
@@ -2727,7 +2733,9 @@ The biggest takeaway from this chapter isn't about any specific tool or techniqu
 - **Start where you are**: You don't need to test everything from day one. Begin with your most important components and gradually expand.
 - **Test like a user**: Focus on what users can see and do, not on how your code works internally.
 
-### What you should remember {.unnumbered .unlisted}**Start with what matters**: Test the behavior your users care about, not implementation details. If clicking a button should save data, test that the save function gets called--don't test that the button has a specific CSS class.
+### What you should remember {.unnumbered .unlisted}
+
+**Start with what matters**: Test the behavior your users care about, not implementation details. If clicking a button should save data, test that the save function gets called--don't test that the button has a specific CSS class.
 
 **Build incrementally**: It's better to have some tests than no tests. Add testing gradually to existing projects rather than feeling overwhelmed by the need to test everything at once.
 
@@ -2761,7 +2769,9 @@ Here's a practical roadmap for introducing testing to your React applications:
 - Add e2e tests for your most critical user journeys
 - Share testing knowledge with your team
 
-### Resources for continued learning {.unnumbered .unlisted}- **For advanced testing strategies**: "The Green Line: A Journey Into Automated Testing" provides comprehensive coverage of testing philosophy and e2e techniques
+### Resources for continued learning {.unnumbered .unlisted}
+
+- **For advanced testing strategies**: "The Green Line: A Journey Into Automated Testing" provides comprehensive coverage of testing philosophy and e2e techniques
 - **For React Testing Library specifics**: The official docs at testing-library.com are excellent
 - **For testing mindset**: Kent C. Dodds' blog posts on testing best practices
 
